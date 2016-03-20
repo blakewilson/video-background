@@ -9,6 +9,13 @@ Author URI: http://blakewilson.me
 */
 
 /**
+ * Include the metabox framework
+ */
+if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
+	require_once dirname( __FILE__ ) . '/framework/init.php';
+}
+
+/**
  * Enqueue backend style and script
  */
 function vidbg_metabox_scripts() {
@@ -25,163 +32,14 @@ function vidbg_jquery() {
 }
 add_action('wp_footer', 'vidbg_jquery' );
 
-/**
- * Add Metabox for video background v2
- * Added page post type
- */
-function vidbg_metabox_add( $post_type ) {
-  $post_types = array( 'post', 'page' );
-  if ( in_array( $post_type, $post_types )) {
-    add_meta_box( 'vidbg-metabox', 'Video Background', 'vidbg_meta_box_cb', $post_type, 'normal', 'high' );
-  }
-}
-add_action( 'add_meta_boxes', 'vidbg_metabox_add' );
 
 /**
- * Create values and metabox form
+ * @TODO add metabox script
  */
-function vidbg_meta_box_cb( $post ) {
-  $values = get_post_custom( $post->ID );
-  $container = isset( $values['vidbg_metabox_field_container'] ) ? esc_attr( $values['vidbg_metabox_field_container'][0] ) : '';
-  $mp4 = isset( $values['vidbg_metabox_field_mp4'] ) ? esc_attr( $values['vidbg_metabox_field_mp4'][0] ) : '';
-  $webm = isset( $values['vidbg_metabox_field_webm'] ) ? esc_attr( $values['vidbg_metabox_field_webm'][0] ) : '';
-  $poster = isset( $values['vidbg_metabox_field_poster'] ) ? esc_attr( $values['vidbg_metabox_field_poster'][0] ) : '';
-  $overlay = isset( $values['vidbg_metabox_field_overlay'] ) ? esc_attr( $values['vidbg_metabox_field_overlay'][0] ) : '';
-  $noloop = isset( $values['vidbg_metabox_field_no_loop'] ) ? esc_attr( $values['vidbg_metabox_field_no_loop'][0] ) : '';
-  $unmute = isset( $values['vidbg_metabox_field_unmute'] ) ? esc_attr( $values['vidbg_metabox_field_unmute'][0] ) : '';
-  wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-  ?>
-  <table class="form-table vidbg_metabox">
-    <tbody>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_container">Container</label>
-        </th>
-        <td>
-          <input type="text" name="vidbg_metabox_field_container" id="vidbg_metabox_field_container" value="<?php echo $container; ?>" />
-          <p class="vidbg_metabox_description">Please specify the container you would like your video background in.</p>
-          <p class="vidbg_metabox_description">ex: <code>.header</code> or <code>body</code></p>
-        </td>
-      </tr>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_mp4">Link to .mp4</label>
-        </th>
-        <td>
-          <input type="text" name="vidbg_metabox_field_mp4" id="vidbg_metabox_field_mp4" value="<?php echo $mp4; ?>" />
-          <p class="vidbg_metabox_description">Please specify the link to the .mp4 file. MP4 adds support for Safari &amp; IE.</p>
-          <p class="vidbg_metabox_description">ex: <code>http://example.com/header_video.mp4</code></p>
-        </td>
-      </tr>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_webm">Link to .webm</label>
-        </th>
-        <td>
-          <input type="text" name="vidbg_metabox_field_webm" id="vidbg_metabox_field_webm" value="<?php echo $webm; ?>" />
-          <p class="vidbg_metabox_description">Please specify the link to the .webm file. WEBM adds support for Chrome, Firefox, &amp; Opera.</p>
-          <p class="vidbg_metabox_description">ex: <code>http://example.com/header_video.webm</code></p>
-        </td>
-      </tr>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_poster">Link to fallback image</label>
-        </th>
-        <td>
-          <input type="text" name="vidbg_metabox_field_poster" id="vidbg_metabox_field_poster" value="<?php echo $poster; ?>" />
-          <p class="vidbg_metabox_description">Please specify the link to the fallback image in case your browser does not support Video Background</p>
-          <p class="vidbg_metabox_description">ex: <code>http://example.com/header_video.jpg</code></p>
-        </td>
-      </tr>
-    </tbody>
-    <tbody class="advanced-options">
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_overlay">Overlay</label>
-        </th>
-        <td>
-          <input type="checkbox" name="vidbg_metabox_field_overlay" id="vidbg_metabox_field_overlay" <?php checked( $overlay, 'on' ); ?> />
-          <p class="vidbg_metabox_description">Add an overlay over the video. This is useful if your text isn&#39;t so clear with a video background.</p>
-        </td>
-      </tr>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_no_loop">Turn Off Loop?</label>
-        </th>
-        <td>
-          <input type="checkbox" name="vidbg_metabox_field_no_loop" id="vidbg_metabox_field_no_loop" <?php checked( $noloop, 'on' ); ?> />
-          <p class="vidbg_metabox_description">Turn off the loop for Video Background. Once the video is fully played it will display the last frame of the video.</p>
-        </td>
-      </tr>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label for="vidbg_metabox_field_unmute">Play the Audio</label>
-        </th>
-        <td>
-          <input type="checkbox" name="vidbg_metabox_field_unmute" id="vidbg_metabox_field_unmute" <?php checked( $unmute, 'on' ); ?> />
-          <p class="vidbg_metabox_description">Enabling this will play the audio of the video.</p>
-        </td>
-      </tr>
-    </tbody>
-    <tbody>
-      <tr class="vidbg-type-text">
-        <th style="width: 18%">
-          <label></label>
-        </th>
-        <td>
-          <p class="vidbg_metabox_description"><a href="#advanced-options-panel" class="advanced-options-panel">Advanced Options &raquo;</a></p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
-  </p>
-  <?php
-}
 
-/**
- * Save the fields
- */
-function vidbg_meta_box_save( $post_id ) {
-  // Bail if we're doing an auto save
-  if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
-  // if our nonce isn't there, or we can't verify it, bail
-  if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
 
-  // if our current user can't edit this post, bail
-  if( !current_user_can( 'edit_posts' ) ) return;
-
-  // now we can actually save the data
-  $allowed = array(
-    'a' => array( // on allow a tags
-      'href' => array() // and those anchors can only have href attribute
-    )
-  );
-
-  //Make sure data is set
-  if( isset( $_POST['vidbg_metabox_field_container'] ) )
-    update_post_meta( $post_id, 'vidbg_metabox_field_container', wp_kses( $_POST['vidbg_metabox_field_container'], $allowed ) );
-
-  if( isset( $_POST['vidbg_metabox_field_mp4'] ) )
-    update_post_meta( $post_id, 'vidbg_metabox_field_mp4', wp_kses( $_POST['vidbg_metabox_field_mp4'], $allowed ) );
-
-  if( isset( $_POST['vidbg_metabox_field_webm'] ) )
-    update_post_meta( $post_id, 'vidbg_metabox_field_webm', wp_kses( $_POST['vidbg_metabox_field_webm'], $allowed ) );
-
-  if( isset( $_POST['vidbg_metabox_field_poster'] ) )
-    update_post_meta( $post_id, 'vidbg_metabox_field_poster', wp_kses( $_POST['vidbg_metabox_field_poster'], $allowed ) );
-
-  $chk = ( isset( $_POST['vidbg_metabox_field_overlay'] ) && $_POST['vidbg_metabox_field_overlay'] ) ? 'on' : 'off';
-  update_post_meta( $post_id, 'vidbg_metabox_field_overlay', $chk );
-
-  $chk2 = ( isset( $_POST['vidbg_metabox_field_no_loop'] ) && $_POST['vidbg_metabox_field_no_loop'] ) ? 'on' : 'off';
-  update_post_meta( $post_id, 'vidbg_metabox_field_no_loop', $chk2 );
-
-  $chk3 = ( isset( $_POST['vidbg_metabox_field_unmute'] ) && $_POST['vidbg_metabox_field_unmute'] ) ? 'on' : 'off';
-  update_post_meta( $post_id, 'vidbg_metabox_field_unmute', $chk3 );
-}
-add_action( 'save_post', 'vidbg_meta_box_save' );
 
 /**
  * Add inline javascript to footer for video background
