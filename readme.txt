@@ -3,7 +3,7 @@ Contributors: blakedotvegas
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
 Requires at least: 3.2
 Tested up to: 4.4.2
-Stable tag: 2.4.1
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ To add a video background to a class called **header** add ".header" to the cont
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
 == Changelog ==
+
+= 2.5.0 =
+* Changelog
 
 = 2.4.1 =
 * Removed those pesky php notices on blog page when no front page was set and WP_DEBUG was true

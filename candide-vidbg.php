@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: http://blakewilson.me/projects/video-background/
 Description: jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Blake Wilson
-Version: 2.4.1
+Version: 2.5.0
 Author URI: http://blakewilson.me
 */
 
@@ -21,7 +21,7 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * Enqueue vidbg jquery script
  */
 function vidbg_jquery() {
-  wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.0.0', true);
+  wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1.0', true);
 }
 add_action('wp_footer', 'vidbg_jquery' );
 
