@@ -164,15 +164,15 @@ function vidbg_initialize_footer() {
     <?php if( isset( $container_field ) ): ?>
     <script type="text/javascript">
       jQuery(function($){
-				var vidbgContainerValue = <?php echo $container_field; ?>;
-				var vidbgMp4Value = <?php echo $mp4_field; ?>;
-				var vidbgWebmValue = <?php echo $webm_field; ?>;
-				var vidbgPosterValue = <?php echo $poster_field; ?>;
-				var vidbgIsMuted = <?php $unmute_field == 'on' ? 'false' : 'true'; ?>;
-				var vidbgIsLoop = <?php $no_loop_field == 'on' ? 'false' : 'true'; ?>;
-				var vidbgIsOverlay = <?php $overlay == 'on' ? 'true' : 'false'; ?>;
-				var vidbgOverlayColor = <?php echo $overlay_color; ?>;
-				var vidbgOverlayAlpha = <?php echo $overlay_alpha; ?>;
+				var vidbgContainerValue = '<?php echo $container_field; ?>';
+				var vidbgMp4Value = '<?php echo $mp4_field; ?>';
+				var vidbgWebmValue = '<?php echo $webm_field; ?>';
+				var vidbgPosterValue = '<?php echo $poster_field; ?>';
+				var vidbgIsMuted = <?php if( $unmute_field == 'on' ) {	echo 'false';	} else { echo 'true'; } ?>;
+				var vidbgIsLoop = <?php if( $no_loop_field == 'on' ) {	echo 'false';	} else { echo 'true'; } ?>;
+				var vidbgIsOverlay = <?php if( $overlay == 'on' ) {	echo 'true';	} else { echo 'false'; } ?>;
+				var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
+				var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
 
 	      $(vidbgContainerValue).vidbg({
 	        'mp4': vidbgMp4Value,
@@ -220,15 +220,15 @@ function candide_video_background( $atts , $content = null ) {
     ob_start(); ?>
     <script>
       jQuery(function($){
-				var vidbgContainerValue = <?php echo $container; ?>;
-				var vidbgMp4Value = <?php echo $mp4; ?>;
-				var vidbgWebmValue = <?php echo $webm; ?>;
-				var vidbgPosterValue = <?php echo $poster; ?>;
+				var vidbgContainerValue = '<?php echo $container; ?>';
+				var vidbgMp4Value = '<?php echo $mp4; ?>';
+				var vidbgWebmValue = '<?php echo $webm; ?>';
+				var vidbgPosterValue = '<?php echo $poster; ?>';
 				var vidbgIsMuted = <?php echo $muted; ?>;
 				var vidbgIsLoop = <?php echo $loop ?>;
 				var vidbgIsOverlay = <?php echo $overlay; ?>
-				var vidbgOverlayColor = <?php echo $overlay_color; ?>;
-				var vidbgOverlayAlpha = <?php echo $overlay_alpha; ?>;
+				var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
+				var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
 
         $(vidbgContainerValue).vidbg({
           'mp4': vidbgMp4Value,
