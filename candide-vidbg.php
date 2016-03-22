@@ -129,9 +129,9 @@ function vidbg_register_metabox() {
  		'desc' => __( 'Specify the opacity of the overlay. Accepts values between <code>0.0 - 1.0</code>', 'video-background' ),
  		'id'   => $prefix . 'overlay_alpha',
  		'type' => 'own_slider',
-		'min'  => '0.0',
-		'max'  => '1.0',
-		'default' => '0.3',
+		'min'  => '1',
+		'max'  => '99',
+		'default' => '30',
  	) );
 
  	$vidbg_metabox->add_field( array(
