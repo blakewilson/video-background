@@ -31,7 +31,9 @@ jQuery( document ).ready(function($) {
 		$value.val( $slider.slider( 'value' ) );
 		$text.text( $slider.slider( 'value' ) );
 
-		$range.addClass('.wp-core-ui .button-primary');
+		$('.ui-slider-range, .ui-slider-handle').each(function() {
+			$(this).addClass( 'wp-core-ui button-primary' );
+		});
 
 		$this.css({
 			'visibility': 'visible',
