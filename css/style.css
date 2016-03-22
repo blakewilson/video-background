@@ -14,68 +14,65 @@
 
 
 /* Jquery UI slider */
-.ui-slider {
-	position: relative;
-	text-align: left;
+.cmb-type-own-slider .button-primary {
+  height: 20px;
+  text-shadow: none;
+  box-shadow: none;
 }
-.ui-slider .ui-slider-handle {
-	position: absolute;
-	z-index: 2;
-	width: 1.2em;
-	height: 1.2em;
-	cursor: default;
-	-ms-touch-action: none;
-	touch-action: none;
-}
-.ui-slider .ui-slider-range {
-	position: absolute;
-	z-index: 1;
-	font-size: .7em;
-	display: block;
-	border: 0;
-	background-position: 0 0;
+.ui-corner-all,
+ .ui-corner-all {
+  border-radius: 0;
 }
 
-/* support: IE8 - See #6727 */
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-	filter: inherit;
+.ui-slider {
+  border: 0;
+  background: #e1e1e1;
+  border-radius: 3px;
 }
 
 .ui-slider-horizontal {
-	height: .8em;
-}
-.ui-slider-horizontal .ui-slider-handle {
-	top: -.3em;
-	margin-left: -.6em;
-}
-.ui-slider-horizontal .ui-slider-range {
-	top: 0;
-	height: 100%;
-}
-.ui-slider-horizontal .ui-slider-range-min {
-	left: 0;
-}
-.ui-slider-horizontal .ui-slider-range-max {
-	right: 0;
+  height: 15px;
 }
 
 .ui-slider-vertical {
-	width: .8em;
-	height: 100px;
+  height: 15em;
+  width: 15px;
 }
+ .ui-slider-handle {
+  width: 25px;
+  height: 20px;
+  background: #0085ba;
+  border-radius: 5%;
+  border: none;
+  cursor: pointer;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: 50%;
+  margin-top: -10px;
+}
+
 .ui-slider-vertical .ui-slider-handle {
-	left: -.3em;
-	margin-left: 0;
-	margin-bottom: -.6em;
+  left: 50%;
+  margin-left: -12.5px;
 }
+
+ .ui-slider-handle:hover {
+  opacity: .8;
+}
+
+ .ui-slider-range {
+  border: 0;
+  border-radius: 3;
+  background: #0085ba;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 15px;
+}
+
 .ui-slider-vertical .ui-slider-range {
-	left: 0;
-	width: 100%;
-}
-.ui-slider-vertical .ui-slider-range-min {
-	bottom: 0;
-}
-.ui-slider-vertical .ui-slider-range-max {
-	top: 0;
+  left: 0;
+  width: 15px;
 }

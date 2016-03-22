@@ -32,7 +32,7 @@ jQuery( document ).ready(function($) {
 		$text.text( $slider.slider( 'value' ) );
 
 		$('.ui-slider-range, .ui-slider-handle').each(function() {
-			$(this).addClass( 'wp-core-ui button-primary' );
+			$(this).addClass( 'button-primary' );
 		});
 
 		$this.css({
