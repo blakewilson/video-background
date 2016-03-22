@@ -40,6 +40,16 @@ add_action('wp_footer', 'vidbg_jquery' );
 
 
 
+function vidbg_default_color_palette( $l10n ) {
+    $l10n['defaults']['color_picker'] = array(
+        'palettes' => array( '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
+    );
+    return $l10n;
+}
+add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
+
+
+
 /**
  * Register metabox and scripts
  */
@@ -197,7 +207,7 @@ function vidbg_initialize_footer() {
 		}
 
 		$overlay_color_value = !empty($overlay_color) ? $overlay_color : '#000';
-		$overlay_alpha_value = !empty($overlay_alpha) ? $overlay_alphs : '0.3';
+		$overlay_alpha_value = !empty($overlay_alpha) ? $overlay_alpha : '0.3';
 		?>
     <script type="text/javascript">
       jQuery(function($){
