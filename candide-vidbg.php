@@ -43,7 +43,7 @@ add_action('wp_footer', 'vidbg_jquery' );
 /**
  * Register metabox and scripts
  */
- function vidbg_register_metabox() {
+function vidbg_register_metabox() {
  	$prefix = 'vidbg_metabox_field_';
 
  	$vidbg_metabox = new_cmb2_box( array(
@@ -95,7 +95,12 @@ add_action('wp_footer', 'vidbg_jquery' );
  		'name' => __( 'Overlay', 'video-background' ),
  		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
  		'id'   => $prefix . 'overlay',
- 		'type' => 'checkbox',
+ 		'type' => 'radio_inline',
+		'default' => 'off',
+		'options' => array(
+				'off' => __( 'Off', 'video-background' ),
+				'on' => __( 'On', 'video-background' ),
+		),
  	) );
 
  	$vidbg_metabox->add_field( array(
@@ -117,18 +122,28 @@ add_action('wp_footer', 'vidbg_jquery' );
  		'name' => __( 'Turn off loop?', 'video-background' ),
  		'desc' => __( 'Turn off the loop for Video Background. Once the video is complete, it will display the last frame of the video.', 'video-background' ),
  		'id'   => $prefix . 'no_loop',
- 		'type' => 'checkbox',
+ 		'type' => 'radio_inline',
+		'default' => 'off',
+		'options' => array(
+				'off' => __( 'Off', 'video-background' ),
+				'on' => __( 'On', 'video-background' ),
+		),
  	) );
 
  	$vidbg_metabox->add_field( array(
  		'name' => __( 'Play the audio?', 'video-background' ),
  		'desc' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
  		'id'   => $prefix . 'unmute',
- 		'type' => 'checkbox',
+ 		'type' => 'radio_inline',
+		'default' => 'off',
+		'options' => array(
+				'off' => __( 'Off', 'video-background' ),
+				'on' => __( 'On', 'video-background' ),
+		),
  	) );
 
- }
- add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
+}
+add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
 
 
 
@@ -162,17 +177,39 @@ function vidbg_initialize_footer() {
     } ?>
 
     <?php if( isset( $container_field ) ): ?>
+		<?php
+		if( $unmute_field == 'on' ) {
+			$boolean_mute = 'false';
+		} else {
+			$boolean_mute = 'true';
+		}
+
+		if( $no_loop_field == 'on' ) {
+			$boolean_loop = 'false';
+		} else {
+			$boolean_loop = 'true';
+		}
+
+		if( $overlay == 'on' ) {
+			$boolean_overlay = 'true';
+		} else {
+			$boolean_overlay = 'false';
+		}
+
+		$overlay_color_value = !empty($overlay_color) ? $overlay_color : '#000';
+		$overlay_alpha_value = !empty($overlay_alpha) ? $overlay_alphs : '0.3';
+		?>
     <script type="text/javascript">
       jQuery(function($){
 				var vidbgContainerValue = '<?php echo $container_field; ?>';
 				var vidbgMp4Value = '<?php echo $mp4_field; ?>';
 				var vidbgWebmValue = '<?php echo $webm_field; ?>';
 				var vidbgPosterValue = '<?php echo $poster_field; ?>';
-				var vidbgIsMuted = <?php if( $unmute_field == 'on' ) {	echo 'false';	} else { echo 'true'; } ?>;
-				var vidbgIsLoop = <?php if( $no_loop_field == 'on' ) {	echo 'false';	} else { echo 'true'; } ?>;
-				var vidbgIsOverlay = <?php if( $overlay == 'on' ) {	echo 'true';	} else { echo 'false'; } ?>;
-				var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
-				var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
+				var vidbgIsMuted = '<?php echo $boolean_mute; ?>';
+				var vidbgIsLoop = '<?php echo $boolean_loop; ?>';
+				var vidbgIsOverlay = '<?php echo $boolean_overlay; ?>';
+				var vidbgOverlayColor = '<?php echo $overlay_color_value; ?>';
+				var vidbgOverlayAlpha = '<?php echo $overlay_alpha_value; ?>';
 
 	      $(vidbgContainerValue).vidbg({
 	        'mp4': vidbgMp4Value,
