@@ -16,6 +16,9 @@ Author URI: http://blakewilson.me
 if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/framework/init.php';
 }
+if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
+	require_once dirname( __FILE__ ) . '/framework/cmb2_field_slider.php';
+}
 
 
 
@@ -125,7 +128,10 @@ function vidbg_register_metabox() {
  		'name' => __( 'Overlay Opacity', 'video-background' ),
  		'desc' => __( 'Specify the opacity of the overlay. Accepts values between <code>0.0 - 1.0</code>', 'video-background' ),
  		'id'   => $prefix . 'overlay_alpha',
- 		'type' => 'text',
+ 		'type' => 'own_slider',
+		'min'  => '0.0',
+		'max'  => '1.0',
+		'default' => '0.3',
  	) );
 
  	$vidbg_metabox->add_field( array(
