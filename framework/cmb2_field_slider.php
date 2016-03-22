@@ -20,9 +20,6 @@ class OWN_Field_Slider {
 		echo '<span class="own-slider-field-value-display">'. $field->value_label() .' <span class="own-slider-field-value-text"></span></span>';
 		$field_type_object->_desc( true, true );
 	}
-	public function setup_admin_scripts( ) {
-		wp_register_style( 'slider_ui', 'http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css', array(), '1.0' );
-	}
 }
 $own_field_slider = new OWN_Field_Slider();
 $own_field_slider->hooks();

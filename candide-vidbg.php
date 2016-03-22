@@ -27,7 +27,9 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
  */
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/style.css', __FILE__));
+	wp_enqueue_style( 'slider_ui', 'http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css', array(), '1.0' );
   wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/jquery.backend.js' );
+
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
