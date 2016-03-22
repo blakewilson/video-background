@@ -12,14 +12,16 @@ jQuery( document ).ready(function($) {
 		var $value      = $this.find( '.own-slider-field-value' );
 		var $slider     = $this.find( '.own-slider-field' );
 		var $text       = $this.find( '.own-slider-field-value-text' );
+		var $range			= $this.find( '.ui-slider-range' );
 		var slider_data = $value.data();
 
 		$slider.slider({
-			range : 'min',
-			value : slider_data.start,
-			min   : slider_data.min,
-			max   : slider_data.max,
-			slide : function( event, ui ) {
+			range 	: 'min',
+			value 	: slider_data.start,
+			min   	: slider_data.min,
+			animate : 'fast',
+			max   	: slider_data.max,
+			slide 	: function( event, ui ) {
 				$value.val( ui.value );
 				$text.text( ui.value );
 			}
@@ -28,6 +30,12 @@ jQuery( document ).ready(function($) {
 		// Initiate the display
 		$value.val( $slider.slider( 'value' ) );
 		$text.text( $slider.slider( 'value' ) );
+
+		$range.addClass('.wp-core-ui .button-primary');
+
+		$this.css({
+			'visibility': 'visible',
+		});
 
 	});
 

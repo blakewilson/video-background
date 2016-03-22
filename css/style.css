@@ -1,3 +1,8 @@
+.cmb-type-own-slider {
+  visibility: hidden;
+  /* hide slider until color scheme is applied */
+}
+
 .own-slider-field-value-display {
 	float:right;
 	font-weight: 400;
