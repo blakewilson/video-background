@@ -205,9 +205,9 @@ function vidbg_initialize_footer() {
 				var vidbgMp4Value = '<?php echo $mp4_field; ?>';
 				var vidbgWebmValue = '<?php echo $webm_field; ?>';
 				var vidbgPosterValue = '<?php echo $poster_field; ?>';
-				var vidbgIsMuted = '<?php echo $boolean_mute; ?>';
-				var vidbgIsLoop = '<?php echo $boolean_loop; ?>';
-				var vidbgIsOverlay = '<?php echo $boolean_overlay; ?>';
+				var vidbgIsMuted = <?php echo $boolean_mute; ?>;
+				var vidbgIsLoop = <?php echo $boolean_loop; ?>;
+				var vidbgIsOverlay = <?php echo $boolean_overlay; ?>;
 				var vidbgOverlayColor = '<?php echo $overlay_color_value; ?>';
 				var vidbgOverlayAlpha = '<?php echo $overlay_alpha_value; ?>';
 
@@ -216,8 +216,8 @@ function vidbg_initialize_footer() {
 	        'webm': vidbgWebmValue,
 	        'poster': vidbgPosterValue,
 	      }, {
-	        muted: vidbgIsMuted,
-	        loop: vidbgIsLoop,
+					muted: vidbgIsMuted,
+					loop: vidbgIsLoop,
 					overlay: vidbgIsOverlay,
 					overlayColor: vidbgOverlayColor,
 					overlayAlpha: vidbgOverlayAlpha,
