@@ -215,7 +215,7 @@ function vidbg_initialize_footer() {
 		}
 
 		$overlay_color_value = !empty($overlay_color) ? $overlay_color : '#000';
-		$overlay_alpha_value = !empty($overlay_alpha) ? $overlay_alpha : '0.3';
+		$overlay_alpha_value = !empty($overlay_alpha) ? '0.' . $overlay_alpha : '0.3';
 		?>
     <script type="text/javascript">
       jQuery(function($){

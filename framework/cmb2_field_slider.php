@@ -5,8 +5,6 @@ class OWN_Field_Slider {
 		add_filter( 'cmb2_render_own_slider',  array( $this, 'own_slider_field' ), 10, 5 );
 	}
 	public function own_slider_field( $field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object ) {
-		// Only enqueue scripts if field is used.
-		$this->setup_admin_scripts();
 		echo '<div class="own-slider-field"></div>';
 		echo $field_type_object->input( array(
 			'type'       => 'hidden',
