@@ -1,8 +1,9 @@
 jQuery( document ).ready(function($) {
 
-	$(function() {                       				//run when the DOM is ready
-	  $(".advanced-options-panel").click(function() {   //use a class, since your ID gets mangled
-	    $(".advanced-options").toggle("slow");      	//add the class to the clicked element
+	$(function() {
+		$('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').hide();
+	  $(".cmb2-id-vidbg-metabox-field-advanced h5").click(function() {
+	    $('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').show();
 	  });
 	});
 
@@ -38,7 +39,6 @@ jQuery( document ).ready(function($) {
 		$this.css({
 			'visibility': 'visible',
 		});
-
 	});
 
 });
