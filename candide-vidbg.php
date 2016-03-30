@@ -97,7 +97,7 @@ function vidbg_register_metabox() {
 
  	$vidbg_metabox->add_field( array(
  		'name' => __( 'Link to fallback image', 'video-background' ),
- 		'desc' => __( 'Please specify a link to the fallback image in case the browser does not support Video Background. You can either enter a URL or upload a file.', 'video-background' ),
+ 		'desc' => __( 'Please specify a link to the fallback image in case the browser does not support video backgrounds. You can either enter a URL or upload a file.', 'video-background' ),
  		'id'   => $prefix . 'poster',
  		'type' => 'file',
  		'options' => array(
@@ -107,7 +107,7 @@ function vidbg_register_metabox() {
 
 	$vidbg_metabox->add_field( array(
     'name' => __( 'Advanced Options &raquo;', 'video-background' ),
-		'before_field' => '<a href="#vidbg-advanced-options" class="button vidbg-button">',
+		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button">',
 		'after_field' => '</a>',
     'type' => 'title',
     'id'   => $prefix . 'advanced'
@@ -117,6 +117,7 @@ function vidbg_register_metabox() {
  		'name' => __( 'Overlay', 'video-background' ),
  		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
  		'id'   => $prefix . 'overlay',
+		'before' => '<div id="vidbg_advanced_options">',
  		'type' => 'radio_inline',
 		'default' => 'off',
 		'options' => array(
@@ -159,6 +160,7 @@ function vidbg_register_metabox() {
  		'name' => __( 'Play the audio?', 'video-background' ),
  		'desc' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
  		'id'   => $prefix . 'unmute',
+		'after' => '</div>',
  		'type' => 'radio_inline',
 		'default' => 'off',
 		'options' => array(

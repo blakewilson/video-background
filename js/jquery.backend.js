@@ -1,5 +1,6 @@
 jQuery( document ).ready(function($) {
 
+	// show advanced options on click
 	$(function() {
 		$('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').hide();
 	  $(".cmb2-id-vidbg-metabox-field-advanced a").click(function() {
@@ -7,6 +8,18 @@ jQuery( document ).ready(function($) {
 			$('.cmb2-id-vidbg-metabox-field-advanced').hide();
 	  });
 	});
+
+	// show extra overlay settings if enabled
+  $(function(){
+    $('#vidbg_metabox_field_overlay1, #vidbg_metabox_field_overlay2').bind('change', function (e) {
+      if( $('#vidbg_metabox_field_overlay1').is(':checked')) {
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').hide();
+      }
+      else if( $('#vidbg_metabox_field_overlay2').is(':checked')) {
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').show();
+      }
+    }).trigger('change');
+  });
 
 	// Loop through all cmb-type-slider-field instances and instantiate the slider UI
 	$( '.cmb-type-own-slider' ).each(function() {
