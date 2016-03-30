@@ -46,7 +46,7 @@ add_action('wp_footer', 'vidbg_jquery' );
 
 function vidbg_default_color_palette( $l10n ) {
     $l10n['defaults']['color_picker'] = array(
-        'palettes' => array( '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
+        'palettes' => array( '#000000', '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
     );
     return $l10n;
 }
@@ -104,6 +104,12 @@ function vidbg_register_metabox() {
  				'add_upload_file_text' => __( 'Upload fallback image', 'video-background' ),
  		),
  	) );
+
+	$vidbg_metabox->add_field( array(
+    'name' => __( 'Advanced Options', 'video-background' ),
+    'type' => 'title',
+    'id'   => $prefix . 'advanced'
+	) );
 
  	$vidbg_metabox->add_field( array(
  		'name' => __( 'Overlay', 'video-background' ),
