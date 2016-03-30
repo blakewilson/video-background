@@ -2,8 +2,9 @@ jQuery( document ).ready(function($) {
 
 	$(function() {
 		$('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').hide();
-	  $(".cmb2-id-vidbg-metabox-field-advanced h5").click(function() {
+	  $(".cmb2-id-vidbg-metabox-field-advanced a").click(function() {
 	    $('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').show();
+			$('.cmb2-id-vidbg-metabox-field-advanced').hide();
 	  });
 	});
 

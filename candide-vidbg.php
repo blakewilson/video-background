@@ -107,7 +107,7 @@ function vidbg_register_metabox() {
 
 	$vidbg_metabox->add_field( array(
     'name' => __( 'Advanced Options &raquo;', 'video-background' ),
-		'before_field' => '<a>',
+		'before_field' => '<a href="#vidbg-advanced-options" class="button vidbg-button">',
 		'after_field' => '</a>',
     'type' => 'title',
     'id'   => $prefix . 'advanced'
