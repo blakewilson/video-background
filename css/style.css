@@ -20,6 +20,7 @@
   box-shadow: none;
   border: 0;
   vertical-align: top;
+  outline: 0!important;
 }
 .cmb-type-own-slider .button-primary:hover {
   height: 15px;
@@ -46,7 +47,6 @@
   vertical-align: top;
   border: 0;
   box-shadow: none;
-  outline: 0;
 }
 .cmb-type-own-slider .ui-slider-handle.button-primary:hover {
   opacity: 1;
