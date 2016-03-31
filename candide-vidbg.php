@@ -28,7 +28,6 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/style.css', __FILE__));
   wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/jquery.backend.js' );
-
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
@@ -62,7 +61,7 @@ function vidbg_register_metabox() {
 
  	$vidbg_metabox = new_cmb2_box( array(
  		'id'            => 'vidbg-metabox',
- 		'title'         => __( 'Video Background', 'cmb2' ),
+ 		'title'         => __( 'Video Background', 'video-background' ),
  		'object_types'  => array( 'post', 'page' ),
  		'context'    => 'normal',
  		'priority'   => 'high',
@@ -110,7 +109,7 @@ function vidbg_register_metabox() {
 		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button">',
 		'after_field' => '</a>',
     'type' => 'title',
-    'id'   => $prefix . 'advanced'
+    'id'   => $prefix . 'advanced',
 	) );
 
  	$vidbg_metabox->add_field( array(
@@ -339,33 +338,23 @@ add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
  * Getting started page content
  */
 function vidbg_gettingstarted_page() {
-    ?>
-    <div class="wrap">
-        <h2>Video Background</h2>
-        <h3>Usability</h3>
-        <p>Video background makes it easy to add responsive, great looking video backgrounds to any element on your website. Below, you will find out what each feild does.</p>
-        <ul>
-          <li><b>Container</b>: This is probably the most important part of the plugin. This field allows you to specifiy whatever element you want for the video background. Say you wanted a full width/height background video playing on your website, you would simply add <code>body</code> to the field.</li>
-          <li><b>MP4</b>: This field represents the link to the .mp4 file. Please place the full link in this field.</li>
-          <li><b>WEBM</b>: This field represents the link to the .webm file. Please place the full link in this field.</li>
-          <li><b>Poster</b>: The poster is the fallback image in case your browser does not support video background. This fallback image is mostly seen from mobile (video background is not supported on mobile)</li>
-          <li><b>Overlay</b>: The overlay feature is useful when your video background is the same color as the text and it makes it hard to see. Using this feature will ensure that your text is visible.</li>
-          <li><b>Turn Off Loop</b>: Turning off loop will result in the video playing only once. After the video is fully finished playing, the last frame of the video will be shown.
-          <li><b>Play the Audio</b>: Toggling this option will enable the audio on the video you inputted in the mp4/webm fields.
-        </ul>
-        <h3>Getting Started</h3>
-        <p>To implement Video Background on your website, please follow the instructions below.
-        <ol>
-          <li>Edit the page or post you would like the video background to be on.</li>
-          <li>Below the content editor, you should see a metabox titled <b>Video Background</b>. Enter the values for the required fields and publish/update the page.</li>
-          <li>Enjoy.</li>
-        </ol>
-				<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like video background on. Here is how it works:<br>
-				<code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; muted=&quot;false&quot;]</code></p>
-				<h3>Questions?</h3>
-        <p>If you have any feedback/questions regarding the plugin you can reach me <a href="mailto:hi@blakewilson.me">here.</a>
-    </div>
-    <?php
+	echo '<div class="wrap">';
+		_e( '<h2>Video Background</h2>', 'video-background' );
+		_e( '<h3>Usability</h3>', 'video-background' );
+		_e( '<p>Video background makes it easy to add responsive, great looking video backgrounds to any element on your website. Below, you will find out what each feild does.</p>', 'video-background' );
+		_e( '<h3>Getting Started</h3>', 'video-background' );
+		_e( '<p>To implement Video Background on your website, please follow the instructions below.', 'video-background' );
+		echo '<ol>';
+			_e( '<li>Edit the page or post you would like the video background to be on.</li>', 'video-background' );
+			_e( '<li>Below the content editor, you should see a metabox titled <b>Video Background</b>. Enter the values for the required fields and publish/update the page.</li>', 'video-background' );
+			_e( '<li>Enjoy.</li>', 'video-background' );
+		echo '</ol>';
+		_e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like video background on. Here is how it works:', 'video-background' );
+		echo '<br>';
+		echo '<code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; muted=&quot;false&quot;]</code></p>', 'video-background' );
+		_e( '<h3>Questions?</h3>', 'video-background' );
+		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background">here.</a>', 'video-background' );
+	echo '</div>';
 }
 
 
