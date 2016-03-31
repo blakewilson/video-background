@@ -351,7 +351,7 @@ function vidbg_gettingstarted_page() {
 		echo '</ol>';
 		_e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like video background on. Here is how it works:', 'video-background' );
 		echo '<br>';
-		echo '<code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; muted=&quot;false&quot;]</code></p>', 'video-background' );
+		echo '<code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; muted=&quot;false&quot;]</code></p>';
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background">here.</a>', 'video-background' );
 	echo '</div>';
