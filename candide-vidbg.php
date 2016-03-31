@@ -366,7 +366,7 @@ function vidbg_gettingstarted_page() {
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Support</h3>', 'video-background' );
-		_e( '<p>If you like Video Background, you can support it\'s development with a donation.</p>', 'video-background' );
+		_e( '<p>If you like Video Background, you can support it\'s development with a donation :)</p>', 'video-background' );
 		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary" target="_blank">Buy Me a Coffee</a>', 'video-background' );
 	echo '</div>';
 }
