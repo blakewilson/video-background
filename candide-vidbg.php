@@ -341,19 +341,22 @@ function vidbg_gettingstarted_page() {
 	echo '<div class="wrap">';
 		_e( '<h2>Video Background</h2>', 'video-background' );
 		_e( '<h3>Usability</h3>', 'video-background' );
-		_e( '<p>Video background makes it easy to add responsive, great looking video backgrounds to any element on your website. Below, you will find out what each feild does.</p>', 'video-background' );
+		_e( '<p>Video background makes it easy to add responsive, great looking video backgrounds to any element on your website.</p>', 'video-background' );
 		_e( '<h3>Getting Started</h3>', 'video-background' );
 		_e( '<p>To implement Video Background on your website, please follow the instructions below.', 'video-background' );
 		echo '<ol>';
-			_e( '<li>Edit the page or post you would like the video background to be on.</li>', 'video-background' );
+			_e( '<li>Edit the page or post you would like the video background to appear on.</li>', 'video-background' );
 			_e( '<li>Below the content editor, you should see a metabox titled <b>Video Background</b>. Enter the values for the required fields and publish/update the page.</li>', 'video-background' );
 			_e( '<li>Enjoy.</li>', 'video-background' );
 		echo '</ol>';
-		_e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like video background on. Here is how it works:', 'video-background' );
-		echo '<br>';
-		echo '<code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; muted=&quot;false&quot;]</code></p>';
+		_e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like the video background to appear on. Here is how it works:</p>', 'video-background' );
+		echo '<p><code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; overlay_color=&quot;#000&quot; overlay_alpha=&quot;0.3&quot; muted=&quot;false&quot;]</code></p>';
+		_e( '<a href="http://blakewilson.me/projects/video-background/" class="button">Further Documentation', 'video-background' );
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background">here.</a>', 'video-background' );
+		_e( '<h3>Support</h3>', 'video-background' );
+		_e( '<p>If you like Video Background, support it\'s development with a donation.</p>', 'video-background' );
+		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary">Buy Me a Coffee</a>')
 	echo '</div>';
 }
 
