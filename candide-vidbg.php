@@ -203,7 +203,7 @@ function vidbg_initialize_footer() {
       $unmute_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_unmute', true );
     } ?>
 
-    <?php if( isset( $container_field ) ): ?>
+    <?php if( !empty( $container_field ) ): ?>
 		<?php
 		if( $unmute_field == 'on' ) {
 			$boolean_mute = 'false';
@@ -290,7 +290,7 @@ function candide_video_background( $atts , $content = null ) {
 				var vidbgPosterValue = '<?php echo $poster; ?>';
 				var vidbgIsMuted = <?php echo $muted; ?>;
 				var vidbgIsLoop = <?php echo $loop ?>;
-				var vidbgIsOverlay = <?php echo $overlay; ?>
+				var vidbgIsOverlay = <?php echo $overlay; ?>;
 				var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
 				var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
 

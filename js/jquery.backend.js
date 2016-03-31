@@ -2,9 +2,9 @@ jQuery( document ).ready(function($) {
 
 	// show advanced options on click
 	$(function() {
-		$('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').hide();
+		$('#vidbg_advanced_options').hide();
 	  $(".cmb2-id-vidbg-metabox-field-advanced a").click(function() {
-	    $('.cmb2-id-vidbg-metabox-field-overlay, .cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-vidbg-metabox-field-no-loop, .cmb2-id-vidbg-metabox-field-unmute').show();
+	    $('#vidbg_advanced_options').show();
 			$('.cmb2-id-vidbg-metabox-field-advanced').hide();
 	  });
 	});
