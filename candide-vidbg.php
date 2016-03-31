@@ -352,9 +352,9 @@ function vidbg_gettingstarted_page() {
 		echo '<p><code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; overlay_color=&quot;#000&quot; overlay_alpha=&quot;0.3&quot; muted=&quot;false&quot;]</code></p>';
 		_e( '<a href="http://blakewilson.me/projects/video-background/" class="button" target="_blank">Further Documentation</a>', 'video-background' );
 		_e( '<h3>Questions?</h3>', 'video-background' );
-		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background">here.</a>', 'video-background' );
+		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Support</h3>', 'video-background' );
-		_e( '<p>If you like Video Background, support it\'s development with a donation.</p>', 'video-background' );
+		_e( '<p>If you like Video Background, you can support it\'s development with a donation.</p>', 'video-background' );
 		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary" target="_blank">Buy Me a Coffee</a>', 'video-background' );
 	echo '</div>';
 }
