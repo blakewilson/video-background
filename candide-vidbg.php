@@ -23,6 +23,16 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
 
 
 /**
+ * Load plugin textdomain.
+ */
+function vidbg_load_textdomain() {
+  load_plugin_textdomain( 'video-background', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
+
+
+
+/**
  * Enqueue backend style and script
  */
 function vidbg_metabox_scripts() {
