@@ -1,11 +1,12 @@
 === Plugin Name ===
 Contributors: blakedotvegas
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
-Requires at least: 3.2
-Tested up to: 4.4.2
-Stable tag: 2.4.1
+Requires at least: 3.8.0
+Tested up to: 4.5
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Donate link: https://www.paypal.me/blakewilsonme
 
 jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 
@@ -23,14 +24,16 @@ There are 4 simple required fields:
 *   Poster: This will be used for the fallback image if video background is not supported (mobile for example)
 
 
-There are also 3 additional optional fields for having a more beautiful video background:
+There are also 5 additional optional fields for having a more beautiful video background:
 
 *   Overlay: Adds a pattern overlay over the video for optimal reading of text.
+*   Overlay Color: If overlay is enabled, you can select the color of the overlay using the colorpicker.
+*   Overlay Alpha: If overlay is enabled, you can specify the amount of transparency.
 *   Loop: Enable or disable the looping of your video! Play your video once, or infinite!
 *   Mute: in Video Background, you now have the option to unmute your audio!
 
 There is now a more detailed shortcode for video background. Input this shortcode in the bottom of the content editor of the page or post you would like video background on.
-`[vidbg container="body" mp4="#" webm="#" poster="#" muted="true" loop="true" overlay="false"]`
+`[vidbg container="body" mp4="#" webm="#" poster="#" muted="true" loop="true" overlay="false" overlay_color="#000" overlay_alpha="0.3"]`
 
 
 Demo:
@@ -42,7 +45,7 @@ Installation is simple.
 
 1. Upload `video-background` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Fill in the settings on the “Video Background” metabox on the page or post you'd like the video background to show up on.
+1. Fill in the settings on the “Video Background” metabox on the page or post you'd like the video background to appear on.
 
 == Frequently Asked Questions ==
 
@@ -75,6 +78,18 @@ To add a video background to a class called **header** add ".header" to the cont
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
 == Changelog ==
+
+= 2.5.0 =
+* Added Overlay Color
+* Added Overlay Alpha
+* Added ability to upload video files through wordpress media
+* Safer metaboxes
+* Added localization for translations in the future
+* added text domain and languages folder
+* Cleaned up source files
+* Integrated with CMB2
+* Added donate link
+* Updated stable tag
 
 = 2.4.1 =
 * Removed those pesky php notices on blog page when no front page was set and WP_DEBUG was true

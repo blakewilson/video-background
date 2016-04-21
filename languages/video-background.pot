@@ -1,0 +1,418 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Video Background\n"
+"POT-Creation-Date: 2016-04-21 02:05-0700\n"
+"PO-Revision-Date: 2016-03-30 22:31-0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: candide-vidbg.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Plugin Name of the plugin/theme
+#: candide-vidbg.php:77
+msgid "Video Background"
+msgstr ""
+
+#: candide-vidbg.php:84
+msgid "Container"
+msgstr ""
+
+#: candide-vidbg.php:85
+msgid ""
+"Please specify the container you would like your video background to be in."
+"<br>ex: <code>.header</code> or <code>body</code>"
+msgstr ""
+
+#: candide-vidbg.php:91
+msgid "Link to .mp4"
+msgstr ""
+
+#: candide-vidbg.php:92
+msgid ""
+"Please specify the link to the .mp4 file. You can either enter a URL or "
+"upload a file.<br>For browser compatability, please enter an .mp4 and .webm "
+"file for video backgrounds."
+msgstr ""
+
+#: candide-vidbg.php:96
+msgid "Upload .mp4 file"
+msgstr ""
+
+#: candide-vidbg.php:101
+msgid "Link to .webm"
+msgstr ""
+
+#: candide-vidbg.php:102
+msgid ""
+"Please specify the link to the .webm file. You can either enter a URL or "
+"upload a file.<br>For browser compatability, please enter an .mp4 and .webm "
+"file for video backgrounds."
+msgstr ""
+
+#: candide-vidbg.php:106
+msgid "Upload .webm file"
+msgstr ""
+
+#: candide-vidbg.php:111
+msgid "Link to fallback image"
+msgstr ""
+
+#: candide-vidbg.php:112
+msgid ""
+"Please specify a link to the fallback image in case the browser does not "
+"support video backgrounds. You can either enter a URL or upload a file."
+msgstr ""
+
+#: candide-vidbg.php:116
+msgid "Upload fallback image"
+msgstr ""
+
+#: candide-vidbg.php:121
+msgid "Advanced Options &raquo;"
+msgstr ""
+
+#: candide-vidbg.php:130
+msgid "Overlay"
+msgstr ""
+
+#: candide-vidbg.php:131
+msgid ""
+"Add an overlay over the video. This is useful if your text isn't readable "
+"with a video background."
+msgstr ""
+
+#: candide-vidbg.php:136 candide-vidbg.php:166 candide-vidbg.php:178
+msgid "Off"
+msgstr ""
+
+#: candide-vidbg.php:137 candide-vidbg.php:167 candide-vidbg.php:179
+msgid "On"
+msgstr ""
+
+#: candide-vidbg.php:142
+msgid "Overlay Color"
+msgstr ""
+
+#: candide-vidbg.php:143
+msgid ""
+"If overlay is enabled, a color will be used for the overlay. You can specify "
+"the color here."
+msgstr ""
+
+#: candide-vidbg.php:150
+msgid "Overlay Opacity"
+msgstr ""
+
+#: candide-vidbg.php:151
+msgid ""
+"Specify the opacity of the overlay with the left being mostly transparent "
+"and the right being hardly transparent."
+msgstr ""
+
+#: candide-vidbg.php:160
+msgid "Turn off loop?"
+msgstr ""
+
+#: candide-vidbg.php:161
+msgid ""
+"Turn off the loop for Video Background. Once the video is complete, it will "
+"display the last frame of the video."
+msgstr ""
+
+#: candide-vidbg.php:172
+msgid "Play the audio?"
+msgstr ""
+
+#: candide-vidbg.php:173
+msgid "Enabling this will play the audio of the video."
+msgstr ""
+
+#: candide-vidbg.php:355
+msgid "<h2>Video Background</h2>"
+msgstr ""
+
+#: candide-vidbg.php:356
+msgid ""
+"<p>Video background makes it easy to add responsive, great looking video "
+"backgrounds to any element on your website.</p>"
+msgstr ""
+
+#: candide-vidbg.php:357
+msgid "<h3>Getting Started</h3>"
+msgstr ""
+
+#: candide-vidbg.php:358
+msgid ""
+"<p>To implement Video Background on your website, please follow the "
+"instructions below."
+msgstr ""
+
+#: candide-vidbg.php:360
+msgid ""
+"<li>Edit the page or post you would like the video background to appear on.</"
+"li>"
+msgstr ""
+
+#: candide-vidbg.php:361
+msgid ""
+"<li>Below the content editor, you should see a metabox titled <b>Video "
+"Background</b>. Enter the values for the required fields and publish/update "
+"the page.</li>"
+msgstr ""
+
+#: candide-vidbg.php:362
+msgid "<li>Enjoy.</li>"
+msgstr ""
+
+#: candide-vidbg.php:364
+msgid ""
+"<p>Alternatively, you can use the shortcode by placing the following code at "
+"the bottom of the content editor of the page or post you would like the "
+"video background to appear on. Here is how it works:</p>"
+msgstr ""
+
+#: candide-vidbg.php:366
+msgid ""
+"<a href=\"http://blakewilson.me/projects/video-background/\" class=\"button"
+"\" target=\"_blank\">Further Documentation</a>"
+msgstr ""
+
+#: candide-vidbg.php:367
+msgid "<h3>Questions?</h3>"
+msgstr ""
+
+#: candide-vidbg.php:368
+msgid ""
+"<p>If you have any feedback/questions regarding the plugin you can reach me "
+"<a href=\"https://wordpress.org/support/plugin/video-background\" target="
+"\"_blank\">here.</a>"
+msgstr ""
+
+#: candide-vidbg.php:369
+msgid "<h3>Support</h3>"
+msgstr ""
+
+#: candide-vidbg.php:370
+msgid ""
+"<p>If you like Video Background and want to support its development, you can "
+"do so with a donation :)</p>"
+msgstr ""
+
+#: candide-vidbg.php:371
+msgid ""
+"<a href=\"http://paypal.me/blakewilsonme\" class=\"button button-primary\" "
+"target=\"_blank\">Buy Me a Coffee</a>"
+msgstr ""
+
+#: framework/includes/CMB2.php:122
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: framework/includes/CMB2.php:375
+msgid "Click to toggle"
+msgstr ""
+
+#: framework/includes/CMB2_Ajax.php:65
+msgid "Please Try Again"
+msgstr ""
+
+#: framework/includes/CMB2_Ajax.php:155
+msgid "Remove Embed"
+msgstr ""
+
+#: framework/includes/CMB2_Ajax.php:159
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: framework/includes/CMB2_Field.php:1030
+msgid "Add Group"
+msgstr ""
+
+#: framework/includes/CMB2_Field.php:1031
+msgid "Remove Group"
+msgstr ""
+
+#: framework/includes/CMB2_Field.php:1053
+#: framework/includes/CMB2_Field.php:1057
+msgid "None"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:86 framework/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:109
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:118 framework/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:129
+msgctxt ""
+"Valid formatting string, as per http://trentrichardson.com/examples/"
+"timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:137 framework/includes/CMB2_Types.php:1021
+msgid "Remove Image"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:138 framework/includes/CMB2_Types.php:357
+#: framework/includes/CMB2_Types.php:1040
+msgid "Remove"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:139 framework/includes/CMB2_Types.php:1035
+msgid "File:"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:140 framework/includes/CMB2_Types.php:1038
+msgid "Download"
+msgstr ""
+
+#: framework/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: framework/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: framework/includes/CMB2_Types.php:768 framework/includes/CMB2_Types.php:816
+msgid "No terms"
+msgstr ""
+
+#: framework/includes/CMB2_Types.php:884
+msgid "Add or Upload Files"
+msgstr ""
+
+#: framework/includes/CMB2_Types.php:945
+msgid "Add or Upload File"
+msgstr ""
+
+#: framework/includes/CMB2_hookup.php:120
+msgid ""
+"Term Metadata is a WordPress > 4.4 feature. Please upgrade your WordPress "
+"install."
+msgstr ""
+
+#: framework/includes/CMB2_hookup.php:124
+msgid "Term metaboxes configuration requires a 'taxonomies' parameter"
+msgstr ""
+
+#: framework/includes/helper-functions.php:250
+msgid "Save"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://blakewilson.me/projects/video-background/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"jQuery WordPress plugin to easily assign a video background to any element. "
+"Awesome."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Blake Wilson"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://blakewilson.me"
+msgstr ""
