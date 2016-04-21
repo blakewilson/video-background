@@ -6,6 +6,7 @@ Description: jQuery WordPress plugin to easily assign a video background to any 
 Author: Blake Wilson
 Version: 2.5.0
 Author URI: http://blakewilson.me
+Donate Link: http://paypal.me/blakewilsonme
 Text Domain: video-background
 Domain Path: /languages
 */

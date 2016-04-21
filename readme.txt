@@ -1,8 +1,8 @@
 === Plugin Name ===
 Contributors: blakedotvegas
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
-Requires at least: 3.2
-Tested up to: 4.4.2
+Requires at least: 3.8.0
+Tested up to: 4.5
 Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@ There are 4 simple required fields:
 *   Poster: This will be used for the fallback image if video background is not supported (mobile for example)
 
 
-There are also 3 additional optional fields for having a more beautiful video background:
+There are also 5 additional optional fields for having a more beautiful video background:
 
 *   Overlay: Adds a pattern overlay over the video for optimal reading of text.
 *   Overlay Color: If overlay is enabled, you can select the color of the overlay using the colorpicker.
@@ -88,6 +88,8 @@ To add a video background to a class called **header** add ".header" to the cont
 * added text domain and languages folder
 * Cleaned up source files
 * Integrated with CMB2
+* Added donate link
+* Updated stable tag
 
 = 2.4.1 =
 * Removed those pesky php notices on blog page when no front page was set and WP_DEBUG was true
