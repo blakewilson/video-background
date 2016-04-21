@@ -122,6 +122,7 @@ function vidbg_register_metabox() {
 		'after_field' => '</a>',
     'type' => 'title',
     'id'   => $prefix . 'advanced',
+		'after_row' => '<div id="vidbg_advanced_options">',
 	) );
 
  	$vidbg_metabox->add_field( array(
@@ -176,6 +177,7 @@ function vidbg_register_metabox() {
 				'off' => __( 'Off', 'video-background' ),
 				'on' => __( 'On', 'video-background' ),
 		),
+		'after_row' => '</div>',
  	) );
 
 }
