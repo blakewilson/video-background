@@ -128,7 +128,6 @@ function vidbg_register_metabox() {
  		'name' => __( 'Overlay', 'video-background' ),
  		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
  		'id'   => $prefix . 'overlay',
-		'before' => '<div id="vidbg_advanced_options">',
  		'type' => 'radio_inline',
 		'default' => 'off',
 		'options' => array(
@@ -171,7 +170,6 @@ function vidbg_register_metabox() {
  		'name' => __( 'Play the audio?', 'video-background' ),
  		'desc' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
  		'id'   => $prefix . 'unmute',
-		'after' => '</div>',
  		'type' => 'radio_inline',
 		'default' => 'off',
 		'options' => array(
