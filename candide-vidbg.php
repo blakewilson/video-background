@@ -56,6 +56,9 @@ add_action('wp_footer', 'vidbg_jquery' );
 
 
 
+/**
+ * Add custom color palette
+ */
 function vidbg_default_color_palette( $l10n ) {
     $l10n['defaults']['color_picker'] = array(
         'palettes' => array( '#000000', '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
