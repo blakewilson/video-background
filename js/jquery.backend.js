@@ -55,4 +55,15 @@ jQuery( document ).ready(function($) {
 		});
 	});
 
+
+	// Ajax used to permanently dismiss premium notice message
+	jQuery(document).on( 'click', '.vidbg-premium-notice .notice-dismiss', function() {
+    jQuery.ajax({
+        url: ajaxurl,
+        data: {
+            action: 'vidbg_dismiss_premium_notice'
+        }
+    })
+	})
+
 });
