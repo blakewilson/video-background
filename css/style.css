@@ -6,6 +6,16 @@
   padding: 0;
 }
 
+.wp-core-ui .button-primary.vidbg-twitter {
+  background: #1da1f2;
+  border-color: #1795E2;
+  -webkit-box-shadow: 0 1px 0 #1795E2;
+  box-shadow: 0 1px 0 #1795E2;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #1795E2,1px 0 1px #1795E2,0 1px 1px #1795E2,-1px 0 1px #1795E2;
+}
+
 /***********************
  jQuery Slider
 ***********************/

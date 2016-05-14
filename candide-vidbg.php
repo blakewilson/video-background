@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: http://blakewilson.me/projects/video-background/
 Description: jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Blake Wilson
-Version: 2.5.0
+Version: 2.5.1
 Author URI: http://blakewilson.me
 Donate Link: http://paypal.me/blakewilsonme
 Text Domain: video-background
@@ -371,7 +371,8 @@ function vidbg_gettingstarted_page() {
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Support</h3>', 'video-background' );
 		_e( '<p>If you like Video Background and want to support its development, you can do so with a donation :)</p>', 'video-background' );
-		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary" target="_blank">Buy Me a Coffee</a>', 'video-background' );
+		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary" target="_blank">Buy me a coffee</a>', 'video-background' );
+		_e( ' <a href="https://twitter.com/blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Follow me on Twitter</a>', 'video-background' );
 	echo '</div>';
 }
 
@@ -387,3 +388,29 @@ function vidbg_gettingstarted_link($links) {
 }
 $plugin = plugin_basename(__FILE__);
 add_filter("plugin_action_links_$plugin", 'vidbg_gettingstarted_link' );
+
+
+
+/**
+ * Create function to see if WordPress version is 4.2 or higher
+ */
+if ( ! function_exists( 'vidbg_is_wp_version' ) ) {
+	function vidbg_is_wp_version( $version = '4.2' ) {
+		global $wp_version;
+
+		if ( version_compare( $wp_version, $version, '>=' ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+
+
+/**
+ * If WP version is 4.2 or higher display premium notice message
+ */
+if( vidbg_is_wp_version() == true ) {
+	require_once( plugin_dir_path( __FILE__ )  . '/admin_premium_notice.php' );
+}
