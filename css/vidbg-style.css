@@ -1,0 +1,95 @@
+/***********************
+ Global Styles
+***********************/
+.button.vidbg-button h5 {
+  font-weight: normal;
+  padding: 0;
+}
+
+.wp-core-ui .button-primary.vidbg-twitter {
+  background: #1da1f2;
+  border-color: #1795E2;
+  -webkit-box-shadow: 0 1px 0 #1795E2;
+  box-shadow: 0 1px 0 #1795E2;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #1795E2,1px 0 1px #1795E2,0 1px 1px #1795E2,-1px 0 1px #1795E2;
+}
+
+#vidbg_advanced_options,
+.cmb-row {
+  width: 100% !important;
+}
+
+.cmb-type-file .file-status,
+.cmb-type-file .cmb2-media-status .img-status {
+  display: none;
+}
+
+/***********************
+ jQuery Slider
+***********************/
+.cmb-type-own-slider {
+  visibility: hidden;
+  /* hide slider until color scheme is applied */
+}
+
+.own-slider-field-value-display {
+	float:right;
+	font-weight: 400;
+	font-size: 12px;
+	color: #888;
+	padding-top: .5em;
+  display: none;
+}
+
+.ui-corner-all {
+  border-radius: 3px;
+}
+
+.ui-slider {
+  border: 1px solid #ddd;
+  background: #F7F7F7;
+  border-radius: 3px;
+}
+
+.ui-slider-horizontal {
+  position: relative;
+}
+
+.ui-slider-horizontal {
+  width: 65%;
+  height: 16px;
+}
+
+.ui-slider-handle {
+  position: absolute;
+}
+
+.ui-slider-handle {
+  width: 22px;
+  height: 22px;
+  background: #4FA7B9;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: 50%;
+  margin-top: -11px;
+  margin-left: -11px;
+}
+
+.ui-slider-range {
+  border: 0;
+  border-radius: 1;
+  background: #5bb6c9;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  position: relative;
+  top: -1px;
+  left: -1px;
+  height: 18px;
+}

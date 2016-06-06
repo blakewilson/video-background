@@ -53,8 +53,8 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
  * Enqueue backend style and script
  */
 function vidbg_metabox_scripts() {
-	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/style.css', __FILE__));
-  wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/jquery.backend.js' );
+	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
+  wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
@@ -134,15 +134,6 @@ function vidbg_register_metabox() {
  		),
  	) );
 
-	$vidbg_metabox->add_field( array(
-    'name' => __( 'Advanced Options &raquo;', 'video-background' ),
-		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button">',
-		'after_field' => '</a>',
-    'type' => 'title',
-    'id'   => $prefix . 'advanced',
-		'after_row' => '<div id="vidbg_advanced_options">',
-	) );
-
  	$vidbg_metabox->add_field( array(
  		'name' => __( 'Overlay', 'video-background' ),
  		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
@@ -153,6 +144,7 @@ function vidbg_register_metabox() {
 				'off' => __( 'Off', 'video-background' ),
 				'on' => __( 'On', 'video-background' ),
 		),
+		'before_row' => '<div id="vidbg_advanced_options">',
  	) );
 
  	$vidbg_metabox->add_field( array(
@@ -198,6 +190,12 @@ function vidbg_register_metabox() {
 		'after_row' => '</div>',
  	) );
 
+	$vidbg_metabox->add_field( array(
+    'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>',
+    'type' => 'title',
+    'id'   => $prefix . 'advanced_button',
+  ) );
+
 }
 add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
 
@@ -207,32 +205,25 @@ add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
  * Add inline javascript to footer for video background
  */
 function vidbg_initialize_footer() {
-  if( is_page() || is_single() || is_home() ) {
-    if( is_page() || is_single() ) {
-      global $post;
-      $container_field = get_post_meta( $post->ID, 'vidbg_metabox_field_container', true );
-      $mp4_field = get_post_meta( $post->ID, 'vidbg_metabox_field_mp4', true );
-      $webm_field = get_post_meta( $post->ID, 'vidbg_metabox_field_webm', true );
-      $poster_field = get_post_meta( $post->ID, 'vidbg_metabox_field_poster', true );
-      $overlay = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay', true );
-			$overlay_color = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay_color', true );
-			$overlay_alpha = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay_alpha', true );
-      $no_loop_field = get_post_meta( $post->ID, 'vidbg_metabox_field_no_loop', true );
-      $unmute_field = get_post_meta( $post->ID, 'vidbg_metabox_field_unmute', true );
-    } elseif ( is_home() && get_option('show_on_front') == 'page' ) {
-      $blog_page_id = get_option('page_for_posts');
-      $container_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_container', true );
-      $mp4_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_mp4', true );
-      $webm_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_webm', true );
-      $poster_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_poster', true );
-      $overlay = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay', true );
-			$overlay_color = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay_color', true );
-			$overlay_alpha = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay_alpha', true );
-      $no_loop_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_no_loop', true );
-      $unmute_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_unmute', true );
-    } ?>
+  if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
 
-    <?php if( !empty( $container_field ) ): ?>
+		if( is_page() || is_single() ) {
+			$the_id = get_the_ID();
+		} elseif( is_home() && get_option( 'show_on_front' ) == 'page' ) {
+			$the_id = get_option( 'page_for_posts' );
+		}
+
+    $container_field = get_post_meta( $the_id, 'vidbg_metabox_field_container', true );
+    $mp4_field = get_post_meta( $the_id, 'vidbg_metabox_field_mp4', true );
+    $webm_field = get_post_meta( $the_id, 'vidbg_metabox_field_webm', true );
+    $poster_field = get_post_meta( $the_id, 'vidbg_metabox_field_poster', true );
+    $overlay = get_post_meta( $the_id, 'vidbg_metabox_field_overlay', true );
+		$overlay_color = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_color', true );
+		$overlay_alpha = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_alpha', true );
+    $no_loop_field = get_post_meta( $the_id, 'vidbg_metabox_field_no_loop', true );
+    $unmute_field = get_post_meta( $the_id, 'vidbg_metabox_field_unmute', true );
+
+    if( !empty( $container_field ) ): ?>
 		<?php
 		if( $unmute_field == 'on' ) {
 			$boolean_mute = 'false';
