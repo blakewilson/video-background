@@ -26,6 +26,20 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
 
 
 /**
+ * Install the plugin
+ * deactivate vidbgpro if installed
+ */
+function vidbg_install_plugin() {
+	if( is_plugin_active( 'video-background-pro/vidbgpro.php') ) {
+		deactivate_plugins( 'video-background-pro/vidbgpro.php' );
+	}
+	delete_option( 'vidbg-premium-notice-dismissed' );
+}
+register_activation_hook( __FILE__, 'vidbg_install_plugin' );
+
+
+
+/**
  * Load plugin textdomain.
  */
 function vidbg_load_textdomain() {
