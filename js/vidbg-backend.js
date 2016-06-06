@@ -3,9 +3,13 @@ jQuery( document ).ready(function($) {
 	// show advanced options on click
 	$(function() {
 		$('#vidbg_advanced_options').hide();
-	  $(".cmb2-id-vidbg-metabox-field-advanced a").click(function() {
-	    $('#vidbg_advanced_options').show();
-			$('.cmb2-id-vidbg-metabox-field-advanced').hide();
+	  $(".cmb2-id-vidbg-metabox-field-advanced-button a").click(function() {
+			if ($('#vidbg_advanced_options').css('display') === 'none') {
+	    	$('#vidbg_advanced_options').show(500);
+				$('a.advanced-options-button').text('Hide Advanced Options');
+			} else {
+				$('#vidbg_advanced_options').hide(500);
+			}
 	  });
 	});
 
@@ -13,10 +17,10 @@ jQuery( document ).ready(function($) {
   $(function(){
     $('#vidbg_metabox_field_overlay1, #vidbg_metabox_field_overlay2').bind('change', function (e) {
       if( $('#vidbg_metabox_field_overlay1').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').hide();
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').hide(500);
       }
       else if( $('#vidbg_metabox_field_overlay2').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').show();
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').show(500);
       }
     }).trigger('change');
   });
@@ -45,10 +49,6 @@ jQuery( document ).ready(function($) {
 		// Initiate the display
 		$value.val( $slider.slider( 'value' ) );
 		$text.text( $slider.slider( 'value' ) );
-
-		$('.ui-slider-range, .ui-slider-handle').each(function() {
-			$(this).addClass( 'button-primary' );
-		});
 
 		$this.css({
 			'visibility': 'visible',

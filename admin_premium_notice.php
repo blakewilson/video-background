@@ -4,7 +4,7 @@
  */
 function vidbg_premium_notice() {
 	$class = 'notice notice-success vidbg-premium-notice is-dismissible';
-	$message = __( 'Does a version of Video Background with premium features interest you? <a href="http://blakewilson.me/projects/video-background/premium-video-background/?utm_source=videobackgroundwordpress&utm_medium=wordpressnotice&utm_campaign=Video%20Background%20Wordpress%20Premium%20Notice" target="_blank">Please take 2 seconds to let me know!</a>', 'video-background' );
+	$message = __( 'Youtube, Visual Composer, and SiteOrigin Integration with much more in the new Video Background Pro! <a href="http://pushlabs.co/video-background-pro" target="_blank">Learn more &raquo;</a>', 'video-background' );
   $is_dismissed = get_option( 'vidbg-premium-notice-dismissed' );
 
   if( empty( $is_dismissed ) ) {

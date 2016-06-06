@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: http://blakewilson.me/projects/video-background/
 Description: jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Blake Wilson
-Version: 2.5.1
+Version: 2.5.2
 Author URI: http://blakewilson.me
 Donate Link: http://paypal.me/blakewilsonme
 Text Domain: video-background
@@ -26,6 +26,20 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
 
 
 /**
+ * Install the plugin
+ * deactivate vidbgpro if installed
+ */
+function vidbg_install_plugin() {
+	if( is_plugin_active( 'video-background-pro/vidbgpro.php') ) {
+		deactivate_plugins( 'video-background-pro/vidbgpro.php' );
+	}
+	delete_option( 'vidbg-premium-notice-dismissed' );
+}
+register_activation_hook( __FILE__, 'vidbg_install_plugin' );
+
+
+
+/**
  * Load plugin textdomain.
  */
 function vidbg_load_textdomain() {
@@ -39,8 +53,8 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
  * Enqueue backend style and script
  */
 function vidbg_metabox_scripts() {
-	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/style.css', __FILE__));
-  wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/jquery.backend.js' );
+	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
+  wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
@@ -120,15 +134,6 @@ function vidbg_register_metabox() {
  		),
  	) );
 
-	$vidbg_metabox->add_field( array(
-    'name' => __( 'Advanced Options &raquo;', 'video-background' ),
-		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button">',
-		'after_field' => '</a>',
-    'type' => 'title',
-    'id'   => $prefix . 'advanced',
-		'after_row' => '<div id="vidbg_advanced_options">',
-	) );
-
  	$vidbg_metabox->add_field( array(
  		'name' => __( 'Overlay', 'video-background' ),
  		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
@@ -139,6 +144,7 @@ function vidbg_register_metabox() {
 				'off' => __( 'Off', 'video-background' ),
 				'on' => __( 'On', 'video-background' ),
 		),
+		'before_row' => '<div id="vidbg_advanced_options">',
  	) );
 
  	$vidbg_metabox->add_field( array(
@@ -184,6 +190,12 @@ function vidbg_register_metabox() {
 		'after_row' => '</div>',
  	) );
 
+	$vidbg_metabox->add_field( array(
+    'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>',
+    'type' => 'title',
+    'id'   => $prefix . 'advanced_button',
+  ) );
+
 }
 add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
 
@@ -193,32 +205,25 @@ add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
  * Add inline javascript to footer for video background
  */
 function vidbg_initialize_footer() {
-  if( is_page() || is_single() || is_home() ) {
-    if( is_page() || is_single() ) {
-      global $post;
-      $container_field = get_post_meta( $post->ID, 'vidbg_metabox_field_container', true );
-      $mp4_field = get_post_meta( $post->ID, 'vidbg_metabox_field_mp4', true );
-      $webm_field = get_post_meta( $post->ID, 'vidbg_metabox_field_webm', true );
-      $poster_field = get_post_meta( $post->ID, 'vidbg_metabox_field_poster', true );
-      $overlay = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay', true );
-			$overlay_color = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay_color', true );
-			$overlay_alpha = get_post_meta( $post->ID, 'vidbg_metabox_field_overlay_alpha', true );
-      $no_loop_field = get_post_meta( $post->ID, 'vidbg_metabox_field_no_loop', true );
-      $unmute_field = get_post_meta( $post->ID, 'vidbg_metabox_field_unmute', true );
-    } elseif ( is_home() && get_option('show_on_front') == 'page' ) {
-      $blog_page_id = get_option('page_for_posts');
-      $container_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_container', true );
-      $mp4_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_mp4', true );
-      $webm_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_webm', true );
-      $poster_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_poster', true );
-      $overlay = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay', true );
-			$overlay_color = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay_color', true );
-			$overlay_alpha = get_post_meta( $blog_page_id, 'vidbg_metabox_field_overlay_alpha', true );
-      $no_loop_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_no_loop', true );
-      $unmute_field = get_post_meta( $blog_page_id, 'vidbg_metabox_field_unmute', true );
-    } ?>
+  if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
 
-    <?php if( !empty( $container_field ) ): ?>
+		if( is_page() || is_single() ) {
+			$the_id = get_the_ID();
+		} elseif( is_home() && get_option( 'show_on_front' ) == 'page' ) {
+			$the_id = get_option( 'page_for_posts' );
+		}
+
+    $container_field = get_post_meta( $the_id, 'vidbg_metabox_field_container', true );
+    $mp4_field = get_post_meta( $the_id, 'vidbg_metabox_field_mp4', true );
+    $webm_field = get_post_meta( $the_id, 'vidbg_metabox_field_webm', true );
+    $poster_field = get_post_meta( $the_id, 'vidbg_metabox_field_poster', true );
+    $overlay = get_post_meta( $the_id, 'vidbg_metabox_field_overlay', true );
+		$overlay_color = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_color', true );
+		$overlay_alpha = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_alpha', true );
+    $no_loop_field = get_post_meta( $the_id, 'vidbg_metabox_field_no_loop', true );
+    $unmute_field = get_post_meta( $the_id, 'vidbg_metabox_field_unmute', true );
+
+    if( !empty( $container_field ) ): ?>
 		<?php
 		if( $unmute_field == 'on' ) {
 			$boolean_mute = 'false';
@@ -370,9 +375,20 @@ function vidbg_gettingstarted_page() {
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Support</h3>', 'video-background' );
-		_e( '<p>If you like Video Background and want to support its development, you can do so with a donation :)</p>', 'video-background' );
-		_e( '<a href="http://paypal.me/blakewilsonme" class="button button-primary" target="_blank">Buy me a coffee</a>', 'video-background' );
-		_e( ' <a href="https://twitter.com/blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Follow me on Twitter</a>', 'video-background' );
+		_e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
+		echo '<ul>';
+			_e( '<li>YouTube Integration</li>', 'video-background' );
+			_e( '<li>Visual Composer Integration</li>', 'video-background' );
+			_e( '<li>Page Builder by SiteOrigin Integration</li>', 'video-background' );
+			_e( '<li>Frontend Play/Pause Button Option</li>', 'video-background' );
+			_e( '<li>Frontend Volume Button Option</li>', 'video-background' );
+			_e( '<li>Overlay Image Textures</li>', 'video-background' );
+			_e( '<li>Extensive Documentation</li>', 'video-background' );
+			_e( '<li>Video Tutorials</li>', 'video-background' );
+			_e( '<li>And Much More!</li>', 'video-background' );
+		echo '</ul>';
+		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
+		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
 	echo '</div>';
 }
 
