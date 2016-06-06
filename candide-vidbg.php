@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: http://blakewilson.me/projects/video-background/
 Description: jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Blake Wilson
-Version: 2.5.1
+Version: 2.5.2
 Author URI: http://blakewilson.me
 Donate Link: http://paypal.me/blakewilsonme
 Text Domain: video-background
@@ -376,7 +376,7 @@ function vidbg_gettingstarted_page() {
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Support</h3>', 'video-background' );
 		_e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
-		echo '<ol>';
+		echo '<ul>';
 			_e( '<li>YouTube Integration</li>', 'video-background' );
 			_e( '<li>Visual Composer Integration</li>', 'video-background' );
 			_e( '<li>Page Builder by SiteOrigin Integration</li>', 'video-background' );
@@ -386,7 +386,7 @@ function vidbg_gettingstarted_page() {
 			_e( '<li>Extensive Documentation</li>', 'video-background' );
 			_e( '<li>Video Tutorials</li>', 'video-background' );
 			_e( '<li>And Much More!</li>', 'video-background' );
-		echo '</ol>';
+		echo '</ul>';
 		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
 		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
 	echo '</div>';
