@@ -100,6 +100,51 @@ function vidbg_default_color_palette( $l10n ) {
 add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
 
 /**
+ * Helper function to output disabled Video Background Pro fields
+ *
+ * @since 2.5.4
+ */
+function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_blank', $field_type = 'input', $field_description = '' ) {
+
+	$output = '';
+
+	$is_showing = true;
+
+	if ( $is_showing === true ) {
+		if ( $field_type === 'input' ) {
+			$field_class = 'cmb-row cmb-type-text cmb2-id-pro-disabled-field-' . $field_id . ' table-layout';
+		} elseif ( $field_type === 'radio' ) {
+			$field_class = 'cmb-row cmb-type-radio-inline cmb2-id-pro-disabled-field-' . $field_id . ' cmb-inline';
+		}
+
+		$output .= '<div class="' . $field_class . '">';
+		$output .= '<div class="cmb-th"><label for="pro_disabled_' . $field_id . '">' . $field_name . '</label></div>';
+		$output .= '<div class="cmb-td">';
+
+		if ( $field_type === 'input' ) {
+			$output .= '<input type="text" class="regular-text" name="pro_disabled_' . $field_id . '" id="' . $field_id . '" disabled>';
+		}
+
+		if ( $field_type === 'radio' ) {
+			$output .= '<ul class="cmb2-radio-list cmb2-list">';
+			$output .= '<li><input type="radio" value="off" class="cmb2-option" name="pro_disabled_' . $field_id . '" id="pro_disabled_' . $field_id . '1" checked="checked" disabled> <label for="pro_disabled_' . $field_id . '1">Off</label></li>';
+			$output .= '<li><input type="radio" class="cmb2-option" name="pro_disabled_' . $field_id . '" id="pro_disabled_' . $field_id . '2" value="on" disabled> <label for="pro_disabled_' . $field_id . '2">On</label></li>';
+			$output .= '</ul>';
+		}
+
+		if ( $field_id === 'overlay_texture' ) {
+			$output .= '<input class="cmb2-upload-button button" type="button" value="Upload Overlay Texture" disabled="">';
+		}
+
+		$output .= '<p class="cmb2-metabox-description">' . $field_description . '</p>';
+		$output .= '</div>';
+		$output .= '</div>';
+	}
+
+	return $output;
+}
+
+/**
  * Register metabox and scripts
  *
  * @since 2.5.0
@@ -125,6 +170,12 @@ function vidbg_register_metabox() {
 		'desc' => __( 'Please specify the container you would like your video background to be in.<br>ex: <code>.header</code> or <code>body</code>', 'video-background' ),
 		'id'   => $prefix . 'container',
 		'type' => 'text',
+		'after_row' => vidbg_disabled_pro_field(
+										__( 'YouTube Link', 'video-background' ),
+										'youtube_link',
+										'input',
+										__( 'To create YouTube video backgrounds, download the pro version!', 'video-background' )
+									 ),
 	) );
 
 	$vidbg_metabox->add_field( array(
@@ -186,6 +237,12 @@ function vidbg_register_metabox() {
 		'min'     => '10',
 		'max'     => '99',
 		'default' => '30',
+		'after_row' => vidbg_disabled_pro_field(
+										__( 'Overlay Texture', 'video-background' ),
+										'overlay_texture',
+										'input',
+										__( 'To add overlay textures to your video background, download the pro version!', 'video-background' )
+									 ),
 	) );
 
 	$vidbg_metabox->add_field( array(
@@ -210,7 +267,17 @@ function vidbg_register_metabox() {
 			'off' => __( 'Off', 'video-background' ),
 			'on'  => __( 'On', 'video-background' ),
 		),
-		'after_row' => '</div>',
+		'after_row' => vidbg_disabled_pro_field(
+										__( 'Enable Play/Pause button', 'video-background' ),
+										'play_button',
+										'radio',
+										__( 'To enable a play/pause button on the frontend, download the pro version!', 'video-background' )
+									 ) . vidbg_disabled_pro_field(
+ 										__( 'Enable Mute/Unmute button', 'video-background' ),
+ 										'volume_button',
+ 										'radio',
+ 										__( 'To enable a mute/unmute button on the frontend, download the pro version!', 'video-background' )
+ 									 ) . '</div>',
 	) );
 
 	$vidbg_metabox->add_field( array(
@@ -426,6 +493,9 @@ function vidbg_gettingstarted_page() {
 		echo '</ul>';
 		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
 		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
+		_e( '<div>' );
+		sandbox_checkbox_element_callback();
+		_e( '</div>' );
 	echo '</div>';
 }
 

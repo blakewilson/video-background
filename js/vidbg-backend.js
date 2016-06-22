@@ -19,10 +19,10 @@ jQuery( document ).ready(function($) {
   $(function(){
     $('#vidbg_metabox_field_overlay1, #vidbg_metabox_field_overlay2').bind('change', function (e) {
       if( $('#vidbg_metabox_field_overlay1').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').hide(500);
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-pro-disabled-field-overlay_texture').hide(500);
       }
       else if( $('#vidbg_metabox_field_overlay2').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').show(500);
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-pro-disabled-field-overlay_texture').show(500);
       }
     }).trigger('change');
   });
