@@ -43,7 +43,7 @@ register_activation_hook( __FILE__, 'vidbg_install_plugin' );
  * Load plugin textdomain.
  */
 function vidbg_load_textdomain() {
-  load_plugin_textdomain( 'video-background', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'video-background', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
 
@@ -54,7 +54,7 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
  */
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
-  wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
+	wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
@@ -64,7 +64,7 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * Enqueue vidbg jquery script
  */
 function vidbg_jquery() {
-  wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
+	wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
 }
 add_action('wp_footer', 'vidbg_jquery' );
 
@@ -74,10 +74,10 @@ add_action('wp_footer', 'vidbg_jquery' );
  * Add custom color palette
  */
 function vidbg_default_color_palette( $l10n ) {
-    $l10n['defaults']['color_picker'] = array(
-        'palettes' => array( '#000000', '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
-    );
-    return $l10n;
+	$l10n['defaults']['color_picker'] = array(
+		'palettes' => array( '#000000', '#3498db', '#e74c3c', '#374e64', '#2ecc71', '#f1c40f' ),
+	);
+	return $l10n;
 }
 add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
 
@@ -87,114 +87,115 @@ add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
  * Register metabox and scripts
  */
 function vidbg_register_metabox() {
- 	$prefix = 'vidbg_metabox_field_';
+	$prefix = 'vidbg_metabox_field_';
+	$post_types = array( 'poost', 'page' );
 
- 	$vidbg_metabox = new_cmb2_box( array(
- 		'id'            => 'vidbg-metabox',
- 		'title'         => __( 'Video Background', 'video-background' ),
- 		'object_types'  => array( 'post', 'page' ),
- 		'context'    => 'normal',
- 		'priority'   => 'high',
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Container', 'video-background' ),
- 		'desc' => __( 'Please specify the container you would like your video background to be in.<br>ex: <code>.header</code> or <code>body</code>', 'video-background' ),
- 		'id'   => $prefix . 'container',
- 		'type' => 'text',
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Link to .mp4', 'video-background' ),
- 		'desc' => __( 'Please specify the link to the .mp4 file. You can either enter a URL or upload a file.<br>For browser compatability, please enter an .mp4 and .webm file for video backgrounds.', 'video-background' ),
- 		'id'   => $prefix . 'mp4',
- 		'type' => 'file',
- 		'options' => array(
- 				'add_upload_file_text' => __( 'Upload .mp4 file', 'video-background' ),
- 		),
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Link to .webm', 'video-background' ),
- 		'desc' => __( 'Please specify the link to the .webm file. You can either enter a URL or upload a file.<br>For browser compatability, please enter an .mp4 and .webm file for video backgrounds.', 'video-background' ),
- 		'id'   => $prefix . 'webm',
- 		'type' => 'file',
- 		'options' => array(
- 				'add_upload_file_text' => __( 'Upload .webm file', 'video-background' ),
- 		),
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Link to fallback image', 'video-background' ),
- 		'desc' => __( 'Please specify a link to the fallback image in case the browser does not support video backgrounds. You can either enter a URL or upload a file.', 'video-background' ),
- 		'id'   => $prefix . 'poster',
- 		'type' => 'file',
- 		'options' => array(
- 				'add_upload_file_text' => __( 'Upload fallback image', 'video-background' ),
- 		),
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Overlay', 'video-background' ),
- 		'desc' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
- 		'id'   => $prefix . 'overlay',
- 		'type' => 'radio_inline',
-		'default' => 'off',
-		'options' => array(
-				'off' => __( 'Off', 'video-background' ),
-				'on' => __( 'On', 'video-background' ),
-		),
-		'before_row' => '<div id="vidbg_advanced_options">',
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Overlay Color', 'video-background' ),
- 		'desc' => __( 'If overlay is enabled, a color will be used for the overlay. You can specify the color here.', 'video-background' ),
- 		'id'   => $prefix . 'overlay_color',
- 		'type' => 'colorpicker',
- 		'default' => '#000',
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Overlay Opacity', 'video-background' ),
- 		'desc' => __( 'Specify the opacity of the overlay with the left being mostly transparent and the right being hardly transparent.', 'video-background' ),
- 		'id'   => $prefix . 'overlay_alpha',
- 		'type' => 'own_slider',
-		'min'  => '10',
-		'max'  => '99',
-		'default' => '30',
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Turn off loop?', 'video-background' ),
- 		'desc' => __( 'Turn off the loop for Video Background. Once the video is complete, it will display the last frame of the video.', 'video-background' ),
- 		'id'   => $prefix . 'no_loop',
- 		'type' => 'radio_inline',
-		'default' => 'off',
-		'options' => array(
-				'off' => __( 'Off', 'video-background' ),
-				'on' => __( 'On', 'video-background' ),
-		),
- 	) );
-
- 	$vidbg_metabox->add_field( array(
- 		'name' => __( 'Play the audio?', 'video-background' ),
- 		'desc' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
- 		'id'   => $prefix . 'unmute',
- 		'type' => 'radio_inline',
-		'default' => 'off',
-		'options' => array(
-				'off' => __( 'Off', 'video-background' ),
-				'on' => __( 'On', 'video-background' ),
-		),
-		'after_row' => '</div>',
- 	) );
+	$vidbg_metabox = new_cmb2_box( array(
+		'id'           => 'vidbg-metabox',
+		'title'        => __( 'Video Background', 'video-background' ),
+		'object_types' => $post_types,
+		'context'      => 'normal',
+		'priority'     => 'high',
+	) );
 
 	$vidbg_metabox->add_field( array(
-    'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>',
-    'type' => 'title',
-    'id'   => $prefix . 'advanced_button',
-  ) );
+		'name' => __( 'Container', 'video-background' ),
+		'desc' => __( 'Please specify the container you would like your video background to be in.<br>ex: <code>.header</code> or <code>body</code>', 'video-background' ),
+		'id'   => $prefix . 'container',
+		'type' => 'text',
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Link to .mp4', 'video-background' ),
+		'desc'    => __( 'Please specify the link to the .mp4 file. You can either enter a URL or upload a file.<br>For browser compatability, please enter an .mp4 and .webm file for video backgrounds.', 'video-background' ),
+		'id'      => $prefix . 'mp4',
+		'type'    => 'file',
+		'options' => array(
+			'add_upload_file_text' => __( 'Upload .mp4 file', 'video-background' ),
+		),
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Link to .webm', 'video-background' ),
+		'desc'    => __( 'Please specify the link to the .webm file. You can either enter a URL or upload a file.<br>For browser compatability, please enter an .mp4 and .webm file for video backgrounds.', 'video-background' ),
+		'id'      => $prefix . 'webm',
+		'type'    => 'file',
+		'options' => array(
+			'add_upload_file_text' => __( 'Upload .webm file', 'video-background' ),
+		),
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Link to fallback image', 'video-background' ),
+		'desc'    => __( 'Please specify a link to the fallback image in case the browser does not support video backgrounds. You can either enter a URL or upload a file.', 'video-background' ),
+		'id'      => $prefix . 'poster',
+		'type'    => 'file',
+		'options' => array(
+			'add_upload_file_text' => __( 'Upload fallback image', 'video-background' ),
+		),
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'       => __( 'Overlay', 'video-background' ),
+		'desc'       => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
+		'id'         => $prefix . 'overlay',
+		'type'       => 'radio_inline',
+		'default'    => 'off',
+		'options' => array(
+			'off' => __( 'Off', 'video-background' ),
+			'on'  => __( 'On', 'video-background' ),
+		),
+		'before_row' => '<div id="vidbg_advanced_options">',
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Overlay Color', 'video-background' ),
+		'desc'    => __( 'If overlay is enabled, a color will be used for the overlay. You can specify the color here.', 'video-background' ),
+		'id'      => $prefix . 'overlay_color',
+		'type'    => 'colorpicker',
+		'default' => '#000',
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Overlay Opacity', 'video-background' ),
+		'desc'    => __( 'Specify the opacity of the overlay with the left being mostly transparent and the right being hardly transparent.', 'video-background' ),
+		'id'      => $prefix . 'overlay_alpha',
+		'type'    => 'own_slider',
+		'min'     => '10',
+		'max'     => '99',
+		'default' => '30',
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'    => __( 'Turn off loop?', 'video-background' ),
+		'desc'    => __( 'Turn off the loop for Video Background. Once the video is complete, it will display the last frame of the video.', 'video-background' ),
+		'id'      => $prefix . 'no_loop',
+		'type'    => 'radio_inline',
+		'default' => 'off',
+		'options' => array(
+			'off' => __( 'Off', 'video-background' ),
+			'on'  => __( 'On', 'video-background' ),
+		),
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'name'      => __( 'Play the audio?', 'video-background' ),
+		'desc'      => __( 'Enabling this will play the audio of the video.', 'video-background' ),
+		'id'        => $prefix . 'unmute',
+		'type'      => 'radio_inline',
+		'default'   => 'off',
+		'options'   => array(
+			'off' => __( 'Off', 'video-background' ),
+			'on'  => __( 'On', 'video-background' ),
+		),
+		'after_row' => '</div>',
+	) );
+
+	$vidbg_metabox->add_field( array(
+		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>',
+		'type'         => 'title',
+		'id'           => $prefix . 'advanced_button',
+	) );
 
 }
 add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
@@ -205,7 +206,7 @@ add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
  * Add inline javascript to footer for video background
  */
 function vidbg_initialize_footer() {
-  if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
+	if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
 
 		if( is_page() || is_single() ) {
 			$the_id = get_the_ID();
@@ -213,17 +214,17 @@ function vidbg_initialize_footer() {
 			$the_id = get_option( 'page_for_posts' );
 		}
 
-    $container_field = get_post_meta( $the_id, 'vidbg_metabox_field_container', true );
-    $mp4_field = get_post_meta( $the_id, 'vidbg_metabox_field_mp4', true );
-    $webm_field = get_post_meta( $the_id, 'vidbg_metabox_field_webm', true );
-    $poster_field = get_post_meta( $the_id, 'vidbg_metabox_field_poster', true );
-    $overlay = get_post_meta( $the_id, 'vidbg_metabox_field_overlay', true );
+		$container_field = get_post_meta( $the_id, 'vidbg_metabox_field_container', true );
+		$mp4_field = get_post_meta( $the_id, 'vidbg_metabox_field_mp4', true );
+		$webm_field = get_post_meta( $the_id, 'vidbg_metabox_field_webm', true );
+		$poster_field = get_post_meta( $the_id, 'vidbg_metabox_field_poster', true );
+		$overlay = get_post_meta( $the_id, 'vidbg_metabox_field_overlay', true );
 		$overlay_color = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_color', true );
 		$overlay_alpha = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_alpha', true );
-    $no_loop_field = get_post_meta( $the_id, 'vidbg_metabox_field_no_loop', true );
-    $unmute_field = get_post_meta( $the_id, 'vidbg_metabox_field_unmute', true );
+		$no_loop_field = get_post_meta( $the_id, 'vidbg_metabox_field_no_loop', true );
+		$unmute_field = get_post_meta( $the_id, 'vidbg_metabox_field_unmute', true );
 
-    if( !empty( $container_field ) ): ?>
+		if( !empty( $container_field ) ): ?>
 		<?php
 		if( $unmute_field == 'on' ) {
 			$boolean_mute = 'false';
@@ -246,8 +247,8 @@ function vidbg_initialize_footer() {
 		$overlay_color_value = !empty($overlay_color) ? $overlay_color : '#000';
 		$overlay_alpha_value = !empty($overlay_alpha) ? '0.' . $overlay_alpha : '0.3';
 		?>
-    <script type="text/javascript">
-      jQuery(function($){
+		<script type="text/javascript">
+			jQuery(function($){
 				var vidbgContainerValue = '<?php echo $container_field; ?>';
 				var vidbgMp4Value = '<?php echo $mp4_field; ?>';
 				var vidbgWebmValue = '<?php echo $webm_field; ?>';
@@ -258,22 +259,22 @@ function vidbg_initialize_footer() {
 				var vidbgOverlayColor = '<?php echo $overlay_color_value; ?>';
 				var vidbgOverlayAlpha = '<?php echo $overlay_alpha_value; ?>';
 
-	      $(vidbgContainerValue).vidbg({
-	        'mp4': vidbgMp4Value,
-	        'webm': vidbgWebmValue,
-	        'poster': vidbgPosterValue,
-	      }, {
+				$(vidbgContainerValue).vidbg({
+					'mp4': vidbgMp4Value,
+					'webm': vidbgWebmValue,
+					'poster': vidbgPosterValue,
+				}, {
 					muted: vidbgIsMuted,
 					loop: vidbgIsLoop,
 					overlay: vidbgIsOverlay,
 					overlayColor: vidbgOverlayColor,
 					overlayAlpha: vidbgOverlayAlpha,
-	      });
-      });
-    </script>
-    <?php endif;
+				});
+			});
+		</script>
+		<?php endif;
 
-  }
+	}
 }
 add_action( 'wp_footer', 'vidbg_initialize_footer' );
 
@@ -283,7 +284,7 @@ add_action( 'wp_footer', 'vidbg_initialize_footer' );
  * Shortcode for v1.0.x versions
  */
 function candide_video_background( $atts , $content = null ) {
-    // Attributes
+	// Attributes
 	extract(
 		shortcode_atts(
 			array(
@@ -300,10 +301,10 @@ function candide_video_background( $atts , $content = null ) {
 		)
 	);
 
-    // Put It Together
-    ob_start(); ?>
-    <script>
-      jQuery(function($){
+		// Put It Together
+		ob_start(); ?>
+		<script>
+			jQuery(function($){
 				var vidbgContainerValue = '<?php echo $container; ?>';
 				var vidbgMp4Value = '<?php echo $mp4; ?>';
 				var vidbgWebmValue = '<?php echo $webm; ?>';
@@ -314,26 +315,26 @@ function candide_video_background( $atts , $content = null ) {
 				var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
 				var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
 
-        $(vidbgContainerValue).vidbg({
-          'mp4': vidbgMp4Value,
-          'webm': vidbgWebmValue,
-          'poster': vidbgPosterValue,
+				$(vidbgContainerValue).vidbg({
+					'mp4': vidbgMp4Value,
+					'webm': vidbgWebmValue,
+					'poster': vidbgPosterValue,
 				}, {
 					muted: vidbgIsMuted,
 					loop: vidbgIsLoop,
 					overlay: vidbgIsOverlay,
 					overlayColor: vidbgOverlayColor,
 					overlayAlpha: vidbgOverlayAlpha,
-        });
-      });
-    <?php
+				});
+			});
+		<?php
 
-    $outputbefore = ob_get_clean();
-    $outputafter = '</script>';
+		$outputbefore = ob_get_clean();
+		$outputafter = '</script>';
 
-    //Return
+		//Return
 
-    return $outputbefore . do_shortcode($content) . $outputafter;
+		return $outputbefore . do_shortcode($content) . $outputafter;
 }
 add_shortcode( 'vidbg', 'candide_video_background' );
 
@@ -343,13 +344,13 @@ add_shortcode( 'vidbg', 'candide_video_background' );
  * Add getting started page
  */
 function vidbg_add_gettingstarted() {
-  add_options_page(
-      'Video Background',
-      'Video Background',
-      'manage_options',
-      'html5-vidbg',
-      'vidbg_gettingstarted_page'
-  );
+	add_options_page(
+		'Video Background',
+		'Video Background',
+		'manage_options',
+		'html5-vidbg',
+		'vidbg_gettingstarted_page'
+	);
 }
 add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
 
@@ -398,9 +399,9 @@ function vidbg_gettingstarted_page() {
  * Add getting started link on plugin page
  */
 function vidbg_gettingstarted_link($links) {
-  $gettingstarted_link = '<a href="options-general.php?page=html5-vidbg">Getting Started</a>';
-  array_unshift($links, $gettingstarted_link);
-  return $links;
+	$gettingstarted_link = '<a href="options-general.php?page=html5-vidbg">Getting Started</a>';
+	array_unshift($links, $gettingstarted_link);
+	return $links;
 }
 $plugin = plugin_basename(__FILE__);
 add_filter("plugin_action_links_$plugin", 'vidbg_gettingstarted_link' );
