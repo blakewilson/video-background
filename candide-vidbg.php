@@ -436,8 +436,7 @@ function vidbg_gettingstarted_link($links) {
 	array_unshift($links, $gettingstarted_link);
 	return $links;
 }
-$plugin = plugin_basename(__FILE__);
-add_filter("plugin_action_links_$plugin", 'vidbg_gettingstarted_link' );
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'vidbg_gettingstarted_link' );
 
 /**
  * Create function to see if WordPress version is 4.2 or higher
