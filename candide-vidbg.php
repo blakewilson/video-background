@@ -65,6 +65,11 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
 	wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
+
+	wp_localize_script( 'vidbg-admin-backend', 'vidbg_localized_text', array(
+		'show_advanced' => __( 'Show Advanced Options', 'video-background' ),
+		'hide_advanced' => __( 'Hide Advanced Options', 'video-background' ),
+	) );
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 

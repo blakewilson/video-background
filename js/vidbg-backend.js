@@ -3,12 +3,14 @@ jQuery( document ).ready(function($) {
 	// show advanced options on click
 	$(function() {
 		$('#vidbg_advanced_options').hide();
-	  $(".cmb2-id-vidbg-metabox-field-advanced-button a").click(function() {
+	  $(".cmb2-id-vidbg-metabox-field-advanced-button a").click(function(e) {
+			e.preventDefault();
 			if ($('#vidbg_advanced_options').css('display') === 'none') {
 	    	$('#vidbg_advanced_options').show(500);
-				$('a.advanced-options-button').text('Hide Advanced Options');
+				$('a.advanced-options-button').text(vidbg_localized_text.hide_advanced);
 			} else {
 				$('#vidbg_advanced_options').hide(500);
+				$('a.advanced-options-button').text(vidbg_localized_text.show_advanced);
 			}
 	  });
 	});
