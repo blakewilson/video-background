@@ -11,8 +11,6 @@ Text Domain: video-background
 Domain Path: /languages
 */
 
-
-
 /**
  * Include the metabox framework
  */
@@ -23,11 +21,11 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
 	require_once dirname( __FILE__ ) . '/framework/cmb2_field_slider.php';
 }
 
-
-
 /**
  * Install the plugin
  * deactivate vidbgpro if installed
+ *
+ * @since 2.5.2
  */
 function vidbg_install_plugin() {
 	if( is_plugin_active( 'video-background-pro/vidbgpro.php') ) {
@@ -37,20 +35,20 @@ function vidbg_install_plugin() {
 }
 register_activation_hook( __FILE__, 'vidbg_install_plugin' );
 
-
-
 /**
  * Load plugin textdomain.
+ *
+ * @since 2.5.0
  */
 function vidbg_load_textdomain() {
 	load_plugin_textdomain( 'video-background', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
 }
 add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
 
-
-
 /**
  * Enqueue backend style and script
+ *
+ * @since 2.1.4
  */
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
@@ -58,20 +56,20 @@ function vidbg_metabox_scripts() {
 }
 add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
 
-
-
 /**
  * Enqueue vidbg jquery script
+ *
+ * @since 2.0.0
  */
 function vidbg_jquery() {
 	wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
 }
 add_action('wp_footer', 'vidbg_jquery' );
 
-
-
 /**
  * Add custom color palette
+ *
+ * @since 2.5.0
  */
 function vidbg_default_color_palette( $l10n ) {
 	$l10n['defaults']['color_picker'] = array(
@@ -81,10 +79,10 @@ function vidbg_default_color_palette( $l10n ) {
 }
 add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
 
-
-
 /**
  * Register metabox and scripts
+ *
+ * @since 2.5.0
  */
 function vidbg_register_metabox() {
 	$prefix = 'vidbg_metabox_field_';
@@ -200,10 +198,10 @@ function vidbg_register_metabox() {
 }
 add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
 
-
-
 /**
  * Add inline javascript to footer for video background
+ *
+ * @since 2.0.0
  */
 function vidbg_initialize_footer() {
 	if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
@@ -278,10 +276,12 @@ function vidbg_initialize_footer() {
 }
 add_action( 'wp_footer', 'vidbg_initialize_footer' );
 
-
-
 /**
  * Shortcode for v1.0.x versions
+ *
+ * @since 1.0.0
+ *
+ *
  */
 function candide_video_background( $atts , $content = null ) {
 	// Attributes
@@ -338,10 +338,10 @@ function candide_video_background( $atts , $content = null ) {
 }
 add_shortcode( 'vidbg', 'candide_video_background' );
 
-
-
 /**
  * Add getting started page
+ *
+ * @since 2.1.1
  */
 function vidbg_add_gettingstarted() {
 	add_options_page(
@@ -354,10 +354,10 @@ function vidbg_add_gettingstarted() {
 }
 add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
 
-
-
 /**
  * Getting started page content
+ *
+ * @since 2.1.1
  */
 function vidbg_gettingstarted_page() {
 	echo '<div class="wrap">';
@@ -393,10 +393,10 @@ function vidbg_gettingstarted_page() {
 	echo '</div>';
 }
 
-
-
 /**
  * Add getting started link on plugin page
+ *
+ * @since 2.1.1
  */
 function vidbg_gettingstarted_link($links) {
 	$gettingstarted_link = '<a href="options-general.php?page=html5-vidbg">Getting Started</a>';
@@ -406,24 +406,20 @@ function vidbg_gettingstarted_link($links) {
 $plugin = plugin_basename(__FILE__);
 add_filter("plugin_action_links_$plugin", 'vidbg_gettingstarted_link' );
 
-
-
 /**
  * Create function to see if WordPress version is 4.2 or higher
+ *
+ * @since 2.5.1
  */
-if ( ! function_exists( 'vidbg_is_wp_version' ) ) {
-	function vidbg_is_wp_version( $version = '4.2' ) {
-		global $wp_version;
+function vidbg_is_wp_version( $version = '4.2' ) {
+	global $wp_version;
 
-		if ( version_compare( $wp_version, $version, '>=' ) ) {
-			return true;
-		} else {
-			return false;
-		}
+	if ( version_compare( $wp_version, $version, '>=' ) ) {
+		return true;
+	} else {
+		return false;
 	}
 }
-
-
 
 /**
  * If WP version is 4.2 or higher display premium notice message
