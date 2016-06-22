@@ -1,6 +1,10 @@
 <?php
 /**
  * Create the premium notice message
+ *
+ * @since 2.5.1
+ *
+ * @uses get_option()
  */
 function vidbg_premium_notice() {
 	$class = 'notice notice-success vidbg-premium-notice is-dismissible';
@@ -17,6 +21,10 @@ add_action( 'admin_notices', 'vidbg_premium_notice' );
 
 /**
  * Ajax handler to permanently dismiss notice
+ *
+ * @since 2.5.1
+ *
+ * @uses update_option()
  */
 function vidbg_dismiss_premium_notice() {
 	update_option( 'vidbgpro-notice-dismissed', 1 );

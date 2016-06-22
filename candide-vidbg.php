@@ -26,6 +26,10 @@ if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
  * deactivate vidbgpro if installed
  *
  * @since 2.5.2
+ *
+ * @uses is_plugin_active()
+ * @uses deactivate_plugins()
+ * @uses delete_option()
  */
 function vidbg_install_plugin() {
 	if( is_plugin_active( 'video-background-pro/vidbgpro.php') ) {
@@ -39,6 +43,9 @@ register_activation_hook( __FILE__, 'vidbg_install_plugin' );
  * Load plugin textdomain.
  *
  * @since 2.5.0
+ *
+ * @uses load_plugin_textdomain()
+ * @uses plugin_basename()
  */
 function vidbg_load_textdomain() {
 	load_plugin_textdomain( 'video-background', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
@@ -49,6 +56,11 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
  * Enqueue backend style and script
  *
  * @since 2.1.4
+ *
+ * @uses wp_enqueue_style()
+ * @uses plugins_url()
+ * @uses wp_enqueue_script()
+ * @uses plugin_dir_url()
  */
 function vidbg_metabox_scripts() {
 	wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
@@ -60,6 +72,9 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * Enqueue vidbg jquery script
  *
  * @since 2.0.0
+ *
+ * @uses wp_enqueue_script()
+ * @uses plugins_url()
  */
 function vidbg_jquery() {
 	wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
@@ -83,6 +98,10 @@ add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
  * Register metabox and scripts
  *
  * @since 2.5.0
+ *
+ * @uses new_cmb2_box()
+ * @uses __()
+ * @uses add_field()
  */
 function vidbg_register_metabox() {
 	$prefix = 'vidbg_metabox_field_';
@@ -202,6 +221,13 @@ add_action( 'cmb2_admin_init', 'vidbg_register_metabox' );
  * Add inline javascript to footer for video background
  *
  * @since 2.0.0
+ *
+ * @uses is_page()
+ * @uses is_single()
+ * @uses is_home()
+ * @uses get_option()
+ * @uses get_the_ID()
+ * @uses get_post_meta()
  */
 function vidbg_initialize_footer() {
 	if( is_page() || is_single() || is_home() && get_option( 'show_on_front') == 'page' ) {
@@ -281,7 +307,8 @@ add_action( 'wp_footer', 'vidbg_initialize_footer' );
  *
  * @since 1.0.0
  *
- *
+ * @uses shortcode_atts()
+ * @uses do_shortcode()
  */
 function candide_video_background( $atts , $content = null ) {
 	// Attributes
@@ -342,6 +369,8 @@ add_shortcode( 'vidbg', 'candide_video_background' );
  * Add getting started page
  *
  * @since 2.1.1
+ *
+ * @uses add_options_page()
  */
 function vidbg_add_gettingstarted() {
 	add_options_page(
@@ -358,6 +387,8 @@ add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
  * Getting started page content
  *
  * @since 2.1.1
+ *
+ * @uses _e()
  */
 function vidbg_gettingstarted_page() {
 	echo '<div class="wrap">';
@@ -397,9 +428,11 @@ function vidbg_gettingstarted_page() {
  * Add getting started link on plugin page
  *
  * @since 2.1.1
+ *
+ * @uses __()
  */
 function vidbg_gettingstarted_link($links) {
-	$gettingstarted_link = '<a href="options-general.php?page=html5-vidbg">Getting Started</a>';
+	$gettingstarted_link = __( '<a href="options-general.php?page=html5-vidbg">Getting Started</a>', 'video-background' );
 	array_unshift($links, $gettingstarted_link);
 	return $links;
 }
