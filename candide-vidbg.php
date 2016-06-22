@@ -493,9 +493,6 @@ function vidbg_gettingstarted_page() {
 		echo '</ul>';
 		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
 		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
-		_e( '<div>' );
-		sandbox_checkbox_element_callback();
-		_e( '</div>' );
 	echo '</div>';
 }
 
