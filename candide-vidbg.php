@@ -107,10 +107,9 @@ add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
 function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_blank', $field_type = 'input', $field_description = '' ) {
 
 	$output = '';
+	$options = get_option( 'vidbg_disable_pro_fields' );
 
-	$is_showing = true;
-
-	if ( $is_showing === true ) {
+	if ( $options['vidbg_checkbox_disable_pro_field'] !== '1' ) {
 		if ( $field_type === 'input' ) {
 			$field_class = 'cmb-row cmb-type-text cmb2-id-pro-disabled-field-' . $field_id . ' table-layout';
 		} elseif ( $field_type === 'radio' ) {
@@ -455,6 +454,39 @@ function vidbg_add_gettingstarted() {
 }
 add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
 
+function vidbg_register_settings() {
+	register_setting( 'vidbg_settings', 'vidbg_disable_pro_fields' );
+
+	add_settings_section(
+		'vidbg_vidbg_settings_section',
+		__( 'Hide Muted Pro Fields', 'video-background' ),
+		'vidbg_disable_pro_fields_section_callback',
+		'vidbg_settings'
+	);
+
+	add_settings_field(
+		'vidbg_checkbox_disable_pro_field',
+		__( 'Hide Muted Pro Fields', 'video-background' ),
+		'vidbg_checkbox_disable_pro_field_render',
+		'vidbg_settings',
+		'vidbg_vidbg_settings_section'
+	);
+}
+add_action( 'admin_init', 'vidbg_register_settings' );
+
+
+function vidbg_checkbox_disable_pro_field_render() {
+	$options = get_option( 'vidbg_disable_pro_fields' );
+	?>
+	<input type='checkbox' name='vidbg_disable_pro_fields[vidbg_checkbox_disable_pro_field]' <?php checked( $options['vidbg_checkbox_disable_pro_field'], 1 ); ?> value='1'>
+	<?php
+}
+
+
+function vidbg_disable_pro_fields_section_callback() {
+	_e( 'Okay, Okay, some of you don\'t want/need Video Background Pro. I get that. That\'s why you can hide the muted pro fields below :)', 'video-background' );
+}
+
 /**
  * Getting started page content
  *
@@ -478,7 +510,7 @@ function vidbg_gettingstarted_page() {
 		_e( '<a href="http://blakewilson.me/projects/video-background/" class="button" target="_blank">Further Documentation</a>', 'video-background' );
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
-		_e( '<h3>Support</h3>', 'video-background' );
+		_e( '<h3>Supporting the Plugin</h3>', 'video-background' );
 		_e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
 		echo '<ul>';
 			_e( '<li>YouTube Integration</li>', 'video-background' );
@@ -493,6 +525,11 @@ function vidbg_gettingstarted_page() {
 		echo '</ul>';
 		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
 		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
+		echo '<form action="options.php" method="post">';
+			settings_fields( 'vidbg_settings' );
+			do_settings_sections( 'vidbg_settings' );
+			submit_button();
+		echo '</form>';
 	echo '</div>';
 }
 
