@@ -173,7 +173,7 @@ function vidbg_register_metabox() {
 										__( 'YouTube Link', 'video-background' ),
 										'youtube_link',
 										'input',
-										__( 'To create YouTube video backgrounds, download the pro version!', 'video-background' )
+										__( 'To create YouTube video backgrounds, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
 									 ),
 	) );
 
@@ -240,7 +240,7 @@ function vidbg_register_metabox() {
 										__( 'Overlay Texture', 'video-background' ),
 										'overlay_texture',
 										'input',
-										__( 'To add overlay textures to your video background, download the pro version!', 'video-background' )
+										__( 'To add overlay textures to your video background, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
 									 ),
 	) );
 
@@ -270,12 +270,12 @@ function vidbg_register_metabox() {
 										__( 'Enable Play/Pause button', 'video-background' ),
 										'play_button',
 										'radio',
-										__( 'To enable a play/pause button on the frontend, download the pro version!', 'video-background' )
+										__( 'To enable a play/pause button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
 									 ) . vidbg_disabled_pro_field(
  										__( 'Enable Mute/Unmute button', 'video-background' ),
  										'volume_button',
  										'radio',
- 										__( 'To enable a mute/unmute button on the frontend, download the pro version!', 'video-background' )
+ 										__( 'To enable a mute/unmute button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
  									 ) . '</div>',
 	) );
 
