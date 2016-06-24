@@ -151,10 +151,11 @@ function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_b
  * @uses new_cmb2_box()
  * @uses __()
  * @uses add_field()
+ * @uses vidbg_disabled_pro_field()
  */
 function vidbg_register_metabox() {
 	$prefix = 'vidbg_metabox_field_';
-	$post_types = array( 'poost', 'page' );
+	$post_types = array( 'post', 'page' );
 
 	$vidbg_metabox = new_cmb2_box( array(
 		'id'           => 'vidbg-metabox',
@@ -280,7 +281,7 @@ function vidbg_register_metabox() {
 	) );
 
 	$vidbg_metabox->add_field( array(
-		'before_field' => '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>',
+		'before_field' => __( '<a href="#vidbg_advanced_options" class="button vidbg-button advanced-options-button">Show Advanced options</a>', 'video-background' ),
 		'type'         => 'title',
 		'id'           => $prefix . 'advanced_button',
 	) );
@@ -454,6 +455,15 @@ function vidbg_add_gettingstarted() {
 }
 add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
 
+/**
+ * Creates Video Background plugin settings
+ *
+ * @since 2.5.4
+ *
+ * @uses register_setting()
+ * @uses add_settings_section()
+ * @uses add_settings_field()
+ */
 function vidbg_register_settings() {
 	register_setting( 'vidbg_settings', 'vidbg_disable_pro_fields' );
 
@@ -474,7 +484,13 @@ function vidbg_register_settings() {
 }
 add_action( 'admin_init', 'vidbg_register_settings' );
 
-
+/**
+ * Creats the checkbox callback for Video Background options
+ *
+ * @since 2.5.4
+ *
+ * @uses get_option()
+ */
 function vidbg_checkbox_disable_pro_field_render() {
 	$options = get_option( 'vidbg_disable_pro_fields' );
 	?>
@@ -482,7 +498,13 @@ function vidbg_checkbox_disable_pro_field_render() {
 	<?php
 }
 
-
+/**
+ * Video Background plugin settings section callback
+ *
+ * @since 2.5.4
+ *
+ * @uses _e()
+ */
 function vidbg_disable_pro_fields_section_callback() {
 	_e( 'Okay, Okay, some of you don\'t want/need Video Background Pro. I get that. That\'s why you can hide the muted pro fields below :)', 'video-background' );
 }
@@ -493,6 +515,9 @@ function vidbg_disable_pro_fields_section_callback() {
  * @since 2.1.1
  *
  * @uses _e()
+ * @uses settings_fields()
+ * @uses do_settings_sections()
+ * @uses submit_button()
  */
 function vidbg_gettingstarted_page() {
 	echo '<div class="wrap">';
