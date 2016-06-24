@@ -2,8 +2,8 @@
 Contributors: blakedotvegas
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
 Requires at least: 3.8.0
-Tested up to: 4.5
-Stable tag: 2.5.3
+Tested up to: 4.5.3
+Stable tag: 2.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.me/blakewilsonme
@@ -75,11 +75,22 @@ This can be an issue with the file size of the video you are uploading. Make sur
 
 To add a video background to a class called **header** add ".header" to the container field. (without the quotes)
 
+= The Video Background Pro fields are annoying, can I get rid of them? =
+
+You sure can! Simply go to the "Settings > Video Background" menu tab and check the "Hide Muted Pro Fields" checkbox.
+
 == Screenshots ==
 
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
 == Changelog ==
+
+= 2.5.4 =
+* Fixed a bug that made the browser position jump when clicking the "Advanced Options" button
+* Added better localization support for translations
+* Cleaner code, well documented.
+* Added Muted Video Background Pro fields (Do not worry, you can hide these)
+* Added new stable tag for WP 4.5.3
 
 = 2.5.3 =
 * Fixed notice option
