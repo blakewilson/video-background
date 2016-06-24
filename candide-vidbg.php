@@ -537,7 +537,7 @@ function vidbg_gettingstarted_page() {
 		_e( '<h3>Questions?</h3>', 'video-background' );
 		_e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
 		_e( '<h3>Supporting the Plugin</h3>', 'video-background' );
-		_e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
+		_e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
 		echo '<ul>';
 			_e( '<li>YouTube Integration</li>', 'video-background' );
 			_e( '<li>Visual Composer Integration</li>', 'video-background' );
