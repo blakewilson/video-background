@@ -3,12 +3,14 @@ jQuery( document ).ready(function($) {
 	// show advanced options on click
 	$(function() {
 		$('#vidbg_advanced_options').hide();
-	  $(".cmb2-id-vidbg-metabox-field-advanced-button a").click(function() {
+	  $(".cmb2-id-vidbg-metabox-field-advanced-button a").click(function(e) {
+			e.preventDefault();
 			if ($('#vidbg_advanced_options').css('display') === 'none') {
 	    	$('#vidbg_advanced_options').show(500);
-				$('a.advanced-options-button').text('Hide Advanced Options');
+				$('a.advanced-options-button').text(vidbg_localized_text.hide_advanced);
 			} else {
 				$('#vidbg_advanced_options').hide(500);
+				$('a.advanced-options-button').text(vidbg_localized_text.show_advanced);
 			}
 	  });
 	});
@@ -17,10 +19,10 @@ jQuery( document ).ready(function($) {
   $(function(){
     $('#vidbg_metabox_field_overlay1, #vidbg_metabox_field_overlay2').bind('change', function (e) {
       if( $('#vidbg_metabox_field_overlay1').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').hide(500);
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-pro-disabled-field-overlay_texture').hide(500);
       }
       else if( $('#vidbg_metabox_field_overlay2').is(':checked')) {
-        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha').show(500);
+        $('.cmb2-id-vidbg-metabox-field-overlay-color, .cmb2-id-vidbg-metabox-field-overlay-alpha, .cmb2-id-pro-disabled-field-overlay_texture').show(500);
       }
     }).trigger('change');
   });

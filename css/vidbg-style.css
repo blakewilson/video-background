@@ -26,6 +26,26 @@
   display: none;
 }
 
+/* Muted pro fields */
+.cmb-row input.disabled,
+.cmb-row input:disabled,
+.cmb-row select.disabled,
+.cmb-row select:disabled,
+.cmb-row textarea.disabled,
+.cmb-row textarea:disabled {
+  background: #f8f8f8;
+}
+.cmb-row input[type=radio].disabled,
+.cmb-row input[type=radio].disabled:checked:before,
+.cmb-row input[type=radio]:disabled,
+.cmb-row input[type=radio]:disabled:checked:before,
+.cmb-row input[type=checkbox].disabled,
+.cmb-row input[type=checkbox].disabled:checked:before,
+.cmb-row input[type=checkbox]:disabled,
+.cmb-row input[type=checkbox]:disabled:checked:before {
+  opacity: .5;
+}
+
 .postbox-container .cmb2-wrap>.cmb-field-list>.cmb-row.cmb2-id-vidbg-metabox-field-advanced-button {
   border-top: 1px solid #e9e9e9;
   padding: 1.8em 0 1.8em 0;
