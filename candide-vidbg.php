@@ -36,6 +36,7 @@ function vidbg_install_plugin() {
 		deactivate_plugins( 'video-background-pro/vidbgpro.php' );
 	}
 	delete_option( 'vidbgpro-notice-dismissed' );
+	delete_option( 'vidbg_disable_pro_fields' );
 }
 register_activation_hook( __FILE__, 'vidbg_install_plugin' );
 
@@ -548,7 +549,7 @@ function vidbg_gettingstarted_page() {
 			_e( '<li>Video Tutorials</li>', 'video-background' );
 			_e( '<li>And Much More!</li>', 'video-background' );
 		echo '</ul>';
-		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" target="_blank">Purchase Video Background Pro</a>', 'video-background' );
+		_e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" rel="nofollow" target="_blank">Learn More About Video Background Pro</a>', 'video-background' );
 		_e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
 		echo '<form action="options.php" method="post">';
 			settings_fields( 'vidbg_settings' );

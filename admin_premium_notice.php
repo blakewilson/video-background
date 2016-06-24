@@ -8,7 +8,7 @@
  */
 function vidbg_premium_notice() {
 	$class = 'notice notice-success vidbg-premium-notice is-dismissible';
-	$message = __( 'Youtube, Visual Composer, and SiteOrigin Integration with much more in the new Video Background Pro! <a href="http://pushlabs.co/video-background-pro" target="_blank">Learn more &raquo;</a>', 'video-background' );
+	$message = __( 'Want more options like YouTube video backgrounds and frontend play/volume buttons in Video Background? <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">Check out the new Video Background Pro!</a>', 'video-background' );
 	$is_dismissed = get_option( 'vidbgpro-notice-dismissed' );
 
 	if( empty( $is_dismissed ) ) {
@@ -16,8 +16,6 @@ function vidbg_premium_notice() {
 	}
 }
 add_action( 'admin_notices', 'vidbg_premium_notice' );
-
-
 
 /**
  * Ajax handler to permanently dismiss notice
