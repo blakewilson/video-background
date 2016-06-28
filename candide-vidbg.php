@@ -104,6 +104,8 @@ add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
  * Helper function to output disabled Video Background Pro fields
  *
  * @since 2.5.4
+ *
+ * @uses get_option()
  */
 function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_blank', $field_type = 'input', $field_description = '' ) {
 
@@ -491,6 +493,7 @@ add_action( 'admin_init', 'vidbg_register_settings' );
  * @since 2.5.4
  *
  * @uses get_option()
+ * @uses checked()
  */
 function vidbg_checkbox_disable_pro_field_render() {
 	$options = get_option( 'vidbg_disable_pro_fields' );
