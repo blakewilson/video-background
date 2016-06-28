@@ -110,7 +110,7 @@ function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_b
 	$output = '';
 	$options = get_option( 'vidbg_disable_pro_fields' );
 
-	if ( $options['vidbg_checkbox_disable_pro_field'] !== '1' ) {
+	if ( ! $options ) {
 		if ( $field_type === 'input' ) {
 			$field_class = 'cmb-row cmb-type-text cmb2-id-pro-disabled-field-' . $field_id . ' table-layout';
 		} elseif ( $field_type === 'radio' ) {
@@ -494,9 +494,16 @@ add_action( 'admin_init', 'vidbg_register_settings' );
  */
 function vidbg_checkbox_disable_pro_field_render() {
 	$options = get_option( 'vidbg_disable_pro_fields' );
-	?>
-	<input type='checkbox' name='vidbg_disable_pro_fields[vidbg_checkbox_disable_pro_field]' <?php checked( $options['vidbg_checkbox_disable_pro_field'], 1 ); ?> value='1'>
-	<?php
+
+	$output = '';
+	$check = '';
+	if ( $options ) {
+		$check = checked( $options['vidbg_checkbox_disable_pro_field'], 1, false );
+	}
+
+	$output .= '<input type="checkbox" name="vidbg_disable_pro_fields[vidbg_checkbox_disable_pro_field]" ' . $check . ' value="1">';
+
+	echo $output;
 }
 
 /**
