@@ -85,6 +85,9 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 
 == Changelog ==
 
+= 2.5.6 =
+* Fixed compatibility issues with other CMB2 instances
+
 = 2.5.5 =
 * Fixed notice issue when hide muted fields checkbox was checked
 
