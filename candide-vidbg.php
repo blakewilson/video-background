@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: http://blakewilson.me/projects/video-background/
 Description: jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Blake Wilson
-Version: 2.5.6
+Version: 2.5.7
 Author URI: http://blakewilson.me
 Donate Link: http://paypal.me/blakewilsonme
 Text Domain: video-background
@@ -159,6 +159,11 @@ function vidbg_disabled_pro_field( $field_name = 'Blank Pro', $field_id = 'pro_b
 function vidbg_register_metabox() {
 	$prefix = 'vidbg_metabox_field_';
 	$post_types = array( 'post', 'page' );
+
+	/**
+	 * Allow the post types to be filtered out
+	 */
+	$post_types = apply_filters( 'vidbg_post_types', $post_types );
 
 	$vidbg_metabox = new_cmb2_box( array(
 		'id'           => 'vidbg-metabox',
