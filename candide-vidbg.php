@@ -414,6 +414,11 @@ function candide_video_background( $atts , $content = null ) {
 		)
 	);
 
+		/**
+		 * Enqueue vidbg conditionally
+		 */
+		wp_enqueue_script( 'vidbg-video-background' );
+
 		// Put It Together
 		ob_start(); ?>
 		<script>
