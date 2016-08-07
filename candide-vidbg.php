@@ -83,9 +83,9 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * @uses plugins_url()
  */
 function vidbg_jquery() {
-	wp_enqueue_script('vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
+	wp_register_script( 'vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
 }
-add_action('wp_footer', 'vidbg_jquery' );
+add_action( 'wp_enqueue_scripts', 'vidbg_jquery' );
 
 /**
  * Add custom color palette
@@ -330,6 +330,12 @@ function vidbg_initialize_footer() {
 
 		if( !empty( $container_field ) ): ?>
 		<?php
+
+		/**
+		 * Enqueue the vidbg script conditionally
+		 */
+		wp_enqueue_script( 'vidbg-video-background' );
+
 		if( $unmute_field == 'on' ) {
 			$boolean_mute = 'false';
 		} else {
