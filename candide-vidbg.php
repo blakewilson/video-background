@@ -62,11 +62,11 @@ function vidbg_is_wp_version( $version = '4.2' ) {
 /**
  * Include the metabox framework
  */
-if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
-  require_once dirname( __FILE__ ) . '/framework/init.php';
+if ( file_exists( dirname( __FILE__ ) . '/inc/vendor/cmb2/init.php' ) ) {
+  require_once dirname( __FILE__ ) . '/inc/vendor/cmb2/init.php';
 }
-if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
-  require_once dirname( __FILE__ ) . '/framework/cmb2_field_slider.php';
+if ( file_exists( dirname( __FILE__ ) . '/inc/classes/cmb2_field_slider.php' ) ) {
+  require_once dirname( __FILE__ ) . '/inc/classes/cmb2_field_slider.php';
 }
 
 /**
