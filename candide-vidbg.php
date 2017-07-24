@@ -82,7 +82,8 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * @uses plugins_url()
  */
 function vidbg_jquery() {
-  wp_register_script( 'vidbg-video-background', plugins_url('/js/dist/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
+  wp_register_script( 'vidbg-video-background', plugins_url('/js/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
+  wp_register_style( 'vidbg-frontend-style', plugins_url( '/css/pushlabs-vidbg.css', __FILE__), '2.6' );
 }
 add_action( 'wp_enqueue_scripts', 'vidbg_jquery' );
 
@@ -334,6 +335,7 @@ function vidbg_initialize_footer() {
      * Enqueue the vidbg script conditionally
      */
     wp_enqueue_script( 'vidbg-video-background' );
+    wp_enqueue_style( 'vidbg-frontend-style' );
 
     if( $unmute_field == 'on' ) {
       $boolean_mute = 'false';
