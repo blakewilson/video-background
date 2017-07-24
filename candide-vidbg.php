@@ -10,16 +10,12 @@ Text Domain: video-background
 Domain Path: /languages
 */
 
-/**
- * Exit if accessed directly
- */
+// Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {
   exit;
 }
 
-/**
- * Define some constants
- */
+// Define some constants
 define( 'VIDBG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'VIDBG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
