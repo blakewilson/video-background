@@ -179,11 +179,11 @@ function vidbg_register_metabox() {
     'id'   => $prefix . 'container',
     'type' => 'text',
     'after_row' => vidbg_disabled_pro_field(
-                    __( 'YouTube Link', 'video-background' ),
-                    'youtube_link',
-                    'input',
-                    __( 'To create YouTube video backgrounds, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-                   ),
+      __( 'YouTube Link', 'video-background' ),
+      'youtube_link',
+      'input',
+      __( 'To create YouTube video backgrounds, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ),
   ) );
 
   $vidbg_metabox->add_field( array(
@@ -246,11 +246,11 @@ function vidbg_register_metabox() {
     'max'     => '99',
     'default' => '30',
     'after_row' => vidbg_disabled_pro_field(
-                    __( 'Overlay Texture', 'video-background' ),
-                    'overlay_texture',
-                    'input',
-                    __( 'To add overlay textures to your video background, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-                   ),
+      __( 'Overlay Texture', 'video-background' ),
+      'overlay_texture',
+      'input',
+      __( 'To add overlay textures to your video background, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ),
   ) );
 
   $vidbg_metabox->add_field( array(
@@ -276,16 +276,16 @@ function vidbg_register_metabox() {
       'on'  => __( 'On', 'video-background' ),
     ),
     'after_row' => vidbg_disabled_pro_field(
-                    __( 'Enable Play/Pause button', 'video-background' ),
-                    'play_button',
-                    'radio',
-                    __( 'To enable a play/pause button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-                   ) . vidbg_disabled_pro_field(
-                     __( 'Enable Mute/Unmute button', 'video-background' ),
-                     'volume_button',
-                     'radio',
-                     __( 'To enable a mute/unmute button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-                    ) . '</div>',
+      __( 'Enable Play/Pause button', 'video-background' ),
+      'play_button',
+      'radio',
+      __( 'To enable a play/pause button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ) . vidbg_disabled_pro_field(
+      __( 'Enable Mute/Unmute button', 'video-background' ),
+      'volume_button',
+      'radio',
+      __( 'To enable a mute/unmute button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ) . '</div>',
   ) );
 
   $vidbg_metabox->add_field( array(
