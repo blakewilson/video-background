@@ -399,10 +399,9 @@ function vidbg_initialize_footer() {
         var vidbgOverlayAlpha = '<?php echo $overlay_alpha_value; ?>';
 
         $(vidbgContainerValue).vidbg({
-          'mp4': vidbgMp4Value,
-          'webm': vidbgWebmValue,
-          'poster': vidbgPosterValue,
-        }, {
+          mp4: vidbgMp4Value,
+          webm: vidbgWebmValue,
+          poster: vidbgPosterValue,
           muted: vidbgIsMuted,
           loop: vidbgIsLoop,
           overlay: vidbgIsOverlay,
@@ -463,10 +462,9 @@ function candide_video_background( $atts , $content = null ) {
         var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
 
         $(vidbgContainerValue).vidbg({
-          'mp4': vidbgMp4Value,
-          'webm': vidbgWebmValue,
-          'poster': vidbgPosterValue,
-        }, {
+          mp4: vidbgMp4Value,
+          webm: vidbgWebmValue,
+          poster: vidbgPosterValue,
           muted: vidbgIsMuted,
           loop: vidbgIsLoop,
           overlay: vidbgIsOverlay,

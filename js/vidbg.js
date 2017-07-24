@@ -45,6 +45,8 @@
       // Extend our plugin options to our init function
       base.options = $.extend({},$.vidbg.defaultOptions, options);
 
+      console.log( base.options );
+
       // Create the vidbg-container element
       base.container();
 
@@ -71,7 +73,7 @@
       } else {
         return false;
       }
-    }
+    };
 
     /**
      * The video background container
@@ -118,13 +120,6 @@
       if ( base.options.overlay === true ) {
         $overlay.css({
           background: 'rgba(' + hexToRGB(base.options.overlayColor).r + ', ' + hexToRGB(base.options.overlayColor).g + ', ' + hexToRGB(base.options.overlayColor).b + ', ' + base.options.overlayAlpha + ')',
-        });
-      }
-
-      // If there is an overlay texture and overlay is enabled, display it
-      if ( base.options.overlayTexture !== '#' && base.options.overlay === true ) {
-        $overlay.css({
-          'background' : 'url(' + base.options.overlayTexture + ')',
         });
       }
 
@@ -271,7 +266,6 @@
     overlay: false, // The video overlay
     overlayColor: '#000', // The default overlay color if enabled
     overlayAlpha: '0.3', // The default overlay transparancy if enabled
-    overlayTexture: '#', // The texture url
   };
 
   /**
