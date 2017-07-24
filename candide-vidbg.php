@@ -11,6 +11,21 @@ Domain Path: /languages
 */
 
 /**
+ * Exit if accessed directly
+ */
+if ( !defined( 'ABSPATH' ) ) {
+  exit;
+}
+
+/**
+ * Define some constants
+ */
+define( 'VIDBG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'VIDBG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
+define( 'VIDBG_PLUGIN_VERSION', '2.6' );
+
+/**
  * Include the metabox framework
  */
 if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
@@ -82,8 +97,8 @@ add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
  * @uses plugins_url()
  */
 function vidbg_jquery() {
-  wp_register_script( 'vidbg-video-background', plugins_url('/js/vidbg.min.js', __FILE__), array('jquery'), '1.1', true);
-  wp_register_style( 'vidbg-frontend-style', plugins_url( '/css/pushlabs-vidbg.css', __FILE__), '2.6' );
+  wp_register_script( 'vidbg-video-background', plugins_url('/js/vidbg.min.js', __FILE__), array('jquery'), VIDBG_PLUGIN_VERSION, true);
+  wp_register_style( 'vidbg-frontend-style', plugins_url( '/css/pushlabs-vidbg.css', __FILE__), VIDBG_PLUGIN_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'vidbg_jquery' );
 
