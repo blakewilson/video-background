@@ -129,6 +129,38 @@ function vidbg_default_color_palette( $l10n ) {
 add_filter( 'cmb2_localized_data', 'vidbg_default_color_palette' );
 
 /**
+ * Construct the vidbg shortcode from an array
+ *
+ * @since 2.6
+ *
+ * @uses do_shortcode()
+ *
+ * @param $atts_array array A 2d array of shortcode attributes
+ * @return string The [vidbg] constructed from the array input
+ */
+function vidbg_construct_shortcode( $atts_array ) {
+  // If no array is provided, quit
+  if ( empty( $atts_array ) ) {
+    return;
+  }
+
+  // Our shortcode name
+  $shortcode_name = 'vidbg';
+
+  // Construct the shortcode
+  $the_shortcode = '[' . $shortcode_name;
+  foreach ( $atts_array as $key => $value ) {
+    $the_shortcode .= ' ' . $key . '="' . $value .'"';
+  }
+  $the_shortcode .= ']';
+
+  // Create the output
+  $output = $the_shortcode;
+
+  return $output;
+}
+
+/**
  * Helper function to output disabled Video Background Pro fields
  *
  * @since 2.5.4
