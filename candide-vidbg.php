@@ -80,6 +80,7 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
 
 /**
  * Enqueue backend style and script
+ * Note: renamed. Previous, vidbg_metabox_scripts()
  *
  * @since 2.1.4
  *
@@ -88,7 +89,7 @@ add_action( 'plugins_loaded', 'vidbg_load_textdomain' );
  * @uses wp_enqueue_script()
  * @uses plugin_dir_url()
  */
-function vidbg_metabox_scripts() {
+function vidbg_enqueue_admin_scripts() {
   wp_enqueue_style('vidbg-metabox-style', plugins_url('/css/vidbg-style.css', __FILE__));
   wp_enqueue_script( 'vidbg-admin-backend', plugin_dir_url( __FILE__ ) . '/js/vidbg-backend.js' );
 
@@ -97,21 +98,22 @@ function vidbg_metabox_scripts() {
     'hide_advanced' => __( 'Hide Advanced Options', 'video-background' ),
   ) );
 }
-add_action('admin_enqueue_scripts', 'vidbg_metabox_scripts');
+add_action('admin_enqueue_scripts', 'vidbg_enqueue_admin_scripts');
 
 /**
  * Enqueue vidbg jquery script
+ * Note: renamed. Previous, vidbg_jquery
  *
  * @since 2.0.0
  *
  * @uses wp_enqueue_script()
  * @uses plugins_url()
  */
-function vidbg_jquery() {
+function vidbg_enqueue_scripts() {
   wp_register_script( 'vidbg-video-background', plugins_url('/js/vidbg.min.js', __FILE__), array('jquery'), VIDBG_PLUGIN_VERSION, true);
   wp_register_style( 'vidbg-frontend-style', plugins_url( '/css/pushlabs-vidbg.css', __FILE__), VIDBG_PLUGIN_VERSION );
 }
-add_action( 'wp_enqueue_scripts', 'vidbg_jquery' );
+add_action( 'wp_enqueue_scripts', 'vidbg_enqueue_scripts' );
 
 /**
  * Add custom color palette
