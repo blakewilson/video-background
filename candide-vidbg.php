@@ -26,16 +26,6 @@ define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
 define( 'VIDBG_PLUGIN_VERSION', '2.6' );
 
 /**
- * Include the metabox framework
- */
-if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
-  require_once dirname( __FILE__ ) . '/framework/init.php';
-}
-if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
-  require_once dirname( __FILE__ ) . '/framework/cmb2_field_slider.php';
-}
-
-/**
  * Install the plugin
  * deactivate vidbgpro if installed
  *
@@ -53,6 +43,31 @@ function vidbg_install_plugin() {
   delete_option( 'vidbg_disable_pro_fields' );
 }
 register_activation_hook( __FILE__, 'vidbg_install_plugin' );
+
+/**
+ * Create function to see if WordPress version is 4.2 or higher
+ *
+ * @since 2.5.1
+ */
+function vidbg_is_wp_version( $version = '4.2' ) {
+  global $wp_version;
+
+  if ( version_compare( $wp_version, $version, '>=' ) ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+/**
+ * Include the metabox framework
+ */
+if ( file_exists( dirname( __FILE__ ) . '/framework/init.php' ) ) {
+  require_once dirname( __FILE__ ) . '/framework/init.php';
+}
+if ( file_exists( dirname( __FILE__ ) . '/framework/cmb2_field_slider.php' ) ) {
+  require_once dirname( __FILE__ ) . '/framework/cmb2_field_slider.php';
+}
 
 /**
  * Load plugin textdomain.
@@ -614,21 +629,6 @@ function vidbg_gettingstarted_link($links) {
   return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'vidbg_gettingstarted_link' );
-
-/**
- * Create function to see if WordPress version is 4.2 or higher
- *
- * @since 2.5.1
- */
-function vidbg_is_wp_version( $version = '4.2' ) {
-  global $wp_version;
-
-  if ( version_compare( $wp_version, $version, '>=' ) ) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 /**
  * If WP version is 4.2 or higher display premium notice message
