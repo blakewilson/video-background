@@ -378,72 +378,45 @@ function vidbg_initialize_footer() {
       $the_id = get_option( 'page_for_posts' );
     }
 
-    $container_field = get_post_meta( $the_id, 'vidbg_metabox_field_container', true );
-    $mp4_field = get_post_meta( $the_id, 'vidbg_metabox_field_mp4', true );
-    $webm_field = get_post_meta( $the_id, 'vidbg_metabox_field_webm', true );
-    $poster_field = get_post_meta( $the_id, 'vidbg_metabox_field_poster', true );
-    $overlay = get_post_meta( $the_id, 'vidbg_metabox_field_overlay', true );
-    $overlay_color = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_color', true );
-    $overlay_alpha = get_post_meta( $the_id, 'vidbg_metabox_field_overlay_alpha', true );
-    $no_loop_field = get_post_meta( $the_id, 'vidbg_metabox_field_no_loop', true );
-    $unmute_field = get_post_meta( $the_id, 'vidbg_metabox_field_unmute', true );
+    $meta_prefix = 'vidbg_metabox_field_';
+    $container_meta = get_post_meta( $the_id, $meta_prefix . 'container', true );
+    $mp4_meta = get_post_meta( $the_id, $meta_prefix . 'mp4', true );
+    $webm_meta = get_post_meta( $the_id, $meta_prefix . 'webm', true );
+    $poster_meta = get_post_meta( $the_id, $meta_prefix . 'poster', true );
+    $overlay_meta = get_post_meta( $the_id, $meta_prefix . 'overlay', true );
+    $overlay_color_meta = get_post_meta( $the_id, $meta_prefix . 'overlay_color', true );
+    $overlay_alpha_meta = get_post_meta( $the_id, $meta_prefix . 'overlay_alpha', true );
+    $loop_meta = get_post_meta( $the_id, $meta_prefix . 'no_loop', true );
+    $mute_meta = get_post_meta( $the_id, $meta_prefix . 'unmute', true );
 
-    if( !empty( $container_field ) ): ?>
-    <?php
+    // If there is no container element, return.
+    if( empty( $container_meta ) ) {
+      return;
+    }
 
-    /**
-     * Enqueue the vidbg script conditionally
-     */
+    // Create our shortcode attributes array
+    $shortcode_atts = array(
+      'container' => $container_meta,
+      'mp4' => ( $mp4_meta == '' ) ? '#' : $mp4_meta,
+      'webm' => ( $webm_meta == '' ) ? '#' : $webm_meta,
+      'poster' => ( $poster_meta == '' ) ? '#' : $poster_meta,
+      'overlay' => ( $overlay_meta == 'on' ) ? 'true' : 'false',
+      'overlay_color' => !empty( $overlay_color_meta ) ? $overlay_color_meta : '#000',
+      'overlay_alpha' => !empty( $overlay_alpha_meta ) ? '0.' . $overlay_alpha_meta : '0.3',
+      'loop' => ( $loop_meta == 'on' ) ? 'false' : 'true',
+      'muted' => ( $mute_meta == 'on' ) ? 'false' : 'true',
+      'source' => 'Metabox',
+    );
+
+    // Enqueue the vidbg script conditionally
     wp_enqueue_script( 'vidbg-video-background' );
     wp_enqueue_style( 'vidbg-frontend-style' );
 
-    if( $unmute_field == 'on' ) {
-      $boolean_mute = 'false';
-    } else {
-      $boolean_mute = 'true';
-    }
+    // Construct the shortcode, then echo it.
+    $the_shortcode = vidbg_construct_shortcode( $shortcode_atts );
+    $output = do_shortcode( $the_shortcode );
 
-    if( $no_loop_field == 'on' ) {
-      $boolean_loop = 'false';
-    } else {
-      $boolean_loop = 'true';
-    }
-
-    if( $overlay == 'on' ) {
-      $boolean_overlay = 'true';
-    } else {
-      $boolean_overlay = 'false';
-    }
-
-    $overlay_color_value = !empty($overlay_color) ? $overlay_color : '#000';
-    $overlay_alpha_value = !empty($overlay_alpha) ? '0.' . $overlay_alpha : '0.3';
-    ?>
-    <script type="text/javascript">
-      jQuery(function($){
-        var vidbgContainerValue = '<?php echo $container_field; ?>';
-        var vidbgMp4Value = '<?php echo $mp4_field; ?>';
-        var vidbgWebmValue = '<?php echo $webm_field; ?>';
-        var vidbgPosterValue = '<?php echo $poster_field; ?>';
-        var vidbgIsMuted = <?php echo $boolean_mute; ?>;
-        var vidbgIsLoop = <?php echo $boolean_loop; ?>;
-        var vidbgIsOverlay = <?php echo $boolean_overlay; ?>;
-        var vidbgOverlayColor = '<?php echo $overlay_color_value; ?>';
-        var vidbgOverlayAlpha = '<?php echo $overlay_alpha_value; ?>';
-
-        $(vidbgContainerValue).vidbg({
-          mp4: vidbgMp4Value,
-          webm: vidbgWebmValue,
-          poster: vidbgPosterValue,
-          muted: vidbgIsMuted,
-          loop: vidbgIsLoop,
-          overlay: vidbgIsOverlay,
-          overlayColor: vidbgOverlayColor,
-          overlayAlpha: vidbgOverlayAlpha,
-        });
-      });
-    </script>
-    <?php endif;
-
+    echo $output;
   }
 }
 add_action( 'wp_footer', 'vidbg_initialize_footer' );
@@ -457,61 +430,43 @@ add_action( 'wp_footer', 'vidbg_initialize_footer' );
  * @uses do_shortcode()
  */
 function candide_video_background( $atts , $content = null ) {
-  // Attributes
-  extract(
-    shortcode_atts(
-      array(
-        'container' 			=> 'body',
-        'mp4' 						=> '#',
-        'webm' 						=> '#',
-        'poster' 					=> '#',
-        'muted' 					=> 'true',
-        'loop' 						=> 'true',
-        'overlay' 				=> 'false',
-        'overlay_color' 	=> '#000',
-        'overlay_alpha' 	=> '0.3',
-      ), $atts , 'vidbg'
-    )
-  );
 
-    /**
-     * Enqueue vidbg conditionally
-     */
-    wp_enqueue_script( 'vidbg-video-background' );
+    // Attributes
+    extract(
+      shortcode_atts(
+        array(
+          'container' => 'body',
+          'mp4' => '#',
+          'webm' => '#',
+          'poster' => '#',
+          'muted' => 'true',
+          'loop' => 'true',
+          'overlay' => 'false',
+          'overlay_color' => '#000',
+          'overlay_alpha' => '0.3',
+          'source' => 'Shortcode',
+        ), $atts , 'vidbg'
+      )
+    );
 
-    // Put It Together
-    ob_start(); ?>
-    <script>
+
+    $output = "<script>
       jQuery(function($){
-        var vidbgContainerValue = '<?php echo $container; ?>';
-        var vidbgMp4Value = '<?php echo $mp4; ?>';
-        var vidbgWebmValue = '<?php echo $webm; ?>';
-        var vidbgPosterValue = '<?php echo $poster; ?>';
-        var vidbgIsMuted = <?php echo $muted; ?>;
-        var vidbgIsLoop = <?php echo $loop ?>;
-        var vidbgIsOverlay = <?php echo $overlay; ?>;
-        var vidbgOverlayColor = '<?php echo $overlay_color; ?>';
-        var vidbgOverlayAlpha = '<?php echo $overlay_alpha; ?>';
-
-        $(vidbgContainerValue).vidbg({
-          mp4: vidbgMp4Value,
-          webm: vidbgWebmValue,
-          poster: vidbgPosterValue,
-          muted: vidbgIsMuted,
-          loop: vidbgIsLoop,
-          overlay: vidbgIsOverlay,
-          overlayColor: vidbgOverlayColor,
-          overlayAlpha: vidbgOverlayAlpha,
+        // Source: " . $source . "
+        $( '" . $container . "' ).vidbg( {
+          mp4: '" . $mp4 . "',
+          webm: '" . $webm . "',
+          poster: '" . $poster . "',
+          mute: " . $muted . ",
+          repeat: " . $loop . ",
+          overlay: " . $overlay . ",
+          overlayColor: '" . $overlay_color . "',
+          overlayAlpha: '" . $overlay_alpha . "',
         });
       });
-    <?php
+    </script>";
 
-    $outputbefore = ob_get_clean();
-    $outputafter = '</script>';
-
-    //Return
-
-    return $outputbefore . do_shortcode($content) . $outputafter;
+    return $output;
 }
 add_shortcode( 'vidbg', 'candide_video_background' );
 
