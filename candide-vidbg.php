@@ -243,6 +243,16 @@ function vidbg_register_metabox() {
       'youtube_link',
       'input',
       __( 'To create YouTube video backgrounds, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ) . vidbg_disabled_pro_field(
+      __( 'YouTube Start Second', 'video-background' ),
+      'youtube_start',
+      'input',
+      __( 'To use the YouTube Start Second feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ) . vidbg_disabled_pro_field(
+      __( 'YouTube End Second', 'video-background' ),
+      'youtube_end',
+      'input',
+      __( 'To use the YouTube End Second feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
     ),
   ) );
 
@@ -322,6 +332,17 @@ function vidbg_register_metabox() {
     'options' => array(
       'off' => __( 'Off', 'video-background' ),
       'on'  => __( 'On', 'video-background' ),
+    ),
+    'after_row' => vidbg_disabled_pro_field(
+      __( 'End video on fallback image?', 'video-background' ),
+      'end_fallback',
+      'radio',
+      __( 'To enable the end video on fallback image feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
+    ) . vidbg_disabled_pro_field(
+      __( 'Enable CSS loader?', 'video-background' ),
+      'enable_loader',
+      'radio',
+      __( 'To enable the CSS loader feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
     ),
   ) );
 
@@ -573,12 +594,13 @@ function vidbg_gettingstarted_page() {
     echo '</ol>';
     _e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like the video background to appear on. Here is how it works:</p>', 'video-background' );
     echo '<p><code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; overlay_color=&quot;#000&quot; overlay_alpha=&quot;0.3&quot; muted=&quot;false&quot;]</code></p>';
-    _e( '<a href="http://blakewilson.me/projects/video-background/" class="button" target="_blank">Further Documentation</a>', 'video-background' );
+    _e( '<a href="https://pushlabs.co/docs/video-background/" class="button" target="_blank">Further Documentation</a>', 'video-background' );
     _e( '<h3>Questions?</h3>', 'video-background' );
     _e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
     _e( '<h3>Supporting the Plugin</h3>', 'video-background' );
     _e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
     echo '<ul>';
+      _e( '<li>Mobile video background playback on supported browsers</li>', 'video-background' );
       _e( '<li>YouTube Integration</li>', 'video-background' );
       _e( '<li>Visual Composer Integration</li>', 'video-background' );
       _e( '<li>Page Builder by SiteOrigin Integration</li>', 'video-background' );
@@ -590,7 +612,6 @@ function vidbg_gettingstarted_page() {
       _e( '<li>And Much More!</li>', 'video-background' );
     echo '</ul>';
     _e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" rel="nofollow" target="_blank">Learn More About Video Background Pro</a>', 'video-background' );
-    _e( ' <a href="https://twitter.com/intent/follow?screen_name=blakewilsonme" class="button button-primary vidbg-twitter" target="_blank">Get Updates on Twitter</a>', 'video-background' );
     echo '<form action="options.php" method="post">';
       settings_fields( 'vidbg_settings' );
       do_settings_sections( 'vidbg_settings' );
