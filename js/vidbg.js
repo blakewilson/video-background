@@ -198,7 +198,6 @@
        */
       $selfHostVideo.one( 'playing.vidbg', function() {
         $selfHostVideo.css({
-          visibility: 'visible',
           opacity: 1
         });
       });
