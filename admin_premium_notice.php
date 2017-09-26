@@ -8,7 +8,7 @@
  */
 function vidbg_premium_notice() {
 	$class = 'notice notice-success vidbg-premium-notice is-dismissible';
-	$message = __( 'Digital agencies and web developers rejoice! Video Background Pro now offers multi-site licenses! <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">Check out Video Background Pro!</a>', 'video-background' );
+	$message = __( 'Video Background Pro now plays video backgrounds on supported mobile devices! <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">Check out Video Background Pro</a>', 'video-background' );
 	$is_dismissed = get_option( 'vidbgpro-notice-dismissed' );
 
 	if( empty( $is_dismissed ) ) {

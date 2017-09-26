@@ -7,7 +7,7 @@
 		"uuidString": "67C55768-2C92-4FD8-BF08-CB2D853E7833"
 		}
 	],
-"creatorBuild": "25849",
+"creatorBuild": "25900",
 "files": {
 	"\/admin_premium_notice.php": {
 		"ft": 8192,
@@ -27,6 +27,16 @@
 		"oAP": "\/css\/index.php",
 		"oF": 0
 		},
+	"\/css\/pushlabs-vidbg.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/pushlabs-vidbg-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/pushlabs-vidbg.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -40,6 +50,16 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/css\/vidbg-style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/vidbg-style-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/vidbg-style.css": {
 		"aP": 1,
 		"bl": 0,
@@ -50,13 +70,19 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/bootstrap.php": {
+	"\/inc\/classes\/cmb2_field_slider.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/bootstrap.php",
+		"oAP": "\/inc\/classes\/cmb2_field_slider.php",
 		"oF": 0
 		},
-	"\/framework\/CHANGELOG.md": {
+	"\/inc\/vendor\/cmb2\/bootstrap.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/inc\/vendor\/cmb2\/bootstrap.php",
+		"oF": 0
+		},
+	"\/inc\/vendor\/cmb2\/CHANGELOG.md": {
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
@@ -65,7 +91,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/framework\/CHANGELOG.html",
+		"oAP": "\/inc\/vendor\/cmb2\/CHANGELOG.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -74,13 +100,7 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/framework\/cmb2_field_slider.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/framework\/cmb2_field_slider.php",
-		"oF": 0
-		},
-	"\/framework\/CONTRIBUTING.md": {
+	"\/inc\/vendor\/cmb2\/CONTRIBUTING.md": {
 		"cS": 0,
 		"eF": 1,
 		"eL": 1,
@@ -89,7 +109,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/framework\/CONTRIBUTING.html",
+		"oAP": "\/inc\/vendor\/cmb2\/CONTRIBUTING.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -98,105 +118,105 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/framework\/css\/cmb2-front-rtl.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-front-rtl.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-front-rtl-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-front-rtl-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2-front-rtl.min.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-front-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-front-rtl.min-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-front-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2-front.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-front.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-front-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-front-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2-front.css.map": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-front.css.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/css\/cmb2-front.css.map",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-front.css.map",
 		"oF": 0
 		},
-	"\/framework\/css\/cmb2-front.min.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-front.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-front.min-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-front.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2-rtl.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-rtl.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-rtl-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-rtl-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2-rtl.min.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2-rtl.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-rtl.min-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-rtl.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/cmb2.css.map": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2.css.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/css\/cmb2.css.map",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2.css.map",
 		"oF": 0
 		},
-	"\/framework\/css\/cmb2.min.css": {
+	"\/inc\/vendor\/cmb2\/css\/cmb2.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/cmb2.min-min.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/cmb2.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/framework\/css\/index.php": {
+	"\/inc\/vendor\/cmb2\/css\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/css\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/index.php",
 		"oF": 0
 		},
-	"\/framework\/css\/sass\/cmb2-front.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/cmb2-front.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -204,12 +224,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/framework\/css\/sass\/cmb2-front.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/cmb2-front.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/cmb2.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/cmb2.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -217,18 +237,18 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/cmb2.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/cmb2.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/index.php": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/css\/sass\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/index.php",
 		"oF": 0
 		},
-	"\/framework\/css\/sass\/partials\/_collapsible_ui.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_collapsible_ui.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -236,12 +256,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_collapsible_ui.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_collapsible_ui.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_front.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_front.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -249,12 +269,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_front.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_front.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_jquery_ui.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_jquery_ui.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -262,12 +282,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_jquery_ui.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_jquery_ui.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_main_wrap.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_main_wrap.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -275,12 +295,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_main_wrap.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_main_wrap.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_misc.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_misc.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -288,12 +308,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_misc.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_misc.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_mixins.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_mixins.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -301,12 +321,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_mixins.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_mixins.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_post_metaboxes.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_post_metaboxes.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -314,12 +334,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_post_metaboxes.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_post_metaboxes.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_sidebar_placements.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_sidebar_placements.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -327,12 +347,12 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_sidebar_placements.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_sidebar_placements.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/_variables.scss": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/_variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -340,1732 +360,1735 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/framework\/css\/sass\/partials\/_variables.css",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/_variables.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/framework\/css\/sass\/partials\/index.php": {
+	"\/inc\/vendor\/cmb2\/css\/sass\/partials\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/css\/sass\/partials\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/css\/sass\/partials\/index.php",
 		"oF": 0
 		},
-	"\/framework\/images\/ico-delete.png": {
+	"\/inc\/vendor\/cmb2\/images\/ico-delete.png": {
 		"ft": 32768,
 		"iS": 715,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ico-delete.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ico-delete.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/index.php": {
+	"\/inc\/vendor\/cmb2\/images\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/images\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/index.php",
 		"oF": 0
 		},
-	"\/framework\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
 		"ft": 32768,
 		"iS": 180,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_flat_75_ffffff_40x100.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_flat_75_ffffff_40x100.png": {
 		"ft": 32768,
 		"iS": 178,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_flat_75_ffffff_40x100.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_flat_75_ffffff_40x100.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_glass_55_fbf9ee_1x400.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_glass_55_fbf9ee_1x400.png": {
 		"ft": 32768,
 		"iS": 120,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_glass_65_ffffff_1x400.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_glass_65_ffffff_1x400.png": {
 		"ft": 32768,
 		"iS": 105,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_glass_65_ffffff_1x400.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_glass_65_ffffff_1x400.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_glass_75_dadada_1x400.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_glass_75_dadada_1x400.png": {
 		"ft": 32768,
 		"iS": 111,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_glass_75_dadada_1x400.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_glass_75_dadada_1x400.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
 		"ft": 32768,
 		"iS": 110,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
 		"ft": 32768,
 		"iS": 119,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_glass_95_fef1ec_1x400.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_glass_95_fef1ec_1x400.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png": {
 		"ft": 32768,
 		"iS": 101,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-icons_222222_256x240.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-icons_222222_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-icons_222222_256x240.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-icons_222222_256x240.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-icons_2e83ff_256x240.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-icons_2e83ff_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-icons_2e83ff_256x240.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-icons_2e83ff_256x240.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-icons_454545_256x240.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-icons_454545_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-icons_454545_256x240.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-icons_454545_256x240.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-icons_888888_256x240.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-icons_888888_256x240.png": {
 		"ft": 32768,
 		"iS": 5355,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-icons_888888_256x240.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-icons_888888_256x240.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/images\/ui-icons_cd0a0a_256x240.png": {
+	"\/inc\/vendor\/cmb2\/images\/ui-icons_cd0a0a_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
 		"oA": 0,
-		"oAP": "\/framework\/images\/ui-icons_cd0a0a_256x240.png",
+		"oAP": "\/inc\/vendor\/cmb2\/images\/ui-icons_cd0a0a_256x240.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/framework\/includes\/CMB2.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Ajax.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Ajax.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Ajax.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Ajax.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Boxes.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Boxes.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Boxes.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Boxes.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Field.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Field.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Field.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Field.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_hookup.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_hookup.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_hookup.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_hookup.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_JS.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_JS.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_JS.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_JS.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Options.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Options.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Options.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Options.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Sanitize.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Sanitize.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Sanitize.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Sanitize.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Show_Filters.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Show_Filters.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Show_Filters.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Show_Filters.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Types.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Types.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Types.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Types.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/CMB2_Utils.php": {
+	"\/inc\/vendor\/cmb2\/includes\/CMB2_Utils.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/CMB2_Utils.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/CMB2_Utils.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/helper-functions.php": {
+	"\/inc\/vendor\/cmb2\/includes\/helper-functions.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/helper-functions.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/helper-functions.php",
 		"oF": 0
 		},
-	"\/framework\/includes\/index.php": {
+	"\/inc\/vendor\/cmb2\/includes\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/includes\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/includes\/index.php",
 		"oF": 0
 		},
-	"\/framework\/index.php": {
+	"\/inc\/vendor\/cmb2\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/index.php",
 		"oF": 0
 		},
-	"\/framework\/init.php": {
+	"\/inc\/vendor\/cmb2\/init.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/init.php",
+		"oAP": "\/inc\/vendor\/cmb2\/init.php",
 		"oF": 0
 		},
-	"\/framework\/js\/cmb2.js": {
+	"\/inc\/vendor\/cmb2\/js\/cmb2.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/framework\/js\/cmb2-min.js",
+		"oAP": "\/inc\/vendor\/cmb2\/js\/cmb2-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/framework\/js\/cmb2.min.js": {
+	"\/inc\/vendor\/cmb2\/js\/cmb2.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/framework\/js\/cmb2.min-min.js",
+		"oAP": "\/inc\/vendor\/cmb2\/js\/cmb2.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/framework\/js\/index.php": {
+	"\/inc\/vendor\/cmb2\/js\/index.php": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/js\/index.php",
+		"oAP": "\/inc\/vendor\/cmb2\/js\/index.php",
 		"oF": 0
 		},
-	"\/framework\/js\/jquery-ui-timepicker-addon.min.js": {
+	"\/inc\/vendor\/cmb2\/js\/jquery-ui-timepicker-addon.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/framework\/js\/jquery-ui-timepicker-addon.min-min.js",
+		"oAP": "\/inc\/vendor\/cmb2\/js\/jquery-ui-timepicker-addon.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
-	"\/framework\/languages\/cmb2-ach.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ach.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ach.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ach.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ach.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ach.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ach.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ach.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-af.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-af.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-af.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-af.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-af.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-af.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-af.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-af.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-an.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-an.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-an.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-an.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-an.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-an.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-an.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-an.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ar.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ar.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ar.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ar.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ar.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ar.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ar.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ar.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-as.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-as.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-as.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-as.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-as.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-as.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-as.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-as.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-az.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-az.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-az.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-az.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-az.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-az.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-az.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-az.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-be.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-be.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-be.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-be.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-be.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-be.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-be.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-be.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bg.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bg.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bg.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bg.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bg.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bg.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bg.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bg.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bg_BG.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bg_BG.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bg_BG.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bg_BG.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bg_BG.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bg_BG.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bg_BG.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bg_BG.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bn_BD.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bn_BD.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bn_BD.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bn_BD.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bn_BD.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bn_BD.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bn_BD.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bn_BD.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-br.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-br.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-br.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-br.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-br.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-br.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-br.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-br.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bs.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bs.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bs.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bs.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bs.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bs.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bs.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bs.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bs_BA.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bs_BA.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bs_BA.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bs_BA.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-bs_BA.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-bs_BA.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-bs_BA.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-bs_BA.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ca.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ca.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ca.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ca.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ca.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ca.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ca.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ca.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-co.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-co.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-co.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-co.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-co.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-co.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-co.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-co.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-cs_CZ.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-cs_CZ.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-cs_CZ.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-cs_CZ.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-cs_CZ.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-cs_CZ.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-cs_CZ.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-cs_CZ.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-cy.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-cy.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-cy.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-cy.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-cy.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-cy.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-cy.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-cy.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-da_DK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-da_DK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-da_DK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-da_DK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-da_DK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-da_DK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-da_DK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-da_DK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_AT.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_AT.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_AT.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_AT.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_AT.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_AT.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_AT.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_AT.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_CH.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_CH.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_CH.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_CH.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_CH.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_CH.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_CH.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_CH.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_DE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_DE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_DE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_DE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-de_DE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-de_DE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-de_DE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-de_DE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-dv.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-dv.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-dv.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-dv.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-dv.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-dv.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-dv.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-dv.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-el.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-el.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-el.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-el.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-el.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-el.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-el.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-el.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en@pirate.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en@pirate.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en@pirate.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en@pirate.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en@pirate.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en@pirate.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en@pirate.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en@pirate.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_AU.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_AU.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_AU.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_AU.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_AU.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_AU.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_AU.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_AU.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_CA.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_CA.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_CA.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_CA.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_CA.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_CA.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_CA.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_CA.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_GB.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_GB.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_GB.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_GB.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-en_GB.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-en_GB.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-en_GB.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-en_GB.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-eo.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-eo.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-eo.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-eo.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-eo.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-eo.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-eo.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-eo.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_AR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_AR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_AR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_AR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_AR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_AR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_AR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_AR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_CL.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_CL.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_CL.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_CL.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_CL.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_CL.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_CL.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_CL.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_CO.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_CO.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_CO.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_CO.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_CO.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_CO.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_CO.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_CO.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_ES.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_ES.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_ES.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_ES.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_ES.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_ES.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_ES.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_ES.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_MX.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_MX.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_MX.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_MX.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_MX.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_MX.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_MX.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_MX.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_PE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_PE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_PE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_PE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_PE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_PE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_PE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_PE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_VE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_VE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_VE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_VE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-es_VE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-es_VE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-es_VE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-es_VE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-et.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-et.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-et.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-et.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-et.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-et.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-et.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-et.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-eu.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-eu.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-eu.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-eu.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-eu.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-eu.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-eu.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-eu.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fa.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fa.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fa.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fa.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fa.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fa.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fa.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fa.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fa_IR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fa_IR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fa_IR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fa_IR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fa_IR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fa_IR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fa_IR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fa_IR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fi.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fi.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fi.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fi.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fi.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fi.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fi.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fi.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fo.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fo.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fo.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fo.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fo.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fo.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fo.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fo.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_BE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_BE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_BE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_BE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_BE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_BE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_BE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_BE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_CA.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_CA.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_CA.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_CA.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_CA.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_CA.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_CA.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_CA.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_FR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_FR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_FR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_FR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fr_FR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fr_FR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fr_FR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fr_FR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fy.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fy.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fy.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fy.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-fy.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-fy.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-fy.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-fy.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ga.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ga.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ga.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ga.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ga.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ga.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ga.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ga.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gd.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gd.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gd.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gd.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gd.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gd.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gd.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gd.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gl_ES.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gl_ES.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gl_ES.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gl_ES.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gl_ES.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gl_ES.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gl_ES.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gl_ES.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gu_IN.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gu_IN.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gu_IN.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gu_IN.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-gu_IN.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-gu_IN.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-gu_IN.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-gu_IN.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-he_IL.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-he_IL.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-he_IL.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-he_IL.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-he_IL.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-he_IL.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-he_IL.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-he_IL.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hi_IN.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hi_IN.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hi_IN.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hi_IN.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hi_IN.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hi_IN.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hi_IN.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hi_IN.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hr.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hr.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hr.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hr.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hr.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hr.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hr.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hr.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hu_HU.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hu_HU.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hu_HU.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hu_HU.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hu_HU.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hu_HU.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hu_HU.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hu_HU.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hy.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hy.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hy.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hy.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-hy.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-hy.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-hy.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-hy.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-id_ID.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-id_ID.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-id_ID.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-id_ID.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-id_ID.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-id_ID.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-id_ID.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-id_ID.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-is_IS.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-is_IS.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-is_IS.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-is_IS.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-is_IS.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-is_IS.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-is_IS.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-is_IS.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-it_IT.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-it_IT.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-it_IT.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-it_IT.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-it_IT.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-it_IT.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-it_IT.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-it_IT.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ja.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ja.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ja.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ja.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ja.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ja.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ja.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ja.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-jv.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-jv.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-jv.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-jv.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-jv.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-jv.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-jv.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-jv.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ka.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ka.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ka.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ka.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ka.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ka.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ka.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ka.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ka_GE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ka_GE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ka_GE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ka_GE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ka_GE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ka_GE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ka_GE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ka_GE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-kk.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-kk.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-kk.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-kk.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-kk.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-kk.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-kk.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-kk.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-km.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-km.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-km.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-km.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-km.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-km.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-km.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-km.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-kn.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-kn.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-kn.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-kn.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-kn.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-kn.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-kn.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-kn.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ko_KR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ko_KR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ko_KR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ko_KR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ko_KR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ko_KR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ko_KR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ko_KR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ku.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ku.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ku.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ku.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ku.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ku.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ku.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ku.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ky.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ky.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ky.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ky.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ky.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ky.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ky.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ky.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lo.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lo.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lo.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lo.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lo.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lo.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lo.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lo.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lt_LT.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lt_LT.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lt_LT.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lt_LT.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lt_LT.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lt_LT.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lt_LT.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lt_LT.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lv.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lv.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lv.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lv.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-lv.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-lv.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-lv.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-lv.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mg.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mg.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mg.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mg.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mg.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mg.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mg.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mg.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mk_MK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mk_MK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mk_MK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mk_MK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mk_MK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mk_MK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mk_MK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mk_MK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mn.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mn.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mn.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mn.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mn.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mn.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mn.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mn.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mr.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mr.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mr.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mr.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-mr.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-mr.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-mr.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-mr.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ms_MY.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ms_MY.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ms_MY.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ms_MY.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ms_MY.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ms_MY.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ms_MY.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ms_MY.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-my_MM.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-my_MM.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-my_MM.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-my_MM.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-my_MM.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-my_MM.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-my_MM.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-my_MM.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nb_NO.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nb_NO.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nb_NO.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nb_NO.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nb_NO.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nb_NO.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nb_NO.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nb_NO.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ne_NP.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ne_NP.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ne_NP.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ne_NP.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ne_NP.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ne_NP.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ne_NP.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ne_NP.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nl_BE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nl_BE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nl_BE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nl_BE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nl_BE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nl_BE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nl_BE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nl_BE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nl_NL.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nl_NL.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nl_NL.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nl_NL.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nl_NL.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nl_NL.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nl_NL.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nl_NL.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nn_NO.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nn_NO.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nn_NO.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nn_NO.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-nn_NO.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-nn_NO.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-nn_NO.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-nn_NO.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-oc.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-oc.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-oc.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-oc.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-oc.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-oc.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-oc.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-oc.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-os.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-os.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-os.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-os.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-os.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-os.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-os.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-os.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pap.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pap.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pap.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pap.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pap.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pap.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pap.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pap.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pl_PL.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pl_PL.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pl_PL.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pl_PL.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pl_PL.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pl_PL.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pl_PL.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pl_PL.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ps.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ps.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ps.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ps.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ps.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ps.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ps.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ps.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pt_BR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pt_BR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pt_BR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pt_BR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pt_BR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pt_BR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pt_BR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pt_BR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pt_PT.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pt_PT.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pt_PT.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pt_PT.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-pt_PT.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-pt_PT.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-pt_PT.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-pt_PT.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ro_RO.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ro_RO.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ro_RO.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ro_RO.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ro_RO.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ro_RO.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ro_RO.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ro_RO.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ru_RU.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ru_RU.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ru_RU.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ru_RU.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ru_RU.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ru_RU.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ru_RU.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ru_RU.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sa.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sa.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sa.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sa.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sa.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sa.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sa.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sa.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sah.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sah.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sah.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sah.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sah.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sah.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sah.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sah.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-si_LK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-si_LK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-si_LK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-si_LK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-si_LK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-si_LK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-si_LK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-si_LK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sk_SK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sk_SK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sk_SK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sk_SK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sk_SK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sk_SK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sk_SK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sk_SK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sl_SI.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sl_SI.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sl_SI.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sl_SI.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sl_SI.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sl_SI.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sl_SI.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sl_SI.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-so.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-so.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-so.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-so.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-so.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-so.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-so.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-so.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sq.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sq.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sq.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sq.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sq.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sq.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sq.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sq.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sr_RS.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sr_RS.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sr_RS.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sr_RS.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sr_RS.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sr_RS.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sr_RS.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sr_RS.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-su.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-su.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-su.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-su.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-su.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-su.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-su.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-su.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sv_SE.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sv_SE.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sv_SE.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sv_SE.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sv_SE.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sv_SE.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sv_SE.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sv_SE.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sw.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sw.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sw.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sw.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-sw.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-sw.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-sw.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-sw.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ta_IN.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ta_IN.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ta_IN.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ta_IN.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ta_IN.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ta_IN.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ta_IN.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ta_IN.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ta_LK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ta_LK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ta_LK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ta_LK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ta_LK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ta_LK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ta_LK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ta_LK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-te.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-te.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-te.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-te.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-te.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-te.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-te.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-te.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tg.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tg.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tg.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tg.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tg.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tg.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tg.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tg.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-th.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-th.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-th.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-th.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-th.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-th.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-th.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-th.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tk_TM.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tk_TM.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tk_TM.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tk_TM.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tk_TM.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tk_TM.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tk_TM.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tk_TM.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tl.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tl.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tl.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tl.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tl.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tl.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tl.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tl.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tr_TR.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tr_TR.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tr_TR.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tr_TR.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tr_TR.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tr_TR.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tr_TR.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tr_TR.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tzm.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tzm.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tzm.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tzm.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-tzm.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-tzm.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-tzm.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-tzm.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ug.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ug.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ug.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ug.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ug.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ug.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ug.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ug.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-uk.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-uk.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-uk.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-uk.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-uk.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-uk.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-uk.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-uk.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ur.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ur.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ur.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ur.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ur.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ur.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ur.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ur.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ur_PK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ur_PK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ur_PK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ur_PK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-ur_PK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-ur_PK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-ur_PK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-ur_PK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-uz.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-uz.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-uz.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-uz.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-uz.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-uz.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-uz.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-uz.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-vi.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-vi.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-vi.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-vi.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-vi.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-vi.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-vi.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-vi.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_CN.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_CN.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_CN.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_CN.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_CN.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_CN.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_CN.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_CN.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_HK.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_HK.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_HK.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_HK.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_HK.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_HK.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_HK.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_HK.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_TW.mo": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_TW.mo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_TW.mo",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_TW.mo",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2-zh_TW.po": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2-zh_TW.po": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2-zh_TW.po",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2-zh_TW.po",
 		"oF": 0
 		},
-	"\/framework\/languages\/cmb2.pot": {
+	"\/inc\/vendor\/cmb2\/languages\/cmb2.pot": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/framework\/languages\/cmb2.pot",
+		"oAP": "\/inc\/vendor\/cmb2\/languages\/cmb2.pot",
 		"oF": 0
 		},
 	"\/index.php": {
@@ -2074,29 +2097,25 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
-	"\/js\/dist\/index.php": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/js\/dist\/index.php",
-		"oF": 0
-		},
-	"\/js\/dist\/vidbg.min.js": {
-		"ft": 64,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/js\/dist\/vidbg.min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
-		},
 	"\/js\/index.php": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/js\/index.php",
 		"oF": 0
 		},
+	"\/js\/vidbg-backend-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/vidbg-backend-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/vidbg-backend.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/js\/vidbg-backend-min.js",
@@ -2106,6 +2125,7 @@
 		},
 	"\/js\/vidbg.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/vidbg.min.js",
@@ -2115,6 +2135,7 @@
 		},
 	"\/js\/vidbg.min.js": {
 		"ft": 64,
+		"ma": 0,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/vidbg.min-min.js",
@@ -2559,6 +2580,10 @@
 			"active": 0,
 			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
 			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
 		"array-bracket-spacing": {
 			"active": 0,
 			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
@@ -2566,6 +2591,10 @@
 		"array-callback-return": {
 			"active": 0,
 			"optionString": ""
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
 			},
 		"arrow-body-style": {
 			"active": 0,
@@ -2663,6 +2692,10 @@
 			"active": 0,
 			"optionString": "'always', {'null': 'always'}"
 			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
 		"func-call-spacing": {
 			"active": 0,
 			"optionString": "'never'"
@@ -2682,6 +2715,10 @@
 		"generator-star-spacing": {
 			"active": 0,
 			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
 			},
 		"global-require": {
 			"active": 0,
@@ -2811,6 +2848,10 @@
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
 			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-caller": {
 			"active": 0,
 			"optionString": ""
@@ -2937,7 +2978,7 @@
 			},
 		"no-extra-parens": {
 			"active": 0,
-			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none'}"
+			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false}"
 			},
 		"no-extra-semi": {
 			"active": 1,
@@ -3185,7 +3226,7 @@
 			},
 		"no-sync": {
 			"active": 0,
-			"optionString": ""
+			"optionString": "{'allowAtRootLevel': false}"
 			},
 		"no-tabs": {
 			"active": 0,
@@ -3209,7 +3250,7 @@
 			},
 		"no-trailing-spaces": {
 			"active": 0,
-			"optionString": "{'skipBlankLines': false}"
+			"optionString": "{'skipBlankLines': false, 'ignoreComments': false}"
 			},
 		"no-undef": {
 			"active": 1,
@@ -3225,7 +3266,7 @@
 			},
 		"no-underscore-dangle": {
 			"active": 0,
-			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false}"
+			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'enforceInMethodNames': false}"
 			},
 		"no-unexpected-multiline": {
 			"active": 1,
@@ -3355,6 +3396,10 @@
 			"active": 0,
 			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
 			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
 		"prefer-arrow-callback": {
 			"active": 0,
 			"optionString": ""
@@ -3423,6 +3468,10 @@
 			"active": 0,
 			"optionString": "{'before': false, 'after': true}"
 			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
 		"sort-imports": {
 			"active": 0,
 			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
@@ -3462,6 +3511,10 @@
 		"strict": {
 			"active": 0,
 			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
 			},
 		"symbol-description": {
 			"active": 0,
@@ -4095,6 +4148,7 @@
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
+	"susyVersion": 3,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
