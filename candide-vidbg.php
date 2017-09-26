@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: https://pushlabs.co/documentation/video-background
 Description: WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Push Labs
-Version: 2.6
+Version: 2.6.1
 Author URI: https://pushlabs.co
 Text Domain: video-background
 Domain Path: /languages
@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'VIDBG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'VIDBG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
-define( 'VIDBG_PLUGIN_VERSION', '2.6' );
+define( 'VIDBG_PLUGIN_VERSION', '2.6.1' );
 
 /**
  * Install the plugin
@@ -115,6 +115,9 @@ add_action('admin_enqueue_scripts', 'vidbg_enqueue_admin_scripts');
 function vidbg_enqueue_scripts() {
   wp_register_script( 'vidbg-video-background', plugins_url('/js/vidbg.min.js', __FILE__), array('jquery'), VIDBG_PLUGIN_VERSION, true);
   wp_register_style( 'vidbg-frontend-style', plugins_url( '/css/pushlabs-vidbg.css', __FILE__), VIDBG_PLUGIN_VERSION );
+
+  // Enqueue the style
+  wp_enqueue_style( 'vidbg-frontend-style' );
 }
 add_action( 'wp_enqueue_scripts', 'vidbg_enqueue_scripts' );
 
@@ -432,10 +435,6 @@ function vidbg_initialize_footer() {
       'source' => 'Metabox',
     );
 
-    // Enqueue the vidbg script conditionally
-    wp_enqueue_script( 'vidbg-video-background' );
-    wp_enqueue_style( 'vidbg-frontend-style' );
-
     // Construct the shortcode, then echo it.
     $the_shortcode = vidbg_construct_shortcode( $shortcode_atts );
     $output = do_shortcode( $the_shortcode );
@@ -473,6 +472,8 @@ function candide_video_background( $atts , $content = null ) {
       )
     );
 
+    // Enqueue the vidbg script conditionally
+    wp_enqueue_script( 'vidbg-video-background' );
 
     $output = "<script>
       jQuery(function($){
