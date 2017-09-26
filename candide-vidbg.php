@@ -311,7 +311,7 @@ function vidbg_register_metabox() {
     'name'    => __( 'Overlay Opacity', 'video-background' ),
     'desc'    => __( 'Specify the opacity of the overlay with the left being mostly transparent and the right being hardly transparent.', 'video-background' ),
     'id'      => $prefix . 'overlay_alpha',
-    'type'    => 'own_slider',
+    'type'    => 'vidbg_slider',
     'min'     => '10',
     'max'     => '99',
     'default' => '30',

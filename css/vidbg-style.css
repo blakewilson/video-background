@@ -56,12 +56,12 @@
 /***********************
  jQuery Slider
 ***********************/
-#vidbg-metabox .cmb2-id-vidbg-metabox-field-overlay-alpha .cmb-type-own-slider {
+#vidbg-metabox .cmb2-id-vidbg-metabox-field-overlay-alpha .cmb-type-vidbg-slider {
   visibility: hidden;
   /* hide slider until color scheme is applied */
 }
 
-#vidbg-metabox .cmb2-id-vidbg-metabox-field-overlay-alpha .own-slider-field-value-display {
+#vidbg-metabox .cmb2-id-vidbg-metabox-field-overlay-alpha .vidbg-slider-field-value-display {
 	float:right;
 	font-weight: 400;
 	font-size: 12px;
