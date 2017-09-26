@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: blakedotvegas
+Contributors: blakedotvegas, pushlabs
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
 Requires at least: 4.2
 Tested up to: 4.8.2
