@@ -45,8 +45,6 @@
       // Extend our plugin options to our init function
       base.options = $.extend({},$.vidbg.defaultOptions, options);
 
-      console.log( base.options );
-
       // Create the vidbg-container element
       base.container();
 
