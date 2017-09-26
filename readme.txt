@@ -1,12 +1,11 @@
 === Plugin Name ===
 Contributors: blakedotvegas
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
-Requires at least: 3.8.0
-Tested up to: 4.5.3
-Stable tag: 2.5.8
+Requires at least: 4.2
+Tested up to: 4.8.2
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Donate link: https://www.paypal.me/blakewilsonme
 
 jQuery WordPress plugin to easily assign a video background to any element. Awesome.
 
@@ -39,7 +38,7 @@ There is now a more detailed shortcode for video background. Input this shortcod
 
 
 Demo:
-<http://blakewilson.me/projects/video-background>
+<https://pushlabs.co/docs/video-background/>
 
 == Installation ==
 
@@ -84,6 +83,13 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
 == Changelog ==
+
+= 2.6.0 =
+* Fixed: Compatibility issue with IOS 11 and High Sierra
+* Added: Reengineered vidbg scripts for more consistency across websites and faster loading speeds
+* Added: All instances of Video Background are now ran straight from the shortcode for more consistency.
+* Fixed: Compatibility issues in the opacity slider
+* Added: WordPress required version is now 4.2
 
 = 2.5.8 =
 * Fixed: Conditionally enqueue vidbg script

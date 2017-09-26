@@ -64,6 +64,9 @@ if ( file_exists( dirname( __FILE__ ) . '/inc/vendor/cmb2/init.php' ) ) {
 if ( file_exists( dirname( __FILE__ ) . '/inc/classes/cmb2_field_slider.php' ) ) {
   require_once dirname( __FILE__ ) . '/inc/classes/cmb2_field_slider.php';
 }
+if ( file_exists( dirname( __FILE__ ) . '/admin_premium_notice.php' ) ) {
+  require_once dirname( __FILE__ ) . '/admin_premium_notice.php';
+}
 
 /**
  * Load plugin textdomain.
@@ -633,10 +636,3 @@ function vidbg_gettingstarted_link($links) {
   return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'vidbg_gettingstarted_link' );
-
-/**
- * If WP version is 4.2 or higher display premium notice message
- */
-if( vidbg_is_wp_version() == true ) {
-  require_once( plugin_dir_path( __FILE__ )  . '/admin_premium_notice.php' );
-}
