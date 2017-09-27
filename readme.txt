@@ -84,6 +84,9 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 
 == Changelog ==
 
+= 2.6.2 =
+* Added: version to wp_register_style()
+
 = 2.6.1 =
 * Fixed: Critical issue with the [vidbg] shortcode not displaying video backgrounds.
 
