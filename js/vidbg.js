@@ -138,11 +138,11 @@
         return;
       }
 
-      // If VBP is mobile, display the poster image
+      // If VB is mobile, display the poster image
       if ( base.isMobile() === true ) {
         $container.css( 'background-image', 'url(' + base.options.poster + ')' );
       } else {
-        if ( base.options.type === 'self-host' && ( base.options.mp4 === '#' && base.options.webm === '#' ) ) {
+        if ( base.options.mp4 === '#' && base.options.webm === '#' ) {
           $container.css( 'background-image', 'url(' + base.options.poster + ')' );
         }
       }
@@ -154,8 +154,8 @@
      * @public
      */
     base.selfHostVideo = function() {
-      // If VBP is mobile, quit
-      if ( base.isMobile() === true ) {
+      // If VB is mobile, or has no video links, quit
+      if ( base.isMobile() === true || ( base.options.mp4 === '#' && base.options.webm === '#' ) ) {
         return;
       }
 
@@ -209,8 +209,8 @@
      * @public
      */
     base.resize = function() {
-      // Check if mobile
-      if ( base.isMobile() === true ) {
+      // If VB is mobile, or has no video links, quit
+      if ( base.isMobile() === true || ( base.options.mp4 === '#' && base.options.webm === '#' ) ) {
         return;
       }
 

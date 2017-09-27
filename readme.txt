@@ -3,7 +3,7 @@ Contributors: blakedotvegas, pushlabs
 Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
 Requires at least: 4.2
 Tested up to: 4.8.2
-Stable tag: 2.6.1
+Stable tag: 2.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,10 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
 == Changelog ==
+
+= 2.6.3 =
+* Fixed: ability to display just fallback image.
+* Fixed: if fallback image is present, but video files are not. The video will not load to save on browser page size.
 
 = 2.6.2 =
 * Added: version to wp_register_style()
