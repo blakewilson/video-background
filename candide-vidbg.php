@@ -68,6 +68,14 @@ if ( file_exists( dirname( __FILE__ ) . '/admin_premium_notice.php' ) ) {
   require_once dirname( __FILE__ ) . '/admin_premium_notice.php';
 }
 
+if ( class_exists( 'Vc_Manager' ) ) {
+    require_once dirname( __FILE__ ) . '/inc/classes/vidbg_wpbakery.php';
+}
+
+if ( class_exists( 'SiteOrigin_Panels_Css_Builder' ) ) {
+  require_once dirname( __FILE__ ) . '/inc/classes/vidbg_siteorigin.php';
+}
+
 /**
  * Load plugin textdomain.
  *
@@ -472,10 +480,7 @@ function candide_video_background( $atts , $content = null ) {
       )
     );
 
-    // Enqueue the vidbg script conditionally
-    wp_enqueue_script( 'vidbg-video-background' );
-
-    $output = "<script>
+    $output = "
       jQuery(function($){
         // Source: " . $source . "
         $( '" . $container . "' ).vidbg( {
@@ -489,9 +494,12 @@ function candide_video_background( $atts , $content = null ) {
           overlayAlpha: '" . $overlay_alpha . "',
         });
       });
-    </script>";
+    ";
 
-    return $output;
+    // Enqueue the vidbg script conditionally
+    wp_enqueue_script( 'vidbg-video-background' );
+    wp_add_inline_script( 'vidbg-video-background', $output );
+
 }
 add_shortcode( 'vidbg', 'candide_video_background' );
 
@@ -637,3 +645,28 @@ function vidbg_gettingstarted_link($links) {
   return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'vidbg_gettingstarted_link' );
+
+/**
+ * Create a unique random class name to be used as a reference for other plugin integrations.
+ *
+ * @since 2.7.0
+ *
+ * @return String The reference class name (without the period prefix)
+ */
+function vidbg_create_unique_ref() {
+  // Our possible list of characters
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen( $characters );
+  $length = 14;
+
+  // Create our string
+  $unique_ref = '';
+  for ( $i = 0; $i < $length; $i++ ) {
+    $unique_ref .= $characters[rand(0, $charactersLength - 1)];
+  }
+
+  // Create our output
+  $output = 'vidbg-ref-' . $unique_ref;
+
+  return $output;
+}
