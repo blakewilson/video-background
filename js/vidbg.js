@@ -127,12 +127,17 @@
      * The function to display the poster fallback
      * @public
      */
-    base.displayPoster = function() {
+    base.displayPoster = function( forcePoster ) {
       // Declare our variables
       var $container = base.$container;
 
       if ( base.options.poster === '#' ) {
         return;
+      }
+
+      // If the forcePoster param is set to true, force the container
+      if ( forcePoster === true ) {
+        $container.css( 'background-image', 'url(' + base.options.poster + ')' );
       }
 
       // If VB is mobile, display the poster image
@@ -180,6 +185,21 @@
           });
       } catch (e) {
         console.log( 'error' );
+      }
+
+      var playPromise = $selfHostVideo.get(0).play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(function() {
+          console.log( 'Autoplay started, play promise succeeded' );
+        }).catch(function(error) {
+          console.log( 'Autoplay failed, play promise failed (due to audio being enabled)' );
+          base.displayPoster( true );
+
+
+          // Automatic playback failed.
+          // Show a UI element to let the user manually start playback.
+        });
       }
 
       // Size the video accordingly to its container
