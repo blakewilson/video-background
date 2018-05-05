@@ -59,6 +59,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
             'value'   => 'self-host',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
+          'weight' => -10,
         ),
         array(
           'type'        => 'textfield',
@@ -70,6 +71,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
             'value'   => 'self-host',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
+          'weight' => -20,
         ),
         array(
           'type'        => 'attach_image',
@@ -77,6 +79,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'param_name'  => $this->prefix . 'poster',
           'description' => __( 'Please upload a fallback image.', 'video-background' ),
           'group'       => __( 'Video Background', 'video-background' ),
+          'weight' => -30,
         ),
         array(
           'type'        => 'checkbox',
@@ -85,6 +88,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'description' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
           'group'       => __( 'Video Background', 'video-background' ),
           'value'       => '0',
+          'weight' => -40,
         ),
         array(
           'type'        => 'colorpicker',
@@ -97,6 +101,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
             'value'   => 'true',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
+          'weight' => -50,
         ),
         array(
           'type'        => 'textfield',
@@ -109,6 +114,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
             'value'   => 'true',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
+          'weight' => -60,
         ),
         array(
           'type'        => 'checkbox',
@@ -117,6 +123,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'description' => __( 'Turn off the loop for Video Background. Once the video is complete, it will display the last frame of the video.', 'video-background' ),
           'group'       => __( 'Video Background', 'video-background' ),
           'value'       => '0',
+          'weight' => -70,
         ),
         array(
           'type'        => 'checkbox',
@@ -125,6 +132,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'description' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
           'group'       => __( 'Video Background', 'video-background' ),
           'value'       => '0',
+          'weight' => -80,
         ),
       );
 
