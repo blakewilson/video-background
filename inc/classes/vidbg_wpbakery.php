@@ -121,6 +121,8 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
         ),
       );
 
+			$attributes = apply_filters( 'vidbg_wpbakery_fields', $attributes );
+
       // Add the params to the VC row
       vc_add_params( 'vc_row', $attributes );
     }
@@ -135,8 +137,6 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       if ( $this->vc_row_atts === null ) {
         return;
       }
-
-			var_dump( $this->vc_row_atts );
 
       // Run a foreach loop on the VC Row atts
       foreach ( $this->vc_row_atts as $attribute_key => $attribute ) {
@@ -170,9 +170,11 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       // Get the Video Background attributes in the VC Row
       $this->get_vidbg_attributes();
 
-      var_dump( $this->vc_row_atts );
+			// Debug Visual Composer row attributes
+      // var_dump( $this->vc_row_atts );
 
-      var_dump( $this->vidbg_atts );
+			// Debug Video Background Attributes from VC Row
+      // var_dump( $this->vidbg_atts );
 
       if ( array_key_exists( 'muted', $this->vidbg_atts ) ) {
         $this->vidbg_atts['muted'] = $this->vidbg_atts['muted'] === 'false' ? 'true' : 'false';

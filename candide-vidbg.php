@@ -56,6 +56,18 @@ function vidbg_is_wp_version( $version = '4.2' ) {
 }
 
 /**
+ * Display a notice if the update is important
+ *
+ * @since 3.0.0
+ */
+function vidbg_update_message( $data, $response ) {
+  if ( isset( $data['upgrade_notice'] ) ) {
+    printf( '<div class="vidbg-update-message">%s</div>', wpautop( $data['upgrade_notice'] ) );
+  }
+}
+add_action( 'in_plugin_update_message-video-background/candide-vidbg.php', 'vidbg_update_message', 10, 2 );
+
+/**
  * Include the metabox framework
  */
 if ( file_exists( dirname( __FILE__ ) . '/inc/vendor/cmb2/init.php' ) ) {
