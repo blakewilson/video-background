@@ -1,41 +1,37 @@
 === Plugin Name ===
 Contributors: blakedotvegas, pushlabs
-Tags: html5, video background, mp4, webm, responsive, shortcode, overlay, fullscreen background, fullscreen, html5 video background, metabox, blake wilson, loop, mute, unmute
+Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
 Requires at least: 4.2
-Tested up to: 4.9.4
-Stable tag: 2.6.3
+Tested up to: 4.9.5
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-jQuery WordPress plugin to easily assign a video background to any element. Awesome.
+Easily assign a video background to any element on your WordPress pages or posts. Now compatible with WPBakery (Visual Composer) and SiteOrigin Page Builder!
 
 == Description ==
 
-This plugin is an easy and simple way to add a video background to any element on your website.
-
-Note: You may need to play around with the element’s z-index for the video background to display properly.
-
-There is now a pro version of Video Background with awesome features like YouTube and Visual Composer integration to make your life easier! [Check it out!](http://pushlabs.co/video-background-pro/ "Video Background Pro")
+Video Background offers a simple and easy way to add a video background to any element on your WordPress site.
 
 There are 4 simple required fields:
 
-*   Container: This fields specifies where you would like the video background. If you want it to cover the whole website, you would enter "body". If you want the video background to be in a class called ".header" you would enter ".header"
+*   Container: This fields specifies where you would like the video background.
 *   MP4: Link to the .mp4 file. For Safari and IE support.
 *   WEBM: Link to the .webm file. For Chrome, Firefox, and Opera support.
 *   Poster: This will be used for the fallback image if video background is not supported (mobile for example)
 
-
 There are also 5 additional optional fields for having a more beautiful video background:
 
-*   Overlay: Adds a pattern overlay over the video for optimal reading of text.
+*   Overlay: Add a color overlay over the video for optimal reading of text.
 *   Overlay Color: If overlay is enabled, you can select the color of the overlay using the colorpicker.
 *   Overlay Alpha: If overlay is enabled, you can specify the amount of transparency.
-*   Loop: Enable or disable the looping of your video! Play your video once, or infinite!
-*   Mute: in Video Background, you now have the option to unmute your audio!
+*   Loop: Enable or disable the looping of the video background
+*   Mute: toggle the video background audio
 
-There is now a more detailed shortcode for video background. Input this shortcode in the bottom of the content editor of the page or post you would like video background on.
-`[vidbg container="body" mp4="#" webm="#" poster="#" muted="true" loop="true" overlay="false" overlay_color="#000" overlay_alpha="0.3"]`
-
+In addition to the Video Background metabox, WPBakery integration, and SiteOrigin Page Builder integration, you can use the shortcode for use anywhere on your Wordpress site:
+```
+[vidbg container="body" mp4="#" webm="#" poster="#" muted="true" loop="true" overlay="false" overlay_color="#000" overlay_alpha="0.3"]
+```
 
 Demo:
 <https://pushlabs.co/docs/video-background/>
@@ -52,7 +48,7 @@ Installation is simple.
 
 = What size is recommended for the videos? =
 
-15mb is usually best for me, I try to not exceed that. Any video after 15mb starts to slow down and sometimes will not load. A great compression tool for Video Background is <https://clipchamp.com>. Check with your hosting provider to make sure you have enough bandwidth for video backgrounds.
+15mb is usually best, I try to not exceed that. Any video after 15mb starts to slow down and sometimes will not load. Check with your hosting provider to make sure you have enough bandwidth for video backgrounds.
 
 = Is this compatible with Internet Explorer? =
 
@@ -62,13 +58,17 @@ Video background works for Internet Explorer 9 and above. Any version below that
 
 Simply fill out the 4 easy fields. Be sure for the container you enter "body" (without the quotes)
 
+= What is the best way to add a full width video background to my website? =
+
+The best way to achieve this is to use a page builder like SiteOrigin or WPBakery (Visual Composer) to add a full width row, and apply the video background to it through the integration.
+
 = What filetypes are allowed for fallback images? =
 
 Fallback images can be .jpg, .png, and .gif.
 
 = I entered all the correct fields, but my video will still not load. What am I doing wrong? =
 
-This can be an issue with the file size of the video you are uploading. Make sure that you video is compressed and is does not exceed 15mb. Once you get over 15mb, it takes a while to load. Check with your hosting provider to make sure you have enough bandwidth for video backgrounds.
+This can be an issue with the file size of the video you are uploading. Make sure that you video is compressed and is does not exceed 15mb.
 
 = I want to add a video background to a class called "header", how would I do that? =
 
@@ -82,7 +82,18 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
 
+2. Use WPBakery (Visual Composer)? Video Background & WPBakery allow you to easily add a video background to your row.
+
+3. Use SiteOrigin Page Builder? Video Background & SiteOrigin allow you to easily add a video background to your row.
+
 == Changelog ==
+
+= 3.0.0 =
+* Added: You can now add a video background to your WPBakery (Visual Composer) row!
+* Added: You can now add a video background to your SiteOrigin Page Builder row!
+* Added: vidbg_update_message() to let users know of crucial updates
+* Added: Play promise for browsers that check for a promise with autoplay videos with audio. If the promise fails, Video Background will show the fallback image.
+* Fixed: Simplified the plugin's resize methods.
 
 = 2.6.3 =
 * Fixed: ability to display just fallback image.
