@@ -246,7 +246,7 @@ function vidbg_register_metabox() {
 
   $vidbg_metabox->add_field( array(
     'name' => __( 'Container', 'video-background' ),
-    'desc' => __( 'Please specify the container you would like your video background to be in.<br>ex: <code>.header</code> or <code>body</code>', 'video-background' ),
+    'desc' => __( 'Please specify the container you would like your video background to be in. <a href="https://pushlabs.co/docs/video-background/#finding-your-container" target="_blank">Learn how to find your container.</a>', 'video-background' ),
     'id'   => $prefix . 'container',
     'type' => 'text',
     'after_row' => vidbg_disabled_pro_field(
