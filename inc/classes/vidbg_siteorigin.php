@@ -9,17 +9,17 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
 
 if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
-	/**
-	 * SiteOrigin Page Builder Integration
-	 *
-	 * @package Video Background/Video Background Pro
-	 * @author Push Labs
-	 * @version 1.0.0
-	 */
+  /**
+   * SiteOrigin Page Builder Integration
+   *
+   * @package Video Background/Video Background Pro
+   * @author Push Labs
+   * @version 1.0.0
+   */
   class Vidbg_SiteOrigin {
 
     // Class' properties
@@ -123,7 +123,7 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
         'priority'    => $priority++,
       );
 
-			$fields = apply_filters( 'vidbg_siteorigin_fields', $fields );
+  $fields = apply_filters( 'vidbg_siteorigin_fields', $fields );
 
       return $fields;
     }
@@ -181,7 +181,12 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
         $this->vidbg_atts['poster'] = $poster_src_arr[0];
       }
 
-			$this->vidbg_atts = apply_filters( 'vidbg_sanitize_siteorigin_fields', $this->vidbg_atts );
+      // If there is an external URL set for the site origin file, use it instead of the WP media upload
+      if ( array_key_exists( 'poster_fallback', $this->vidbg_atts ) ) {
+        $this->vidbg_atts['poster'] = $this->vidbg_atts['poster_fallback'];
+      }
+
+      $this->vidbg_atts = apply_filters( 'vidbg_sanitize_siteorigin_fields', $this->vidbg_atts );
 
       // Create our container selector
       $unique_class = vidbg_create_unique_ref();
