@@ -181,6 +181,10 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
         $this->vidbg_atts['poster'] = $poster_src_arr[0];
       }
 
+			if( function_exists('vidbgpro_siteorigin_sanitize_params') ) {
+				$this->vidbg_atts = vidbgpro_siteorigin_sanitize_params( $this->vidbg_atts );
+			}
+
       // Create our container selector
       $unique_class = vidbg_create_unique_ref();
       $row_class = $unique_class . '-row';
