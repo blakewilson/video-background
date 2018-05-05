@@ -10,9 +10,6 @@
     // to reference this class from internal events and functions.
     var base = this;
 
-    // Not implemented message
-    var NOT_IMPLEMENTED_MSG = 'Not implemented';
-
     // Access to jQuery and DOM versions of element
     base.$el = $(el);
     base.el = el;
@@ -182,7 +179,7 @@
             defaultPlaybackRate: 1,
           });
       } catch (e) {
-        throw new Error(NOT_IMPLEMENTED_MSG);
+        console.log( 'error' );
       }
 
       // Size the video accordingly to its container
