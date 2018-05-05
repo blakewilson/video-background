@@ -9,17 +9,17 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+  exit;
 }
 
 if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
-	/**
-	 * WP Bakery Integration
-	 *
-	 * @package Video Background/Video Background Pro
-	 * @author Push Labs
-	 * @version 1.0.0
-	 */
+  /**
+   * WP Bakery Integration
+   *
+   * @package Video Background/Video Background Pro
+   * @author Push Labs
+   * @version 1.0.0
+   */
   class Vidbg_WPBakery {
 
     // Class' properties
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
         ),
       );
 
-			$attributes = apply_filters( 'vidbg_wpbakery_fields', $attributes );
+      $attributes = apply_filters( 'vidbg_wpbakery_fields', $attributes );
 
       // Add the params to the VC row
       vc_add_params( 'vc_row', $attributes );
@@ -177,10 +177,10 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       // Get the Video Background attributes in the VC Row
       $this->get_vidbg_attributes();
 
-			// Debug Visual Composer row attributes
+      // Debug Visual Composer row attributes
       // var_dump( $this->vc_row_atts );
 
-			// Debug Video Background Attributes from VC Row
+      // Debug Video Background Attributes from VC Row
       // var_dump( $this->vidbg_atts );
 
       if ( array_key_exists( 'muted', $this->vidbg_atts ) ) {
@@ -191,7 +191,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
         $this->vidbg_atts['loop'] = $this->vidbg_atts['loop'] === 'false' ? 'true' : 'false';
       }
 
-			$this->vidbg_atts = apply_filters( 'vidbg_sanitize_wpbakery_fields', $this->vidbg_atts );
+      $this->vidbg_atts = apply_filters( 'vidbg_sanitize_wpbakery_fields', $this->vidbg_atts );
 
       // Create our container selector
       $unique_class = vidbg_create_unique_ref();
