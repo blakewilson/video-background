@@ -13,6 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
+	/**
+	 * WP Bakery Integration
+	 *
+	 * @package Video Background/Video Background Pro
+	 * @author Push Labs
+	 * @version 1.0.0
+	 */
   class Vidbg_WPBakery {
 
     // Class' properties

@@ -13,6 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
+	/**
+	 * SiteOrigin Page Builder Integration
+	 *
+	 * @package Video Background/Video Background Pro
+	 * @author Push Labs
+	 * @version 1.0.0
+	 */
   class Vidbg_SiteOrigin {
 
     // Class' properties
@@ -115,6 +122,8 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
         'group'       => $this->group_name,
         'priority'    => $priority++,
       );
+
+			$attributes = apply_filters( 'vidbg_siteorigin_fields', $attributes );
 
       return $fields;
     }
