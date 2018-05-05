@@ -123,7 +123,7 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
         'priority'    => $priority++,
       );
 
-			$attributes = apply_filters( 'vidbg_siteorigin_fields', $attributes );
+			$fields = apply_filters( 'vidbg_siteorigin_fields', $fields );
 
       return $fields;
     }
