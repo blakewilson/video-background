@@ -53,6 +53,34 @@ function vidbg_update_message( $data, $response ) {
 add_action( 'in_plugin_update_message-video-background/candide-vidbg.php', 'vidbg_update_message', 10, 2 );
 
 /**
+ * Determines if VC integration should be added
+ *
+ * @since 2.2.0
+ *
+ * @return Boolean
+ */
+function vidbg_is_vc_enabled() {
+  $is_enabled = true;
+  $is_enabled = apply_filters( 'vidbg_is_vc_enabled', $is_enabled );
+
+  return $is_enabled;
+}
+
+/**
+ * Determines if SiteOrigin integration should be added
+ *
+ * @since 2.2.0
+ *
+ * @return Boolean
+ */
+function vidbg_is_siteorigin_enabled() {
+  $is_enabled = true;
+  $is_enabled = apply_filters( 'vidbg_is_siteorigin_enabled', $is_enabled );
+
+  return $is_enabled;
+}
+
+/**
  * Include the metabox framework
  */
 if ( file_exists( dirname( __FILE__ ) . '/inc/vendor/cmb2/init.php' ) ) {
@@ -65,13 +93,29 @@ if ( file_exists( dirname( __FILE__ ) . '/admin_premium_notice.php' ) ) {
   require_once dirname( __FILE__ ) . '/admin_premium_notice.php';
 }
 
-if ( class_exists( 'Vc_Manager' ) ) {
+/**
+ * Load the WPBakery (Visual Composer) integration if conditions are met
+ *
+ * @since 3.0.0
+ */
+function vidbg_load_vc_integration() {
+  if ( class_exists( 'Vc_Manager' ) && vidbg_is_vc_enabled() === true ) {
     require_once dirname( __FILE__ ) . '/inc/classes/vidbg_wpbakery.php';
+  }
 }
+add_action( 'after_setup_theme', 'vidbg_load_vc_integration' );
 
-if ( class_exists( 'SiteOrigin_Panels_Css_Builder' ) ) {
-  require_once dirname( __FILE__ ) . '/inc/classes/vidbg_siteorigin.php';
+/**
+ * Load the SiteOrigin Page Builder integration if conditions are met
+ *
+ * @since 3.0.0
+ */
+function vidbg_load_siteorigin_integration() {
+  if ( class_exists( 'SiteOrigin_Panels_Css_Builder' ) && vidbg_is_siteorigin_enabled() === true ) {
+    require_once dirname( __FILE__ ) . '/inc/classes/vidbg_siteorigin.php';
+  }
 }
+add_action( 'after_setup_theme', 'vidbg_load_siteorigin_integration' );
 
 /**
  * Load plugin textdomain.
