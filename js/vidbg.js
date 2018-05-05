@@ -280,8 +280,6 @@
     overlay: false, // The video overlay
     overlayColor: '#000', // The default overlay color if enabled
     overlayAlpha: '0.3', // The default overlay transparancy if enabled
-    hoverToUnmute: false, // The hover to unmute feature
-    hoverToUnmuteText: 'Hover to unmute', // The hover to unmute text
   };
 
   /**
@@ -291,7 +289,7 @@
    * @constructor
    */
   $.fn.vidbg = function(options){
-    
+
     return this.each( function() {
       // Create the plugin instance and reference
       var plugin = new $.vidbg( this, options );
