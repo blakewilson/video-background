@@ -41,21 +41,6 @@ function vidbg_install_plugin() {
 register_activation_hook( __FILE__, 'vidbg_install_plugin' );
 
 /**
- * Create function to see if WordPress version is 4.2 or higher
- *
- * @since 2.5.1
- */
-function vidbg_is_wp_version( $version = '4.2' ) {
-  global $wp_version;
-
-  if ( version_compare( $wp_version, $version, '>=' ) ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-/**
  * Display a notice if the update is important
  *
  * @since 3.0.0
