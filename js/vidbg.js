@@ -193,12 +193,9 @@
         playPromise.then(function() {
           console.log( 'Autoplay started, play promise succeeded' );
         }).catch(function(error) {
+          // The browser doesn't allow video backgrounds to be played with audio, show fallback
           console.log( 'Autoplay failed, play promise failed (due to audio being enabled)' );
           base.displayPoster( true );
-
-
-          // Automatic playback failed.
-          // Show a UI element to let the user manually start playback.
         });
       }
 
