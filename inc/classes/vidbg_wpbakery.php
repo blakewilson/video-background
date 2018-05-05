@@ -191,9 +191,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
         $this->vidbg_atts['loop'] = $this->vidbg_atts['loop'] === 'false' ? 'true' : 'false';
       }
 
-			if( function_exists('vidbgpro_wpbakery_atts_check') ) {
-				$this->vidbg_atts = vidbgpro_wpbakery_atts_check();
-			}
+			$this->vidbg_atts = apply_filters( 'vidbg_sanitize_wpbakery_fields', $this->vidbg_atts );
 
       // Create our container selector
       $unique_class = vidbg_create_unique_ref();
