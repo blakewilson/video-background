@@ -280,15 +280,8 @@
     overlay: false, // The video overlay
     overlayColor: '#000', // The default overlay color if enabled
     overlayAlpha: '0.3', // The default overlay transparancy if enabled
-  };
-
-  /**
-   * An object for keeping track of instances
-   * @public
-   * @type {Object}
-   */
-  $.vidbg.instanceCollection = {
-    instance: []
+    hoverToUnmute: false, // The hover to unmute feature
+    hoverToUnmuteText: 'Hover to unmute', // The hover to unmute text
   };
 
   /**
@@ -298,35 +291,18 @@
    * @constructor
    */
   $.fn.vidbg = function(options){
-    return this.each(function(){
-      // Get the plugin data
-      var instance = $.data( this, 'vidbg' );
+    
+    return this.each( function() {
+      // Create the plugin instance and reference
+      var plugin = new $.vidbg( this, options );
+      $( this ).data( 'vidbg', plugin );
 
-      // Create the instance
-      instance = new $.vidbg( this, options );
-      instance.index = $.vidbg.instanceCollection.instance.push( instance ) - 1;
-      $.data( this, 'vidbg', instance );
+      // If window is resized, resize the plugin instance
+      $( window ).resize( function() {
+        plugin.resize();
+      })
     });
+
   };
-
-  /**
-   * Our Ready function
-   * Resize will go here for each instance
-   */
-  $( document ).ready( function() {
-    var $window = $(window);
-
-    // Resize the video backgrounds
-    $window.on( 'resize.vidbg', function() {
-      for ( var len = $.vidbg.instanceCollection.instance.length, i = 0, instance; i < len; i++ ) {
-        instance = $.vidbg.instanceCollection.instance[i];
-
-        if ( instance ) {
-          instance.resize();
-        }
-      }
-    });
-
-  });
 
 })(jQuery);
