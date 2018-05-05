@@ -189,7 +189,13 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
       $this->vidbg_atts = apply_filters( 'vidbg_sanitize_siteorigin_fields', $this->vidbg_atts );
 
       // Create our container selector
-      $unique_class = vidbg_create_unique_ref();
+      // Check if plugin is Video Background Pro or Video Background
+      if ( function_exists( 'vidbgpro_create_unique_ref' ) ) {
+        $unique_class = vidbgpro_create_unique_ref();
+      } else {
+        $unique_class = vidbg_create_unique_ref();
+      }
+
       $row_class = $unique_class . '-row';
       $container_class = $unique_class . '-container';
 
@@ -219,7 +225,12 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
       wp_add_inline_script( 'vidbg-video-background', $add_container_to_row );
 
       // Construct the shortcode with our attributes
-      $shortcode = vidbg_construct_shortcode( $this->vidbg_atts );
+      // Check if plugin is Video Background Pro or Video Background
+      if ( function_exists( 'vidbgpro_construct_shortcode' ) ) {
+        $shortcode = vidbgpro_construct_shortcode( $this->vidbg_atts );
+      } else {
+        $shortcode = vidbg_construct_shortcode( $this->vidbg_atts );
+      }
 
       // Output the shortcode
       $output = do_shortcode( $shortcode );
