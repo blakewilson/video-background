@@ -55,7 +55,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'param_name'  => $this->prefix . 'mp4',
           'description' => __( 'Please specify the link to the .mp4 file.', 'video-background' ),
           'dependency'  => array(
-            'element' => 'type',
+            'element' => $this->prefix . 'type',
             'value'   => 'self-host',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
@@ -67,7 +67,7 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'param_name'  => $this->prefix . 'webm',
           'description' => __( 'Please specify the link to the .webm file.', 'video-background' ),
           'dependency'  => array(
-            'element' => 'type',
+            'element' => $this->prefix . 'type',
             'value'   => 'self-host',
           ),
           'group'       => __( 'Video Background', 'video-background' ),
@@ -125,16 +125,20 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
           'value'       => '0',
           'weight' => -70,
         ),
-        array(
+      );
+
+      // Only add tap to unmute if is not Video Background Pro
+      if ( ! function_exists( 'vidbgpro_install_plugin' ) ) {
+        $attributes[] = array(
           'type'        => 'checkbox',
-          'heading'     => __( 'Play the Audio?', 'video-background' ),
-          'param_name'  => $this->prefix . 'muted',
-          'description' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
+          'heading'     => __( 'Display "Tap to unmute" button?', 'video-background' ),
+          'param_name'  => $this->prefix . 'tap_to_unmute',
+          'description' => __( 'Allow your users to interact with the sound of the video background.', 'video-background' ),
           'group'       => __( 'Video Background', 'video-background' ),
           'value'       => '0',
           'weight' => -80,
-        ),
-      );
+        );
+      }
 
       $attributes = apply_filters( 'vidbg_wpbakery_fields', $attributes );
 
@@ -188,13 +192,6 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       // Debug Visual Composer row attributes
       // var_dump( $this->vc_row_atts );
 
-      // Debug Video Background Attributes from VC Row
-      // var_dump( $this->vidbg_atts );
-
-      if ( array_key_exists( 'muted', $this->vidbg_atts ) ) {
-        $this->vidbg_atts['muted'] = $this->vidbg_atts['muted'] === 'false' ? 'true' : 'false';
-      }
-
       if ( array_key_exists( 'loop', $this->vidbg_atts ) ) {
         $this->vidbg_atts['loop'] = $this->vidbg_atts['loop'] === 'false' ? 'true' : 'false';
       }
@@ -217,6 +214,9 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       // Add our source to the shortcode atts array
       $this->vidbg_atts['source'] = 'WPBakery Integration';
 
+      // Use to test the attributes created for $vidbg_atts
+      // var_dump( $this->vidbg_atts );
+
       // Our jQuery code to add the container class to the container so we can target the VC Row
       $add_container_to_row = "
         jQuery(function($){
@@ -224,8 +224,14 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
         });
       ";
 
+      if ( function_exists( 'vidbgpro_install_plugin' ) ) {
+        $script_handle = 'vidbgpro';
+      } else {
+        $script_handle = 'vidbg-video-background';
+      }
+
       // Add our "container to row" script
-      wp_add_inline_script( 'vidbg-video-background', $add_container_to_row );
+      wp_add_inline_script( $script_handle, $add_container_to_row );
 
       // Construct the shortcode with our attributes
       // Check if plugin is Video Background Pro or Video Background

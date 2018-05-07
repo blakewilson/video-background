@@ -303,7 +303,7 @@
     webm: '#', // The webm link if type is set to self-host
     poster: '#', // The fallback image if on mobile
     mute: true, // Video mute (Depreciated due to autoplay restrictions)
-    tapToUnmute: true, // Tap to Unmute button
+    tapToUnmute: false, // Tap to Unmute button
     tapToUnmuteText: 'Tap to unmute', // Tap to unmute text
     repeat: true, // Video loop
     overlay: false, // The video overlay

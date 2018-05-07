@@ -62,68 +62,77 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
      * @since 2.7.0
      */
     public function register_fields( $fields ) {
-      $priority = 5;
 
       $fields[$this->prefix . 'mp4'] = array(
         'name'        => __( 'Link to .mp4', 'video-background' ),
         'type'        => 'url',
         'description' => __( 'Please specify the link to the .mp4 file.', 'video-background' ),
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 10,
       );
+
       $fields[$this->prefix . 'webm'] = array(
         'type'        => 'url',
         'name'        => __( 'Link to .webm', 'video-background' ),
         'description' => __( 'Please specify the link to the .webm file.', 'video-background' ),
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 20,
       );
+
       $fields[$this->prefix . 'poster'] = array(
         'type'        => 'image',
         'name'        => __( 'Fallback Image', 'video-background' ),
         'description' => __( 'Please upload a fallback image.', 'video-background' ),
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 30,
       );
+
       $fields[$this->prefix . 'overlay'] = array(
         'type'        => 'checkbox',
         'name'        => __( 'Enable Overlay?', 'video-background' ),
         'description' => __( 'Add an overlay over the video. This is useful if your text isn\'t readable with a video background.', 'video-background' ),
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 40,
       );
+
       $fields[$this->prefix . 'overlay_color'] = array(
         'type'        => 'color',
         'name'        => __( 'Overlay Color', 'video-background' ),
         'description' => __( 'If overlay is enabled, a color will be used for the overlay. You can specify the color here.', 'video-background' ),
         'default'     => '#000',
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 50,
       );
+
       $fields[$this->prefix . 'overlay_alpha'] = array(
         'type'        => 'text',
         'name'        => __( 'Overlay Opacity', 'video-background' ),
         'description' => __( 'Specify the opacity of the overlay. Accepts any value between 0.00-1.00 with 0 being completely transparent and 1 being completely invisible. Ex. 0.30', 'video-background' ),
         'default'     => '0.3',
         'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 60,
       );
+
       $fields[$this->prefix . 'loop'] = array(
         'type'        => 'checkbox',
         'name'        => __( 'Disable Loop?', 'video-background' ),
         'description' => __( 'Turn off the loop for Video Background. Once the video is complete, it will display the last frame of the video.', 'video-background' ),
         'group'       => $this->group_name,
-        'priority'    => $priority++,
-      );
-      $fields[$this->prefix . 'muted'] = array(
-        'type'        => 'checkbox',
-        'name'        => __( 'Play the Audio?', 'video-background' ),
-        'description' => __( 'Enabling this will play the audio of the video.', 'video-background' ),
-        'group'       => $this->group_name,
-        'priority'    => $priority++,
+        'priority'    => 70,
       );
 
-  $fields = apply_filters( 'vidbg_siteorigin_fields', $fields );
+      // Only add tap to unmute if is not Video Background Pro
+      if ( ! function_exists( 'vidbgpro_install_plugin' ) ) {
+        $fields[$this->prefix . 'tap_to_unmute'] = array(
+          'type'        => 'checkbox',
+          'name'        => __( 'Display "Tap to unmute" button?', 'video-background' ),
+          'description' => __( 'Allow your users to interact with the sound of the video background.', 'video-background' ),
+          'group'       => $this->group_name,
+          'priority'    => 80,
+        );
+      }
+
+      $fields = apply_filters( 'vidbg_siteorigin_fields', $fields );
 
       return $fields;
     }
@@ -221,8 +230,14 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
       });
       ";
 
+      if ( function_exists( 'vidbgpro_install_plugin' ) ) {
+        $script_handle = 'vidbgpro';
+      } else {
+        $script_handle = 'vidbg-video-background';
+      }
+
       // Add our "container to row" script
-      wp_add_inline_script( 'vidbg-video-background', $add_container_to_row );
+      wp_add_inline_script( $script_handle, $add_container_to_row );
 
       // Construct the shortcode with our attributes
       // Check if plugin is Video Background Pro or Video Background
