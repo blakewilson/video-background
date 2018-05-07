@@ -519,7 +519,7 @@ function vidbg_add_gettingstarted() {
     'Video Background',
     'Video Background',
     'manage_options',
-    'html5-vidbg',
+    'pushlabs-vidbg',
     'vidbg_gettingstarted_page'
   );
 }
@@ -574,7 +574,7 @@ function vidbg_gettingstarted_page() {
  * @uses __()
  */
 function vidbg_gettingstarted_link($links) {
-  $gettingstarted_link = __( '<a href="options-general.php?page=html5-vidbg">Getting Started</a>', 'video-background' );
+  $gettingstarted_link = __( '<a href="options-general.php?page=pushlabs-vidbg">Getting Started</a>', 'video-background' );
   array_unshift($links, $gettingstarted_link);
   return $links;
 }
