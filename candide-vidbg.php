@@ -521,6 +521,10 @@ function candide_video_background( $atts , $content = null ) {
       )
     );
 
+    $tap_to_unmute_text = __( 'Tap to Unmute', 'video-background' );
+    $tap_to_unmute_text = apply_filters( 'vidbg_tap_to_unmute_text', $tap_to_unmute_text );
+    $tap_to_unmute = '<img src="' . plugins_url( 'img/volume-icon.svg', __FILE__ ) . '" width="20" height="20" /><span>' . $tap_to_unmute_text . '</span>';
+
     $output = "
       jQuery(function($){
         // Source: " . $source . "
@@ -533,6 +537,7 @@ function candide_video_background( $atts , $content = null ) {
           overlay: " . $overlay . ",
           overlayColor: '" . $overlay_color . "',
           overlayAlpha: '" . $overlay_alpha . "',
+          tapToUnmuteText: '" . $tap_to_unmute . "',
         });
       });
     ";

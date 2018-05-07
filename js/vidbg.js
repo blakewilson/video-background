@@ -51,6 +51,9 @@
       // Display our self hosted video if applicable
       base.selfHostVideo();
 
+      //
+      base.tapToUnmute();
+
       // Add our overlay to be initialized
       base.overlay();
     };
@@ -120,8 +123,35 @@
 
       // Add the vidbg overlay to the container
       $container.append( $overlay );
-
     };
+
+    /**
+     * The function to display the tap to unmute button
+     * @public
+     */
+    base.tapToUnmute = function() {
+
+      // If the tap to unmute option is disabled, quit.
+      if ( base.options.tapToUnmute === false ) {
+        return;
+      }
+
+      // Create the tap to unmute button
+      var $tapToUnmuteButton = base.$tapToUnmuteButton = $( '<div class="vidbg-tap-to-unmute">' + base.options.tapToUnmuteText + '</div>' );
+
+      // On click unmute the video and remove the button
+      $tapToUnmuteButton.on( 'click', function( event ) {
+        event.preventDefault();
+
+        base.$selfHostVideo.prop( 'muted', false );
+
+        this.remove();
+      });
+
+      // Add the tap to unmute button to the element
+      // The button is added outside the .vidbg-container due to the negative z-index.
+      base.$el.append( $tapToUnmuteButton );
+    }
 
     /**
      * The function to display the poster fallback
@@ -191,10 +221,10 @@
 
       if (playPromise !== undefined) {
         playPromise.then(function() {
-          console.log( 'Autoplay started, play promise succeeded' );
+          // Autoplay succeed
         }).catch(function(error) {
           // The browser doesn't allow video backgrounds to be played with audio, show fallback
-          console.log( 'Autoplay failed, play promise failed (due to audio being enabled)' );
+          // Autoplay failed
           base.displayPoster( true );
         });
       }
@@ -272,7 +302,9 @@
     mp4: '#', // The mp4 link if type is set to self-host
     webm: '#', // The webm link if type is set to self-host
     poster: '#', // The fallback image if on mobile
-    mute: true, // Video mute
+    mute: true, // Video mute (Depreciated due to autoplay restrictions)
+    tapToUnmute: true, // Tap to Unmute button
+    tapToUnmuteText: 'Tap to unmute', // Tap to unmute text
     repeat: true, // Video loop
     overlay: false, // The video overlay
     overlayColor: '#000', // The default overlay color if enabled

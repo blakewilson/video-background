@@ -73,6 +73,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"\/img\/volume-icon.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/volume-icon.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/inc\/classes\/cmb2_field_slider.php": {
 		"cB": 0,
 		"ft": 8192,
