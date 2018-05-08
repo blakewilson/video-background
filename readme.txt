@@ -88,6 +88,9 @@ To add a video background to a class called **header** add ".header" to the cont
 * Added: You can now add a video background to your WPBakery (Visual Composer) row!
 * Added: You can now add a video background to your SiteOrigin Page Builder row!
 * Added: vidbg_update_message() to let users know of crucial updates
+* Removed: vidbg_is_wp_version()
+* Removed: Pesky Video Background Pro fields
+* Updated: Settings page slug
 * Fixed: Simplified the plugin's resize methods.
 * Added: As a result of recent browser autoplay policy changes, the default audio on option has been removed. Now, you can add a nice "Tap to unmute" button to the video background!
 
