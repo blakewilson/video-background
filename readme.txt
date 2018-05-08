@@ -1,9 +1,9 @@
 === Plugin Name ===
 Contributors: blakedotvegas, pushlabs
 Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
-Requires at least: 4.2
+Requires at least: 4.5
 Tested up to: 4.9.5
-Stable tag: 3.0.0
+Stable tag: 2.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ There are also 5 additional optional fields for having a more beautiful video ba
 *   Overlay Color: If overlay is enabled, you can select the color of the overlay using the colorpicker.
 *   Overlay Alpha: If overlay is enabled, you can specify the amount of transparency.
 *   Loop: Enable or disable the looping of the video background
-*   Mute: toggle the video background audio
+*   Tap to unmute: Add a "Tap to unmute" button to your video backgrounds to have your users engage with the sound. Compatible with Chrome's newest autoplay policies!
 
 In addition to the Video Background metabox, WPBakery integration, and SiteOrigin Page Builder integration, you can use the shortcode for use anywhere on your Wordpress site:
 ```
@@ -74,10 +74,6 @@ This can be an issue with the file size of the video you are uploading. Make sur
 
 To add a video background to a class called **header** add ".header" to the container field. (without the quotes)
 
-= The Video Background Pro fields are annoying, can I get rid of them? =
-
-You sure can! Simply go to the "Settings > Video Background" menu tab and check the "Hide Muted Pro Fields" checkbox.
-
 == Screenshots ==
 
 1. 4 fields? That’s it? Yep, simply enter in the element you’d like the video background to be in and key in the paths to the video and fallback image. Awesome.
@@ -88,12 +84,12 @@ You sure can! Simply go to the "Settings > Video Background" menu tab and check 
 
 == Changelog ==
 
-= 3.0.0 =
+= 2.7.0 =
 * Added: You can now add a video background to your WPBakery (Visual Composer) row!
 * Added: You can now add a video background to your SiteOrigin Page Builder row!
 * Added: vidbg_update_message() to let users know of crucial updates
-* Added: Play promise for browsers that check for a promise with autoplay videos with audio. If the promise fails, Video Background will show the fallback image.
 * Fixed: Simplified the plugin's resize methods.
+* Added: As a result of recent browser autoplay policy changes, the default audio on option has been removed. Now, you can add a nice "Tap to unmute" button to the video background!
 
 = 2.6.3 =
 * Fixed: ability to display just fallback image.

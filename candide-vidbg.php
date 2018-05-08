@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: https://pushlabs.co/documentation/video-background
 Description: WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Push Labs
-Version: 3.0.0
+Version: 2.7.0
 Author URI: https://pushlabs.co
 Text Domain: video-background
 Domain Path: /languages
@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'VIDBG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'VIDBG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
-define( 'VIDBG_PLUGIN_VERSION', '3.0.0' );
+define( 'VIDBG_PLUGIN_VERSION', '2.7.0' );
 
 /**
  * Install the plugin
@@ -370,7 +370,7 @@ function vidbg_register_metabox() {
 
   $vidbg_metabox->add_field( array(
     'name'    => __( 'Display "Tap to unmute" button?', 'video-background' ),
-    'desc'    => __( 'Allow your users to interact with the sound of the video background. <a href="#">Learn how to change this text.</a>', 'video-background' ),
+    'desc'    => __( 'Allow your users to interact with the sound of the video background. <a href="https://pushlabs.co/docs/video-background/#tap-to-unmute-text" target="_blank">Learn how to change this text.</a>', 'video-background' ),
     'id'      => $prefix . 'tap_to_unmute',
     'type'    => 'radio_inline',
     'default' => 'off',
