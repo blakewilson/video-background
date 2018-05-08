@@ -10,9 +10,6 @@
     // to reference this class from internal events and functions.
     var base = this;
 
-    // Not implemented message
-    var NOT_IMPLEMENTED_MSG = 'Not implemented';
-
     // Access to jQuery and DOM versions of element
     base.$el = $(el);
     base.el = el;
@@ -53,6 +50,9 @@
 
       // Display our self hosted video if applicable
       base.selfHostVideo();
+
+      //
+      base.tapToUnmute();
 
       // Add our overlay to be initialized
       base.overlay();
@@ -123,19 +123,51 @@
 
       // Add the vidbg overlay to the container
       $container.append( $overlay );
-
     };
+
+    /**
+     * The function to display the tap to unmute button
+     * @public
+     */
+    base.tapToUnmute = function() {
+
+      // If the tap to unmute option is disabled, quit.
+      if ( base.options.tapToUnmute === false ) {
+        return;
+      }
+
+      // Create the tap to unmute button
+      var $tapToUnmuteButton = base.$tapToUnmuteButton = $( '<div class="vidbg-tap-to-unmute">' + base.options.tapToUnmuteText + '</div>' );
+
+      // On click unmute the video and remove the button
+      $tapToUnmuteButton.on( 'click', function( event ) {
+        event.preventDefault();
+
+        base.$selfHostVideo.prop( 'muted', false );
+
+        this.remove();
+      });
+
+      // Add the tap to unmute button to the element
+      // The button is added outside the .vidbg-container due to the negative z-index.
+      base.$el.append( $tapToUnmuteButton );
+    }
 
     /**
      * The function to display the poster fallback
      * @public
      */
-    base.displayPoster = function() {
+    base.displayPoster = function( forcePoster ) {
       // Declare our variables
       var $container = base.$container;
 
       if ( base.options.poster === '#' ) {
         return;
+      }
+
+      // If the forcePoster param is set to true, force the container
+      if ( forcePoster === true ) {
+        $container.css( 'background-image', 'url(' + base.options.poster + ')' );
       }
 
       // If VB is mobile, display the poster image
@@ -182,7 +214,19 @@
             defaultPlaybackRate: 1,
           });
       } catch (e) {
-        throw new Error(NOT_IMPLEMENTED_MSG);
+        console.log( 'error' );
+      }
+
+      var playPromise = $selfHostVideo.get(0).play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(function() {
+          // Autoplay succeed
+        }).catch(function(error) {
+          // The browser doesn't allow video backgrounds to be played with audio, show fallback
+          // Autoplay failed
+          base.displayPoster( true );
+        });
       }
 
       // Size the video accordingly to its container
@@ -258,20 +302,13 @@
     mp4: '#', // The mp4 link if type is set to self-host
     webm: '#', // The webm link if type is set to self-host
     poster: '#', // The fallback image if on mobile
-    mute: true, // Video mute
+    mute: true, // Video mute (Depreciated due to autoplay restrictions)
+    tapToUnmute: false, // Tap to Unmute button
+    tapToUnmuteText: 'Tap to unmute', // Tap to unmute text
     repeat: true, // Video loop
     overlay: false, // The video overlay
     overlayColor: '#000', // The default overlay color if enabled
     overlayAlpha: '0.3', // The default overlay transparancy if enabled
-  };
-
-  /**
-   * An object for keeping track of instances
-   * @public
-   * @type {Object}
-   */
-  $.vidbg.instanceCollection = {
-    instance: []
   };
 
   /**
@@ -281,35 +318,18 @@
    * @constructor
    */
   $.fn.vidbg = function(options){
-    return this.each(function(){
-      // Get the plugin data
-      var instance = $.data( this, 'vidbg' );
 
-      // Create the instance
-      instance = new $.vidbg( this, options );
-      instance.index = $.vidbg.instanceCollection.instance.push( instance ) - 1;
-      $.data( this, 'vidbg', instance );
+    return this.each( function() {
+      // Create the plugin instance and reference
+      var plugin = new $.vidbg( this, options );
+      $( this ).data( 'vidbg', plugin );
+
+      // If window is resized, resize the plugin instance
+      $( window ).resize( function() {
+        plugin.resize();
+      })
     });
+
   };
-
-  /**
-   * Our Ready function
-   * Resize will go here for each instance
-   */
-  $( document ).ready( function() {
-    var $window = $(window);
-
-    // Resize the video backgrounds
-    $window.on( 'resize.vidbg', function() {
-      for ( var len = $.vidbg.instanceCollection.instance.length, i = 0, instance; i < len; i++ ) {
-        instance = $.vidbg.instanceCollection.instance[i];
-
-        if ( instance ) {
-          instance.resize();
-        }
-      }
-    });
-
-  });
 
 })(jQuery);

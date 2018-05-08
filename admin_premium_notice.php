@@ -7,13 +7,13 @@
  * @uses get_option()
  */
 function vidbg_premium_notice() {
-	$class = 'notice notice-success vidbg-premium-notice is-dismissible';
-	$message = __( 'Video Background Pro now plays video backgrounds on supported mobile devices! <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">Check out Video Background Pro</a>', 'video-background' );
-	$is_dismissed = get_option( 'vidbgpro-notice-dismissed' );
+  $class = 'notice notice-success vidbg-premium-notice is-dismissible';
+  $message = __( 'Video Background Pro now plays video backgrounds on supported mobile devices! <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">Check out Video Background Pro</a>', 'video-background' );
+  $is_dismissed = get_option( 'vidbgpro-notice-dismissed' );
 
-	if( empty( $is_dismissed ) ) {
-		printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
-	}
+  if( empty( $is_dismissed ) ) {
+    printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message );
+  }
 }
 add_action( 'admin_notices', 'vidbg_premium_notice' );
 
@@ -25,7 +25,7 @@ add_action( 'admin_notices', 'vidbg_premium_notice' );
  * @uses update_option()
  */
 function vidbg_dismiss_premium_notice() {
-	update_option( 'vidbgpro-notice-dismissed', 1 );
+  update_option( 'vidbgpro-notice-dismissed', 1 );
 }
 add_action( 'wp_ajax_vidbg_dismiss_premium_notice', 'vidbg_dismiss_premium_notice' );
 ?>

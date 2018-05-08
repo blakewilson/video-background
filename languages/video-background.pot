@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Video Background\n"
-"POT-Creation-Date: 2017-09-26 15:18-0700\n"
+"POT-Creation-Date: 2018-05-07 21:30-0700\n"
 "PO-Revision-Date: 2016-03-30 22:31-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -27,355 +27,293 @@ msgid ""
 "\" target=\"_blank\">Check out Video Background Pro</a>"
 msgstr ""
 
-#: candide-vidbg.php:100
+#: candide-vidbg.php:149
 msgid "Show Advanced Options"
 msgstr ""
 
-#: candide-vidbg.php:101
+#: candide-vidbg.php:150
 msgid "Hide Advanced Options"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-#: candide-vidbg.php:236
+#: candide-vidbg.php:285 inc/classes/vidbg_siteorigin.php:53
+#: inc/classes/vidbg_wpbakery.php:61 inc/classes/vidbg_wpbakery.php:73
+#: inc/classes/vidbg_wpbakery.php:81 inc/classes/vidbg_wpbakery.php:89
+#: inc/classes/vidbg_wpbakery.php:103 inc/classes/vidbg_wpbakery.php:116
+#: inc/classes/vidbg_wpbakery.php:124 inc/classes/vidbg_wpbakery.php:137
 msgid "Video Background"
 msgstr ""
 
-#: candide-vidbg.php:243
+#: candide-vidbg.php:292
 msgid "Container"
 msgstr ""
 
-#: candide-vidbg.php:244
+#: candide-vidbg.php:293
 msgid ""
-"Please specify the container you would like your video background to be in."
-"<br>ex: <code>.header</code> or <code>body</code>"
+"Please specify the container you would like your video background to be in. "
+"<a href=\"https://pushlabs.co/docs/video-background/#finding-your-container"
+"\" target=\"_blank\">Learn how to find your container.</a>"
 msgstr ""
 
-#: candide-vidbg.php:248
-msgid "YouTube Link"
-msgstr ""
-
-#: candide-vidbg.php:251
-msgid ""
-"To create YouTube video backgrounds, <a href=\"http://pushlabs.co/video-"
-"background-pro\" rel=\"nofollow\" target=\"_blank\">please download the pro "
-"version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:253
-msgid "YouTube Start Second"
-msgstr ""
-
-#: candide-vidbg.php:256
-msgid ""
-"To use the YouTube Start Second feature, <a href=\"http://pushlabs.co/video-"
-"background-pro\" rel=\"nofollow\" target=\"_blank\">please download the pro "
-"version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:258
-msgid "YouTube End Second"
-msgstr ""
-
-#: candide-vidbg.php:261
-msgid ""
-"To use the YouTube End Second feature, <a href=\"http://pushlabs.co/video-"
-"background-pro\" rel=\"nofollow\" target=\"_blank\">please download the pro "
-"version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:266
+#: candide-vidbg.php:299 inc/classes/vidbg_siteorigin.php:67
+#: inc/classes/vidbg_wpbakery.php:54
 msgid "Link to .mp4"
 msgstr ""
 
-#: candide-vidbg.php:267
+#: candide-vidbg.php:300
 msgid ""
 "Please specify the link to the .mp4 file. You can either enter a URL or "
 "upload a file.<br>For browser compatability, please enter an .mp4 and .webm "
 "file for video backgrounds."
 msgstr ""
 
-#: candide-vidbg.php:271
+#: candide-vidbg.php:304
 msgid "Upload .mp4 file"
 msgstr ""
 
-#: candide-vidbg.php:276
+#: candide-vidbg.php:309 inc/classes/vidbg_siteorigin.php:76
+#: inc/classes/vidbg_wpbakery.php:66
 msgid "Link to .webm"
 msgstr ""
 
-#: candide-vidbg.php:277
+#: candide-vidbg.php:310
 msgid ""
 "Please specify the link to the .webm file. You can either enter a URL or "
 "upload a file.<br>For browser compatability, please enter an .mp4 and .webm "
 "file for video backgrounds."
 msgstr ""
 
-#: candide-vidbg.php:281
+#: candide-vidbg.php:314
 msgid "Upload .webm file"
 msgstr ""
 
-#: candide-vidbg.php:286
+#: candide-vidbg.php:319
 msgid "Link to fallback image"
 msgstr ""
 
-#: candide-vidbg.php:287
+#: candide-vidbg.php:320
 msgid ""
 "Please specify a link to the fallback image in case the browser does not "
 "support video backgrounds. You can either enter a URL or upload a file."
 msgstr ""
 
-#: candide-vidbg.php:291
+#: candide-vidbg.php:324
 msgid "Upload fallback image"
 msgstr ""
 
-#: candide-vidbg.php:296
+#: candide-vidbg.php:329
 msgid "Overlay"
 msgstr ""
 
-#: candide-vidbg.php:297
+#: candide-vidbg.php:330 inc/classes/vidbg_siteorigin.php:93
+#: inc/classes/vidbg_wpbakery.php:88
 msgid ""
 "Add an overlay over the video. This is useful if your text isn't readable "
 "with a video background."
 msgstr ""
 
-#: candide-vidbg.php:302 candide-vidbg.php:339 candide-vidbg.php:362
+#: candide-vidbg.php:335 candide-vidbg.php:366 candide-vidbg.php:378
 msgid "Off"
 msgstr ""
 
-#: candide-vidbg.php:303 candide-vidbg.php:340 candide-vidbg.php:363
+#: candide-vidbg.php:336 candide-vidbg.php:367 candide-vidbg.php:379
 msgid "On"
 msgstr ""
 
-#: candide-vidbg.php:309
+#: candide-vidbg.php:342 inc/classes/vidbg_siteorigin.php:100
+#: inc/classes/vidbg_wpbakery.php:95
 msgid "Overlay Color"
 msgstr ""
 
-#: candide-vidbg.php:310
+#: candide-vidbg.php:343 inc/classes/vidbg_siteorigin.php:101
+#: inc/classes/vidbg_wpbakery.php:98
 msgid ""
 "If overlay is enabled, a color will be used for the overlay. You can specify "
 "the color here."
 msgstr ""
 
-#: candide-vidbg.php:317
+#: candide-vidbg.php:350 inc/classes/vidbg_siteorigin.php:109
+#: inc/classes/vidbg_wpbakery.php:108
 msgid "Overlay Opacity"
 msgstr ""
 
-#: candide-vidbg.php:318
+#: candide-vidbg.php:351
 msgid ""
 "Specify the opacity of the overlay with the left being mostly transparent "
 "and the right being hardly transparent."
 msgstr ""
 
-#: candide-vidbg.php:325
-msgid "Overlay Texture"
-msgstr ""
-
-#: candide-vidbg.php:328
-msgid ""
-"To add overlay textures to your video background, <a href=\"http://pushlabs."
-"co/video-background-pro\" rel=\"nofollow\" target=\"_blank\">please download "
-"the pro version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:333
+#: candide-vidbg.php:360
 msgid "Turn off loop?"
 msgstr ""
 
-#: candide-vidbg.php:334
+#: candide-vidbg.php:361 inc/classes/vidbg_siteorigin.php:119
+#: inc/classes/vidbg_wpbakery.php:123
 msgid ""
 "Turn off the loop for Video Background. Once the video is complete, it will "
 "display the last frame of the video."
 msgstr ""
 
-#: candide-vidbg.php:343
-msgid "End video on fallback image?"
+#: candide-vidbg.php:372 inc/classes/vidbg_siteorigin.php:128
+#: inc/classes/vidbg_wpbakery.php:134
+msgid "Display \"Tap to unmute\" button?"
 msgstr ""
 
-#: candide-vidbg.php:346
+#: candide-vidbg.php:373
 msgid ""
-"To enable the end video on fallback image feature, <a href=\"http://pushlabs."
-"co/video-background-pro\" rel=\"nofollow\" target=\"_blank\">please download "
-"the pro version!</a>"
+"Allow your users to interact with the sound of the video background. <a href="
+"\"https://pushlabs.co/docs/video-background/#tap-to-unmute-text\" target="
+"\"_blank\">Learn how to change this text.</a>"
 msgstr ""
 
-#: candide-vidbg.php:348
-msgid "Enable CSS loader?"
-msgstr ""
-
-#: candide-vidbg.php:351
-msgid ""
-"To enable the CSS loader feature, <a href=\"http://pushlabs.co/video-"
-"background-pro\" rel=\"nofollow\" target=\"_blank\">please download the pro "
-"version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:356
-msgid "Play the audio?"
-msgstr ""
-
-#: candide-vidbg.php:357
-msgid "Enabling this will play the audio of the video."
-msgstr ""
-
-#: candide-vidbg.php:366
-msgid "Enable Play/Pause button"
-msgstr ""
-
-#: candide-vidbg.php:369
-msgid ""
-"To enable a play/pause button on the frontend, <a href=\"http://pushlabs.co/"
-"video-background-pro\" rel=\"nofollow\" target=\"_blank\">please download "
-"the pro version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:371
-msgid "Enable Mute/Unmute button"
-msgstr ""
-
-#: candide-vidbg.php:374
-msgid ""
-"To enable a mute/unmute button on the frontend, <a href=\"http://pushlabs.co/"
-"video-background-pro\" rel=\"nofollow\" target=\"_blank\">please download "
-"the pro version!</a>"
-msgstr ""
-
-#: candide-vidbg.php:379
+#: candide-vidbg.php:385
 msgid ""
 "<a href=\"#vidbg_advanced_options\" class=\"button vidbg-button advanced-"
 "options-button\">Show Advanced options</a>"
 msgstr ""
 
-#: candide-vidbg.php:530 candide-vidbg.php:537
-msgid "Hide Muted Pro Fields"
+#: candide-vidbg.php:482
+msgid "Tap to Unmute"
 msgstr ""
 
-#: candide-vidbg.php:575
-msgid ""
-"Okay, Okay, some of you don't want/need Video Background Pro. I get that. "
-"That's why you can hide the muted pro fields below :)"
-msgstr ""
-
-#: candide-vidbg.php:590
+#: candide-vidbg.php:540
 msgid "<h2>Video Background</h2>"
 msgstr ""
 
-#: candide-vidbg.php:591
+#: candide-vidbg.php:541
 msgid ""
 "<p>Video background makes it easy to add responsive, great looking video "
 "backgrounds to any element on your website.</p>"
 msgstr ""
 
-#: candide-vidbg.php:592
+#: candide-vidbg.php:542
 msgid "<h3>Getting Started</h3>"
 msgstr ""
 
-#: candide-vidbg.php:593
-msgid ""
-"<p>To implement Video Background on your website, please follow the "
-"instructions below."
+#: candide-vidbg.php:543
+msgid "<p>There are four ways to use Video Background"
 msgstr ""
 
-#: candide-vidbg.php:595
-msgid ""
-"<li>Edit the page or post you would like the video background to appear on.</"
-"li>"
+#: candide-vidbg.php:545
+msgid "<li>With the metabox</li>"
 msgstr ""
 
-#: candide-vidbg.php:596
-msgid ""
-"<li>Below the content editor, you should see a metabox titled <b>Video "
-"Background</b>. Enter the values for the required fields and publish/update "
-"the page.</li>"
+#: candide-vidbg.php:546
+msgid "<li>With the WPBakery (Visual Composer) integration</li>"
 msgstr ""
 
-#: candide-vidbg.php:597
-msgid "<li>Enjoy.</li>"
+#: candide-vidbg.php:547
+msgid "<li>With the SiteOrigin Page Builder integration</li>"
 msgstr ""
 
-#: candide-vidbg.php:599
-msgid ""
-"<p>Alternatively, you can use the shortcode by placing the following code at "
-"the bottom of the content editor of the page or post you would like the "
-"video background to appear on. Here is how it works:</p>"
+#: candide-vidbg.php:548
+msgid "<li>With the shortcode</li>"
 msgstr ""
 
-#: candide-vidbg.php:601
+#: candide-vidbg.php:550
 msgid ""
 "<a href=\"https://pushlabs.co/docs/video-background/\" class=\"button\" "
 "target=\"_blank\">Further Documentation</a>"
 msgstr ""
 
-#: candide-vidbg.php:602
+#: candide-vidbg.php:551
 msgid "<h3>Questions?</h3>"
 msgstr ""
 
-#: candide-vidbg.php:603
+#: candide-vidbg.php:552
 msgid ""
 "<p>If you have any feedback/questions regarding the plugin you can reach me "
 "<a href=\"https://wordpress.org/support/plugin/video-background\" target="
 "\"_blank\">here.</a>"
 msgstr ""
 
-#: candide-vidbg.php:604
+#: candide-vidbg.php:553
 msgid "<h3>Supporting the Plugin</h3>"
 msgstr ""
 
-#: candide-vidbg.php:605
+#: candide-vidbg.php:554
 msgid ""
 "<p>If you like Video Background and want to show your support, consider "
-"purchasing the <a href=\"http://pushlabs.co/video-background-pro\" rel="
-"\"nofollow\" target=\"_blank\">pro version</a>. It comes with plenty of "
-"helpful features that make your life easier like:</p>"
+"purchasing <a href=\"http://pushlabs.co/video-background-pro\" target="
+"\"_blank\">Video Background Pro</a>. It comes with plenty of helpful "
+"features that make your life easier like:</p>"
 msgstr ""
 
-#: candide-vidbg.php:607
+#: candide-vidbg.php:556
 msgid "<li>Mobile video background playback on supported browsers</li>"
 msgstr ""
 
-#: candide-vidbg.php:608
+#: candide-vidbg.php:557
 msgid "<li>YouTube Integration</li>"
 msgstr ""
 
-#: candide-vidbg.php:609
-msgid "<li>Visual Composer Integration</li>"
-msgstr ""
-
-#: candide-vidbg.php:610
-msgid "<li>Page Builder by SiteOrigin Integration</li>"
-msgstr ""
-
-#: candide-vidbg.php:611
+#: candide-vidbg.php:558
 msgid "<li>Frontend Play/Pause Button Option</li>"
 msgstr ""
 
-#: candide-vidbg.php:612
+#: candide-vidbg.php:559
 msgid "<li>Frontend Volume Button Option</li>"
 msgstr ""
 
-#: candide-vidbg.php:613
+#: candide-vidbg.php:560
 msgid "<li>Overlay Image Textures</li>"
 msgstr ""
 
-#: candide-vidbg.php:614
+#: candide-vidbg.php:561
 msgid "<li>Extensive Documentation</li>"
 msgstr ""
 
-#: candide-vidbg.php:615
+#: candide-vidbg.php:562
 msgid "<li>Video Tutorials</li>"
 msgstr ""
 
-#: candide-vidbg.php:616
+#: candide-vidbg.php:563
 msgid "<li>And Much More!</li>"
 msgstr ""
 
-#: candide-vidbg.php:618
+#: candide-vidbg.php:565
 msgid ""
 "<a href=\"http://pushlabs.co/video-background-pro\" class=\"button button-"
 "primary\" rel=\"nofollow\" target=\"_blank\">Learn More About Video "
 "Background Pro</a>"
 msgstr ""
 
-#: candide-vidbg.php:635
-msgid "<a href=\"options-general.php?page=html5-vidbg\">Getting Started</a>"
+#: candide-vidbg.php:577
+msgid "<a href=\"options-general.php?page=pushlabs-vidbg\">Getting Started</a>"
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:69 inc/classes/vidbg_wpbakery.php:56
+msgid "Please specify the link to the .mp4 file."
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:77 inc/classes/vidbg_wpbakery.php:68
+msgid "Please specify the link to the .webm file."
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:84 inc/classes/vidbg_wpbakery.php:78
+msgid "Fallback Image"
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:85 inc/classes/vidbg_wpbakery.php:80
+msgid "Please upload a fallback image."
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:92 inc/classes/vidbg_wpbakery.php:86
+msgid "Enable Overlay?"
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:110 inc/classes/vidbg_wpbakery.php:111
+msgid ""
+"Specify the opacity of the overlay. Accepts any value between 0.00-1.00 with "
+"0 being completely transparent and 1 being completely invisible. Ex. 0.30"
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:118 inc/classes/vidbg_wpbakery.php:121
+msgid "Disable Loop?"
+msgstr ""
+
+#: inc/classes/vidbg_siteorigin.php:129 inc/classes/vidbg_wpbakery.php:136
+msgid "Allow your users to interact with the sound of the video background."
 msgstr ""
 
 #: inc/vendor/cmb2/includes/CMB2.php:122

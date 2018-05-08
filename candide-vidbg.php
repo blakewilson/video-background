@@ -4,7 +4,7 @@ Plugin Name: Video Background
 Plugin URI: https://pushlabs.co/documentation/video-background
 Description: WordPress plugin to easily assign a video background to any element. Awesome.
 Author: Push Labs
-Version: 2.6.3
+Version: 2.7.0
 Author URI: https://pushlabs.co
 Text Domain: video-background
 Domain Path: /languages
@@ -19,7 +19,7 @@ if ( !defined( 'ABSPATH' ) ) {
 define( 'VIDBG_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'VIDBG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'VIDBG_PLUGIN_BASE', plugin_basename(__FILE__) );
-define( 'VIDBG_PLUGIN_VERSION', '2.6.3' );
+define( 'VIDBG_PLUGIN_VERSION', '2.7.0' );
 
 /**
  * Install the plugin
@@ -41,18 +41,43 @@ function vidbg_install_plugin() {
 register_activation_hook( __FILE__, 'vidbg_install_plugin' );
 
 /**
- * Create function to see if WordPress version is 4.2 or higher
+ * Display a notice if the update is important
  *
- * @since 2.5.1
+ * @since 3.0.0
  */
-function vidbg_is_wp_version( $version = '4.2' ) {
-  global $wp_version;
-
-  if ( version_compare( $wp_version, $version, '>=' ) ) {
-    return true;
-  } else {
-    return false;
+function vidbg_update_message( $data, $response ) {
+  if ( isset( $data['upgrade_notice'] ) ) {
+    printf( '<div class="vidbg-update-message">%s</div>', wpautop( $data['upgrade_notice'] ) );
   }
+}
+add_action( 'in_plugin_update_message-video-background/candide-vidbg.php', 'vidbg_update_message', 10, 2 );
+
+/**
+ * Determines if VC integration should be added
+ *
+ * @since 2.2.0
+ *
+ * @return Boolean
+ */
+function vidbg_is_vc_enabled() {
+  $is_enabled = true;
+  $is_enabled = apply_filters( 'vidbg_is_vc_enabled', $is_enabled );
+
+  return $is_enabled;
+}
+
+/**
+ * Determines if SiteOrigin integration should be added
+ *
+ * @since 2.2.0
+ *
+ * @return Boolean
+ */
+function vidbg_is_siteorigin_enabled() {
+  $is_enabled = true;
+  $is_enabled = apply_filters( 'vidbg_is_siteorigin_enabled', $is_enabled );
+
+  return $is_enabled;
 }
 
 /**
@@ -67,6 +92,30 @@ if ( file_exists( dirname( __FILE__ ) . '/inc/classes/cmb2_field_slider.php' ) )
 if ( file_exists( dirname( __FILE__ ) . '/admin_premium_notice.php' ) ) {
   require_once dirname( __FILE__ ) . '/admin_premium_notice.php';
 }
+
+/**
+ * Load the WPBakery (Visual Composer) integration if conditions are met
+ *
+ * @since 3.0.0
+ */
+function vidbg_load_vc_integration() {
+  if ( class_exists( 'Vc_Manager' ) && vidbg_is_vc_enabled() === true ) {
+    require_once dirname( __FILE__ ) . '/inc/classes/vidbg_wpbakery.php';
+  }
+}
+add_action( 'after_setup_theme', 'vidbg_load_vc_integration' );
+
+/**
+ * Load the SiteOrigin Page Builder integration if conditions are met
+ *
+ * @since 3.0.0
+ */
+function vidbg_load_siteorigin_integration() {
+  if ( class_exists( 'SiteOrigin_Panels_Css_Builder' ) && vidbg_is_siteorigin_enabled() === true ) {
+    require_once dirname( __FILE__ ) . '/inc/classes/vidbg_siteorigin.php';
+  }
+}
+add_action( 'after_setup_theme', 'vidbg_load_siteorigin_integration' );
 
 /**
  * Load plugin textdomain.
@@ -241,25 +290,9 @@ function vidbg_register_metabox() {
 
   $vidbg_metabox->add_field( array(
     'name' => __( 'Container', 'video-background' ),
-    'desc' => __( 'Please specify the container you would like your video background to be in.<br>ex: <code>.header</code> or <code>body</code>', 'video-background' ),
+    'desc' => __( 'Please specify the container you would like your video background to be in. <a href="https://pushlabs.co/docs/video-background/#finding-your-container" target="_blank">Learn how to find your container.</a>', 'video-background' ),
     'id'   => $prefix . 'container',
     'type' => 'text',
-    'after_row' => vidbg_disabled_pro_field(
-      __( 'YouTube Link', 'video-background' ),
-      'youtube_link',
-      'input',
-      __( 'To create YouTube video backgrounds, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ) . vidbg_disabled_pro_field(
-      __( 'YouTube Start Second', 'video-background' ),
-      'youtube_start',
-      'input',
-      __( 'To use the YouTube Start Second feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ) . vidbg_disabled_pro_field(
-      __( 'YouTube End Second', 'video-background' ),
-      'youtube_end',
-      'input',
-      __( 'To use the YouTube End Second feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ),
   ) );
 
   $vidbg_metabox->add_field( array(
@@ -321,12 +354,6 @@ function vidbg_register_metabox() {
     'min'     => '10',
     'max'     => '99',
     'default' => '30',
-    'after_row' => vidbg_disabled_pro_field(
-      __( 'Overlay Texture', 'video-background' ),
-      'overlay_texture',
-      'input',
-      __( 'To add overlay textures to your video background, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ),
   ) );
 
   $vidbg_metabox->add_field( array(
@@ -339,40 +366,19 @@ function vidbg_register_metabox() {
       'off' => __( 'Off', 'video-background' ),
       'on'  => __( 'On', 'video-background' ),
     ),
-    'after_row' => vidbg_disabled_pro_field(
-      __( 'End video on fallback image?', 'video-background' ),
-      'end_fallback',
-      'radio',
-      __( 'To enable the end video on fallback image feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ) . vidbg_disabled_pro_field(
-      __( 'Enable CSS loader?', 'video-background' ),
-      'enable_loader',
-      'radio',
-      __( 'To enable the CSS loader feature, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ),
   ) );
 
   $vidbg_metabox->add_field( array(
-    'name'      => __( 'Play the audio?', 'video-background' ),
-    'desc'      => __( 'Enabling this will play the audio of the video.', 'video-background' ),
-    'id'        => $prefix . 'unmute',
-    'type'      => 'radio_inline',
-    'default'   => 'off',
-    'options'   => array(
+    'name'    => __( 'Display "Tap to unmute" button?', 'video-background' ),
+    'desc'    => __( 'Allow your users to interact with the sound of the video background. <a href="https://pushlabs.co/docs/video-background/#tap-to-unmute-text" target="_blank">Learn how to change this text.</a>', 'video-background' ),
+    'id'      => $prefix . 'tap_to_unmute',
+    'type'    => 'radio_inline',
+    'default' => 'off',
+    'options' => array(
       'off' => __( 'Off', 'video-background' ),
       'on'  => __( 'On', 'video-background' ),
     ),
-    'after_row' => vidbg_disabled_pro_field(
-      __( 'Enable Play/Pause button', 'video-background' ),
-      'play_button',
-      'radio',
-      __( 'To enable a play/pause button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ) . vidbg_disabled_pro_field(
-      __( 'Enable Mute/Unmute button', 'video-background' ),
-      'volume_button',
-      'radio',
-      __( 'To enable a mute/unmute button on the frontend, <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">please download the pro version!</a>', 'video-background' )
-    ) . '</div>',
+    'after_row' => '</div>',
   ) );
 
   $vidbg_metabox->add_field( array(
@@ -414,7 +420,7 @@ function vidbg_initialize_footer() {
     $overlay_color_meta = get_post_meta( $the_id, $meta_prefix . 'overlay_color', true );
     $overlay_alpha_meta = get_post_meta( $the_id, $meta_prefix . 'overlay_alpha', true );
     $loop_meta = get_post_meta( $the_id, $meta_prefix . 'no_loop', true );
-    $mute_meta = get_post_meta( $the_id, $meta_prefix . 'unmute', true );
+    $tap_to_unmute_meta = get_post_meta( $the_id, $meta_prefix . 'tap_to_unmute', true );
 
     // If there is no container element, return.
     if( empty( $container_meta ) ) {
@@ -431,7 +437,7 @@ function vidbg_initialize_footer() {
       'overlay_color' => !empty( $overlay_color_meta ) ? $overlay_color_meta : '#000',
       'overlay_alpha' => !empty( $overlay_alpha_meta ) ? '0.' . $overlay_alpha_meta : '0.3',
       'loop' => ( $loop_meta == 'on' ) ? 'false' : 'true',
-      'muted' => ( $mute_meta == 'on' ) ? 'false' : 'true',
+      'tap_to_unmute' => ( $tap_to_unmute_meta == 'on' ) ? 'true' : 'false',
       'source' => 'Metabox',
     );
 
@@ -467,31 +473,37 @@ function candide_video_background( $atts , $content = null ) {
           'overlay' => 'false',
           'overlay_color' => '#000',
           'overlay_alpha' => '0.3',
+          'tap_to_unmute' => 'false',
           'source' => 'Shortcode',
         ), $atts , 'vidbg'
       )
     );
 
-    // Enqueue the vidbg script conditionally
-    wp_enqueue_script( 'vidbg-video-background' );
+    $tap_to_unmute_text = __( 'Tap to Unmute', 'video-background' );
+    $tap_to_unmute_text = apply_filters( 'vidbg_tap_to_unmute_text', $tap_to_unmute_text );
+    $tap_to_unmute_button = '<img src="' . plugins_url( 'img/volume-icon.svg', __FILE__ ) . '" width="20" height="20" /><span>' . $tap_to_unmute_text . '</span>';
 
-    $output = "<script>
+    $output = "
       jQuery(function($){
         // Source: " . $source . "
         $( '" . $container . "' ).vidbg( {
           mp4: '" . $mp4 . "',
           webm: '" . $webm . "',
           poster: '" . $poster . "',
-          mute: " . $muted . ",
           repeat: " . $loop . ",
           overlay: " . $overlay . ",
           overlayColor: '" . $overlay_color . "',
           overlayAlpha: '" . $overlay_alpha . "',
+          tapToUnmute: " . $tap_to_unmute . ",
+          tapToUnmuteText: '" . $tap_to_unmute_button . "',
         });
       });
-    </script>";
+    ";
 
-    return $output;
+    // Enqueue the vidbg script conditionally
+    wp_enqueue_script( 'vidbg-video-background' );
+    wp_add_inline_script( 'vidbg-video-background', $output );
+
 }
 add_shortcode( 'vidbg', 'candide_video_background' );
 
@@ -507,73 +519,11 @@ function vidbg_add_gettingstarted() {
     'Video Background',
     'Video Background',
     'manage_options',
-    'html5-vidbg',
+    'pushlabs-vidbg',
     'vidbg_gettingstarted_page'
   );
 }
 add_action( 'admin_menu', 'vidbg_add_gettingstarted' );
-
-/**
- * Creates Video Background plugin settings
- *
- * @since 2.5.4
- *
- * @uses register_setting()
- * @uses add_settings_section()
- * @uses add_settings_field()
- */
-function vidbg_register_settings() {
-  register_setting( 'vidbg_settings', 'vidbg_disable_pro_fields' );
-
-  add_settings_section(
-    'vidbg_vidbg_settings_section',
-    __( 'Hide Muted Pro Fields', 'video-background' ),
-    'vidbg_disable_pro_fields_section_callback',
-    'vidbg_settings'
-  );
-
-  add_settings_field(
-    'vidbg_checkbox_disable_pro_field',
-    __( 'Hide Muted Pro Fields', 'video-background' ),
-    'vidbg_checkbox_disable_pro_field_render',
-    'vidbg_settings',
-    'vidbg_vidbg_settings_section'
-  );
-}
-add_action( 'admin_init', 'vidbg_register_settings' );
-
-/**
- * Creats the checkbox callback for Video Background options
- *
- * @since 2.5.4
- *
- * @uses get_option()
- * @uses checked()
- */
-function vidbg_checkbox_disable_pro_field_render() {
-  $options = get_option( 'vidbg_disable_pro_fields' );
-
-  $output = '';
-  $check = '';
-  if ( $options ) {
-    $check = checked( $options['vidbg_checkbox_disable_pro_field'], 1, false );
-  }
-
-  $output .= '<input type="checkbox" name="vidbg_disable_pro_fields[vidbg_checkbox_disable_pro_field]" ' . $check . ' value="1">';
-
-  echo $output;
-}
-
-/**
- * Video Background plugin settings section callback
- *
- * @since 2.5.4
- *
- * @uses _e()
- */
-function vidbg_disable_pro_fields_section_callback() {
-  _e( 'Okay, Okay, some of you don\'t want/need Video Background Pro. I get that. That\'s why you can hide the muted pro fields below :)', 'video-background' );
-}
 
 /**
  * Getting started page content
@@ -590,24 +540,21 @@ function vidbg_gettingstarted_page() {
     _e( '<h2>Video Background</h2>', 'video-background' );
     _e( '<p>Video background makes it easy to add responsive, great looking video backgrounds to any element on your website.</p>', 'video-background' );
     _e( '<h3>Getting Started</h3>', 'video-background' );
-    _e( '<p>To implement Video Background on your website, please follow the instructions below.', 'video-background' );
+    _e( '<p>There are four ways to use Video Background', 'video-background' );
     echo '<ol>';
-      _e( '<li>Edit the page or post you would like the video background to appear on.</li>', 'video-background' );
-      _e( '<li>Below the content editor, you should see a metabox titled <b>Video Background</b>. Enter the values for the required fields and publish/update the page.</li>', 'video-background' );
-      _e( '<li>Enjoy.</li>', 'video-background' );
+      _e( '<li>With the metabox</li>', 'video-background' );
+      _e( '<li>With the WPBakery (Visual Composer) integration</li>', 'video-background' );
+      _e( '<li>With the SiteOrigin Page Builder integration</li>', 'video-background' );
+      _e( '<li>With the shortcode</li>', 'video-background' );
     echo '</ol>';
-    _e( '<p>Alternatively, you can use the shortcode by placing the following code at the bottom of the content editor of the page or post you would like the video background to appear on. Here is how it works:</p>', 'video-background' );
-    echo '<p><code>[vidbg container=&quot;body&quot; mp4=&quot;#&quot; webm=&quot;#&quot; poster=&quot;#&quot; loop=&quot;true&quot; overlay=&quot;false&quot; overlay_color=&quot;#000&quot; overlay_alpha=&quot;0.3&quot; muted=&quot;false&quot;]</code></p>';
     _e( '<a href="https://pushlabs.co/docs/video-background/" class="button" target="_blank">Further Documentation</a>', 'video-background' );
     _e( '<h3>Questions?</h3>', 'video-background' );
     _e( '<p>If you have any feedback/questions regarding the plugin you can reach me <a href="https://wordpress.org/support/plugin/video-background" target="_blank">here.</a>', 'video-background' );
     _e( '<h3>Supporting the Plugin</h3>', 'video-background' );
-    _e( '<p>If you like Video Background and want to show your support, consider purchasing the <a href="http://pushlabs.co/video-background-pro" rel="nofollow" target="_blank">pro version</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
+    _e( '<p>If you like Video Background and want to show your support, consider purchasing <a href="http://pushlabs.co/video-background-pro" target="_blank">Video Background Pro</a>. It comes with plenty of helpful features that make your life easier like:</p>', 'video-background' );
     echo '<ul>';
       _e( '<li>Mobile video background playback on supported browsers</li>', 'video-background' );
       _e( '<li>YouTube Integration</li>', 'video-background' );
-      _e( '<li>Visual Composer Integration</li>', 'video-background' );
-      _e( '<li>Page Builder by SiteOrigin Integration</li>', 'video-background' );
       _e( '<li>Frontend Play/Pause Button Option</li>', 'video-background' );
       _e( '<li>Frontend Volume Button Option</li>', 'video-background' );
       _e( '<li>Overlay Image Textures</li>', 'video-background' );
@@ -616,11 +563,6 @@ function vidbg_gettingstarted_page() {
       _e( '<li>And Much More!</li>', 'video-background' );
     echo '</ul>';
     _e( '<a href="http://pushlabs.co/video-background-pro" class="button button-primary" rel="nofollow" target="_blank">Learn More About Video Background Pro</a>', 'video-background' );
-    echo '<form action="options.php" method="post">';
-      settings_fields( 'vidbg_settings' );
-      do_settings_sections( 'vidbg_settings' );
-      submit_button();
-    echo '</form>';
   echo '</div>';
 }
 
@@ -632,8 +574,33 @@ function vidbg_gettingstarted_page() {
  * @uses __()
  */
 function vidbg_gettingstarted_link($links) {
-  $gettingstarted_link = __( '<a href="options-general.php?page=html5-vidbg">Getting Started</a>', 'video-background' );
+  $gettingstarted_link = __( '<a href="options-general.php?page=pushlabs-vidbg">Getting Started</a>', 'video-background' );
   array_unshift($links, $gettingstarted_link);
   return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'vidbg_gettingstarted_link' );
+
+/**
+ * Create a unique random class name to be used as a reference for other plugin integrations.
+ *
+ * @since 2.7.0
+ *
+ * @return String The reference class name (without the period prefix)
+ */
+function vidbg_create_unique_ref() {
+  // Our possible list of characters
+  $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $charactersLength = strlen( $characters );
+  $length = 14;
+
+  // Create our string
+  $unique_ref = '';
+  for ( $i = 0; $i < $length; $i++ ) {
+    $unique_ref .= $characters[rand(0, $charactersLength - 1)];
+  }
+
+  // Create our output
+  $output = 'vidbg-ref-' . $unique_ref;
+
+  return $output;
+}
