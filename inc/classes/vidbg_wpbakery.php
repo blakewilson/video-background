@@ -189,6 +189,28 @@ if ( ! class_exists( 'Vidbg_WPBakery' ) ) {
       // Get the Video Background attributes in the VC Row
       $this->get_vidbg_attributes();
 
+      // Conditionally determine if the row has a video background
+      if ( function_exists( 'vidbgpro_install_plugin' ) ) {
+        // If plugin is Video Background Pro
+
+        // If type is YouTube and YouTube URL param is empty, quit
+        if ( isset( $this->vidbg_atts['type'] ) && ! isset( $this->vidbg_atts['youtube_url'] ) ) {
+          return;
+        }
+
+        // If type is self-host and mp4 amd webm param are both empty, quit
+        if ( ! isset( $this->vidbg_atts['type'] ) && ! isset( $this->vidbg_atts['mp4'] ) && ! isset( $this->vidbg_atts['webm'] ) ) {
+          return;
+        }
+      } else {
+        // If plugin is Video Background
+
+        // If mp4 and webm params are empty, quit
+        if ( ! isset( $this->vidbg_atts['mp4'] ) && ! isset( $this->vidbg_atts['webm'] ) ) {
+          return;
+        }
+      }
+
       // Debug Visual Composer row attributes
       // var_dump( $this->vc_row_atts );
 

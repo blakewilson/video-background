@@ -177,8 +177,32 @@ if ( ! class_exists( 'Vidbg_SiteOrigin' ) ) {
       // Get the $vidbg_atts
       $this->get_vidbg_attributes( $grid_item['style'] );
 
-      if ( array_key_exists( 'muted', $this->vidbg_atts ) ) {
-        $this->vidbg_atts['muted'] = $this->vidbg_atts['muted'] === true ? 'false' : 'true';
+      // Conditionally determine if the row has a video background
+      if ( function_exists( 'vidbgpro_install_plugin' ) ) {
+        // If plugin is Video Background Pro
+
+        if ( ! isset( $this->vidbg_atts['type'] ) ) {
+          return;
+        }
+
+        // If type is YouTube and YouTube URL param is empty, quit
+        if ( $this->vidbg_atts['type'] === 'youtube' && empty( $this->vidbg_atts['youtube_url'] ) ) {
+          var_dump( 'no youtube video exists' );
+          return;
+        }
+
+        // If type is self-host and mp4 amd webm param are both empty, quit
+        if ( $this->vidbg_atts['type'] === 'self-host' && empty( $this->vidbg_atts['mp4'] ) && empty( $this->vidbg_atts['webm'] ) ) {
+          var_dump( 'no self hosted video exists' );
+          return;
+        }
+      } else {
+        // If plugin is Video Background
+
+        // If mp4 and webm params are empty, quit
+        if ( empty( $this->vidbg_atts['mp4'] ) && empty( $this->vidbg_atts['webm'] ) ) {
+          return;
+        }
       }
 
       if ( array_key_exists( 'loop', $this->vidbg_atts ) ) {
