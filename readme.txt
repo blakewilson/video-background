@@ -3,7 +3,7 @@ Contributors: blakedotvegas, pushlabs
 Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
 Requires at least: 4.5
 Tested up to: 4.9.5
-Stable tag: 5.0.3
+Stable tag: 2.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
