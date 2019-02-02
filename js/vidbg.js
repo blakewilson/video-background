@@ -131,6 +131,11 @@
      */
     base.tapToUnmute = function() {
 
+      // If Video Background is mobile, don't display the tapToUnmute button
+      if ( base.isMobile() === true  ) {
+        return;
+      }
+
       // If the tap to unmute option is disabled, quit.
       if ( base.options.tapToUnmute === false ) {
         return;
