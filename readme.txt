@@ -84,6 +84,9 @@ To add a video background to a class called **header** add ".header" to the cont
 
 == Changelog ==
 
+= 2.7.1 =
+* Fixed: Remove tap to unmute button when video background can't be played
+
 = 2.7.0 =
 * Added: You can now add a video background to your WPBakery (Visual Composer) row!
 * Added: You can now add a video background to your SiteOrigin Page Builder row!
