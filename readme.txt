@@ -2,8 +2,8 @@
 Contributors: blakedotvegas, pushlabs
 Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
 Requires at least: 4.5
-Tested up to: 5.0.3
-Stable tag: 2.7.1
+Tested up to: 6.0.1
+Stable tag: 2.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,10 @@ To add a video background to a class called **header** add ".header" to the cont
 3. Use SiteOrigin Page Builder? Video Background & SiteOrigin allow you to easily add a video background to your row.
 
 == Changelog ==
+
+= 2.7.2 =
+* Fixed: Upgraded CMB2 from 2.2.1 to 2.10.1
+* Fixed: Fixed critical errors seen when using UpdraftPlus 1.22.16 via the above CMB2 update
 
 = 2.7.1 =
 * Fixed: Remove tap to unmute button when video background can't be played
