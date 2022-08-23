@@ -3,7 +3,7 @@ Contributors: blakedotvegas, pushlabs
 Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
 Requires at least: 4.5
 Tested up to: 6.0.1
-Stable tag: 2.7.2
+Stable tag: 2.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,9 @@ To add a video background to a class called **header** add ".header" to the cont
 3. Use SiteOrigin Page Builder? Video Background & SiteOrigin allow you to easily add a video background to your row.
 
 == Changelog ==
+
+= 2.7.3 =
+* Fixed: Fixes a bug introduced in v2.7.2 where the metabox does not appear on some UNIX systems
 
 = 2.7.2 =
 * Fixed: Upgraded CMB2 from 2.2.1 to 2.10.1
