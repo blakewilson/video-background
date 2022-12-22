@@ -481,20 +481,20 @@ function candide_video_background( $atts , $content = null ) {
 
     $tap_to_unmute_text = __( 'Tap to Unmute', 'video-background' );
     $tap_to_unmute_text = apply_filters( 'vidbg_tap_to_unmute_text', $tap_to_unmute_text );
-    $tap_to_unmute_button = '<img src="' . plugins_url( 'img/volume-icon.svg', __FILE__ ) . '" width="20" height="20" /><span>' . $tap_to_unmute_text . '</span>';
+    $tap_to_unmute_button = '<img src="' . plugins_url( 'img/volume-icon.svg', __FILE__ ) . '" width="20" height="20" /><span>' . esc_js($tap_to_unmute_text) . '</span>';
 
     $output = "
       jQuery(function($){
-        // Source: " . $source . "
-        $( '" . $container . "' ).vidbg( {
-          mp4: '" . $mp4 . "',
-          webm: '" . $webm . "',
-          poster: '" . $poster . "',
-          repeat: " . $loop . ",
-          overlay: " . $overlay . ",
-          overlayColor: '" . $overlay_color . "',
-          overlayAlpha: '" . $overlay_alpha . "',
-          tapToUnmute: " . $tap_to_unmute . ",
+        // Source: " . esc_js($source) . "
+        $( '" . esc_js($container) . "' ).vidbg( {
+          mp4: '" . esc_js($mp4) . "',
+          webm: '" . esc_js($webm) . "',
+          poster: '" . esc_js($poster) . "',
+          repeat: " . esc_js($loop) . ",
+          overlay: " . esc_js($overlay) . ",
+          overlayColor: '" . esc_js($overlay_color) . "',
+          overlayAlpha: '" . esc_js($overlay_alpha) . "',
+          tapToUnmute: " . esc_js($tap_to_unmute) . ",
           tapToUnmuteText: '" . $tap_to_unmute_button . "',
         });
       });
