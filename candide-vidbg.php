@@ -457,6 +457,7 @@ add_action( 'wp_footer', 'vidbg_initialize_footer' );
  *
  * @uses shortcode_atts()
  * @uses do_shortcode()
+ * @uses esc_js()
  */
 function candide_video_background( $atts , $content = null ) {
 
