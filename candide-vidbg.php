@@ -480,6 +480,10 @@ function candide_video_background( $atts , $content = null ) {
       )
     );
 
+    $has_overlay = ($overlay == 'true') ? 'true' : 'false';
+    $has_loop = ($loop == 'true') ? 'true' : 'false';
+    $has_tap_to_unmute = ($tap_to_unmute == 'true') ? 'true' : 'false';
+
     $tap_to_unmute_text = __( 'Tap to Unmute', 'video-background' );
     $tap_to_unmute_text = apply_filters( 'vidbg_tap_to_unmute_text', $tap_to_unmute_text );
     $tap_to_unmute_button = '<img src="' . plugins_url( 'img/volume-icon.svg', __FILE__ ) . '" width="20" height="20" /><span>' . esc_js($tap_to_unmute_text) . '</span>';
@@ -491,11 +495,11 @@ function candide_video_background( $atts , $content = null ) {
           mp4: '" . esc_js($mp4) . "',
           webm: '" . esc_js($webm) . "',
           poster: '" . esc_js($poster) . "',
-          repeat: " . esc_js($loop) . ",
-          overlay: " . esc_js($overlay) . ",
+          repeat: " . $has_loop . ",
+          overlay: " . $has_overlay . ",
           overlayColor: '" . esc_js($overlay_color) . "',
           overlayAlpha: '" . esc_js($overlay_alpha) . "',
-          tapToUnmute: " . esc_js($tap_to_unmute) . ",
+          tapToUnmute: " . $has_tap_to_unmute . ",
           tapToUnmuteText: '" . $tap_to_unmute_button . "',
         });
       });
