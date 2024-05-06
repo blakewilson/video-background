@@ -1,7 +1,7 @@
 {
   "name": "video-background",
   "version": "2.7.5",
-  "description": "This GitHub repo is for the development of the Video Background WordPress plugin. If you are looking to download the production version, you can do so here:",
+  "description": "This GitHub repo is for the development of the Video Background WordPress plugin. If you are looking to download the production version, you can find it on the WordPress Plugin Repo",
   "main": "candide-vidbg.php",
   "scripts": {
     "changeset": "changeset",
@@ -9,8 +9,7 @@
     "release": "npm run build && changeset publish"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Blake Wilson <blake@blake.id>",
   "devDependencies": {
     "@changesets/cli": "^2.27.1"
   }
