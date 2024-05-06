@@ -154,7 +154,6 @@ async function generateReadmeChangelog(readmeTxtFile, changelog) {
       if (line.startsWith("## ")) {
         // Format version number for WordPress
         line = line.replace("## ", "= ") + " =";
-        versionCount++;
       }
 
       processedLines.push(line);
