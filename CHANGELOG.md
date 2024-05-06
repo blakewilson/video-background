@@ -1,5 +1,22 @@
 # Video Background
 
+## 2.7.5
+
+- Fixed: Escaped shortcode booleans (loop, overlay, tap to unmute)
+
+## 2.7.4
+
+- Fixed: Escaped shortcode input (container field, and other attributes)
+
+## 2.7.3
+
+- Fixed: Fixes a bug introduced in v2.7.2 where the metabox does not appear on some UNIX systems
+
+## 2.7.2
+
+- Fixed: Upgraded CMB2 from 2.2.1 to 2.10.1
+- Fixed: Fixed critical errors seen when using UpdraftPlus 1.22.16 via the above CMB2 update
+
 ## 2.7.1
 
 - Fixed: Remove tap to unmute button when video background can’t be played
