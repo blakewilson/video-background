@@ -1,3 +1,5 @@
+# Video Background
+
 ## 2.7.1
 
 - Fixed: Remove tap to unmute button when video background can’t be played
