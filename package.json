@@ -1,10 +1,12 @@
 {
   "name": "video-background",
-  "version": "1.0.0",
+  "version": "2.7.5",
   "description": "This GitHub repo is for the development of the Video Background WordPress plugin. If you are looking to download the production version, you can do so here:",
-  "main": "index.js",
+  "main": "candide-vidbg.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "changeset": "changeset",
+    "version": "changeset version && node scripts/versionPlugin.js",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [],
   "author": "",
