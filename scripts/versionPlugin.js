@@ -16,6 +16,7 @@ async function versionPlugin() {
   const pluginPath = path.join(__dirname, "../");
   const pluginFile = path.join(pluginPath, "candide-vidbg.php");
   const readmeTxt  = path.join(pluginPath, 'readme.txt');
+  const changelog  = path.join(pluginPath, 'CHANGELOG.md');
 
   const version = await getNewVersion(pluginPath);
 
