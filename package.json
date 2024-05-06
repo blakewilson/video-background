@@ -1,0 +1,15 @@
+{
+  "name": "video-background",
+  "version": "1.0.0",
+  "description": "This GitHub repo is for the development of the Video Background WordPress plugin. If you are looking to download the production version, you can do so here:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
+}
