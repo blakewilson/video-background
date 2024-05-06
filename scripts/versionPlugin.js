@@ -1,5 +1,5 @@
 /**
- * Versions the FaustWP plugin.
+ * Versions the plugin.
  */
 
 const fs = require("fs/promises");
@@ -9,7 +9,7 @@ const readFile = (filename) => fs.readFile(filename, { encoding: "utf8" });
 const writeFile = fs.writeFile;
 
 /**
- * Runs all WordPress plugin versioning operations for FaustWP
+ * Runs all WordPress plugin versioning operations 
  * including version bumps and readme.txt changelog updates.
  */
 async function versionPlugin() {
@@ -23,11 +23,12 @@ async function versionPlugin() {
     await bumpPluginHeader(pluginFile, version);
     await bumpStableTag(readmeTxt, version);
     await bumpVersionConstant(pluginFile, version);
+    await generateReadmeChangelog(readmeTxt, changelog);
   }
 }
 
 /**
- * Updates the version constant found in the WPGraphQLContentBlocks.php file.
+ * Updates the version constant 
  *
  * @param {String} pluginFile Full path to a file containing PHP constants.
  * @param {String} version    The new version number.
@@ -122,5 +123,55 @@ async function getNewVersion(pluginPath) {
     console.warn(e);
   }
 }
+
+/**
+ * Updates the plugin's readme.txt changelog 
+ * found in the plugin's CHANGELOG.md file.
+ *
+ * @param {String} readmeTxtFile Full path to the plugin's readme.txt file.
+ * @param {String} changelog     Full path to the plugin's CHANGELOG.md file.
+ */
+async function generateReadmeChangelog(readmeTxtFile, changelog) {
+  let output = "";
+
+  try {
+    let readmeTxt = await readFile(readmeTxtFile);
+    changelog     = await readFile(changelog);
+
+    changelog = changelog.replace(
+      "# Video Background",
+      "== Changelog =="
+    );
+
+    // split the contents by new line
+    const changelogLines = changelog.split(/\r?\n/);
+    const processedLines = [];
+
+    // print all lines in current version
+    changelogLines.every((line) => {
+      // Version numbers in CHANGELOG.md are h2
+      if (line.startsWith("## ")) {
+        // Format version number for WordPress
+        line = line.replace("## ", "= ") + " =";
+        versionCount++;
+      }
+
+      processedLines.push(line);
+
+      return true;
+    });
+
+    changelog = processedLines.join("\n");
+
+    const changelogStart = readmeTxt.indexOf('== Changelog ==');
+
+    output = readmeTxt.substring(0, changelogStart) + changelog;
+
+    return writeFile(readmeTxtFile, output);
+  } catch(e) {
+    console.warn(e);
+  }
+}
+
 
 versionPlugin();
