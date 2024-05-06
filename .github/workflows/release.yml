@@ -1,0 +1,53 @@
+name: Release Plugin 
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  release_plugin:
+    name: Release Plugin 
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - name: Setup Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Create Release Pull Request or Publish 
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: npm run release
+          version: npm run version
+          commit: "Version Plugin"
+          title: "Version Plugin"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Save Plugin version
+        run: |
+          json=${{ toJSON(steps.changesets.outputs.publishedPackages) }}
+          echo PLUGIN_VERSION=$(echo "$json" | jq '.[] | select(.name == "video-background") | .version') >> $GITHUB_ENV
+      - name: Deploy WordPress plugin
+        # Checks the changesets publishedPackages output
+        # If there is a published package named "video-background"
+        # Then deploy the WordPress plugin
+        # https://github.com/changesets/action#outputs
+        if: steps.changesets.outputs.published && contains(steps.changesets.outputs.publishedPackages, '"video-background"')
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SLUG: video-background 
+          VERSION: ${{ env.PLUGIN_VERSION }}

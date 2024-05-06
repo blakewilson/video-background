@@ -1,14 +1,14 @@
 <?php
-/*
-Plugin Name: Video Background
-Plugin URI: https://pushlabs.co/documentation/video-background
-Description: WordPress plugin to easily assign a video background to any element. Awesome.
-Author: Push Labs
-Version: 2.7.5
-Author URI: https://pushlabs.co
-Text Domain: video-background
-Domain Path: /languages
-*/
+/**
+ * Plugin Name: Video Background
+ * Plugin URI: https://pushlabs.co/documentation/video-background
+ * Description: WordPress plugin to easily assign a video background to any element. Awesome.
+ * Author: Push Labs
+ * Version: 2.7.5
+ * Author URI: https://pushlabs.co
+ * Text Domain: video-background
+ * Domain Path: /languages
+ */
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {
