@@ -1,5 +1,11 @@
 # Video Background
 
+## 2.7.7
+
+### Patch Changes
+
+- Removed `.changeset`, `package.json`, and `package-lock.json` from production dist
+
 ## 2.7.6
 
 ### Patch Changes
