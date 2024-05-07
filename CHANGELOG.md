@@ -1,5 +1,12 @@
 # Video Background
 
+## 2.7.6
+
+### Patch Changes
+
+- Add CHANGELOG.md to production plugin bundle
+- Update tested up to version to 6.5.2
+
 ## 2.7.5
 
 - Fixed: Escaped shortcode booleans (loop, overlay, tap to unmute)
