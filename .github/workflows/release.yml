@@ -38,7 +38,7 @@ jobs:
       - name: Save Plugin version
         run: |
           json=${{ toJSON(steps.changesets.outputs.publishedPackages) }}
-          echo PLUGIN_VERSION=$(echo "$json" | jq '.[] | select(.name == "video-background") | .version') >> $GITHUB_ENV
+          echo PLUGIN_VERSION=$(echo "$json" | jq --raw-output '.[] | select(.name == "video-background") | .version') >> $GITHUB_ENV
       - name: Deploy WordPress plugin
         # Checks the changesets publishedPackages output
         # If there is a published package named "video-background"
