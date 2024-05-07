@@ -149,7 +149,9 @@ async function generateReadmeChangelog(readmeTxtFile, changelog) {
     const processedLines = [];
 
     // print all lines in current version
-    for(let line of changelogLines) {
+    for(let i = 0; i < changelogLines.length; i++) {
+      let line = changelogLines[i]
+
       // Version numbers in CHANGELOG.md are h2
       if (line.startsWith("## ")) {
         // Format version number for WordPress
@@ -158,6 +160,7 @@ async function generateReadmeChangelog(readmeTxtFile, changelog) {
       
       // The line is a patch/minor/major heading. Remove it.
       if(line.startsWith('### ')) {
+        i++; // Skip ahead one line as the line after a patch/minor/major heading is an empty line.
         continue;
       }
 
