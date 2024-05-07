@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Video Background ===
 Contributors: blakedotvegas, pushlabs
 Tags: video background, Visual Composer, WPBakery, SiteOrigin, page builder
 Requires at least: 4.5
