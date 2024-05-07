@@ -1,12 +1,16 @@
 /.wordpress-org
 /.git
 /.github
+/.changeset
 /node_modules
 /scripts
 
 .distignore
 .gitignore
 .gitattributes
+
+package.json
+package-lock.json
 
 config.codekit3
 README.md
