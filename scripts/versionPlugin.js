@@ -149,17 +149,20 @@ async function generateReadmeChangelog(readmeTxtFile, changelog) {
     const processedLines = [];
 
     // print all lines in current version
-    changelogLines.every((line) => {
+    for(let line of changelogLines) {
       // Version numbers in CHANGELOG.md are h2
       if (line.startsWith("## ")) {
         // Format version number for WordPress
         line = line.replace("## ", "= ") + " =";
       }
+      
+      // The line is a patch/minor/major heading. Remove it.
+      if(line.startsWith('### ')) {
+        continue;
+      }
 
       processedLines.push(line);
-
-      return true;
-    });
+    }
 
     changelog = processedLines.join("\n");
 
