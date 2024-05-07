@@ -6,7 +6,7 @@
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version && node scripts/versionPlugin.js",
-    "release": "npm run build && changeset publish"
+    "release": "changeset publish"
   },
   "keywords": [],
   "author": "Blake Wilson <blake@blake.id>",
